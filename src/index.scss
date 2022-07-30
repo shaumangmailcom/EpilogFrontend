@@ -1,0 +1,336 @@
+body {
+  margin: 0;
+  background: linear-gradient(0.76deg, #fcfcfe -4.74%, #e9ebfc 300.53%);
+  min-height: 100vh;
+  width: 100%;
+  color: var(--color-primary);
+  overflow-x: hidden;
+  font-family: heebo;
+}
+
+p {
+  margin-bottom: 0px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 51%;
+  }
+}
+
+@media screen and (max-width: 471px) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@font-face {
+  font-family: ubuntu;
+  src: url("./Assets/fonts/Ubuntu-Medium.ttf");
+}
+
+@font-face {
+  font-family: heebo;
+  src: url("./Assets/fonts/Heebo-Regular.ttf");
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-info);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  border-radius: 10px;
+  background-color: var(--color-primary-light);
+}
+
+:root {
+  --color-primary: #112548;
+  --color-primary-dark: #4059ad;
+  --color-primary-light: #ccdbff;
+  --color-info: #bdd2f9;
+  --color-info-light: #CCDBFF;
+  --color-success: #68dab7;
+  --color-dark: #000000;
+  --color-white: #fff;
+  --color-light: #76787c;
+  --color-text: #1125486b;
+}
+
+.title {
+  font-size: 2.9rem;
+  line-height: 127%;
+  font-family: ubuntu;
+  color: var(--color-primary);
+  @media screen and (max-width: 428px) {
+    text-align: center;
+  }
+}
+
+.desc {
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  margin: 3.2rem 0;
+  font-family: heebo;
+
+  @media screen and (max-width: 428px) {
+    text-align: center;
+  }
+}
+
+/*------------------------*/
+/*       App Header       */
+/*------------------------*/
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 54px;
+  padding: 0 18px;
+  background-color: var(--color-primary);
+  .logo {
+    width: 74px;
+    margin: 0 auto;
+  }
+  .back {
+    width: 11px;
+    cursor: pointer;
+  }
+}
+
+/*------------------------*/
+/*       App Header       */
+/*------------------------*/
+/*------------------------*/
+/*       App NavBar       */
+/*------------------------*/
+
+.app-navbar {
+  .navbar {
+    // flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    // min-height: 10.8rem;
+    padding: 4.4rem 0;
+
+    .back-link {
+      font-size: 1.4rem;
+      color: var(--color-secondry);
+      opacity: 0.7;
+    }
+
+    .mbBtn {
+      height: 29px;
+      width: 96px;
+      // visibility: hidden;
+      display: none;
+      margin: 0 1rem 0 auto;
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+
+    .navbar-brand {
+      padding: 0;
+      margin: 0;
+      // flex: 1;
+
+      @media screen and (max-width: 768px) {
+        flex: unset;
+      }
+
+      img {
+        width: 20rem;
+      }
+    }
+
+    .navbar-collapse {
+      // flex-grow: unset;
+      // flex: 1.5;
+      justify-content: flex-end;
+
+      @media screen and (max-width: 768px) {
+        flex: unset;
+        flex-basis: 100%;
+        align-items: center;
+      }
+
+      .navbar-nav {
+        flex: 1;
+        justify-content: space-evenly;
+        .nav-link {
+          color: var(--color-dark);
+          font-size: 1.6rem;
+          font-family: Montserrat600;
+          // margin: 0 2.2rem;
+          &:hover {
+            color: var(--color-success-dark);
+            font-family: Montserrat600;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          align-items: center;
+        }
+      }
+
+      .navbar-btn {
+        height: 4.7rem;
+        width: 17.2rem;
+        border-radius: 5px;
+        border: 3px solid var(--color-primary);
+        background-color: transparent;
+
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/*------------------------*/
+/*       App NavBar       */
+/*------------------------*/
+/*------------------------*/
+/*      Input Field       */
+/*------------------------*/
+
+.form-group {
+  .form-label {
+    font-size: 1.6rem;
+    color: var(--color-secondry);
+    margin-bottom: 7px;
+  }
+
+  .optional {
+    font-size: 1.4rem;
+    color: var(--color-danger);
+    margin-top: 2px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 9px 2rem;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    border: 1px solid #c8d0da;
+    border-radius: 1rem;
+
+    &::placeholder {
+      color: #c7c7c7;
+    }
+  }
+}
+
+/*------------------------*/
+/*      Input Field       */
+/*------------------------*/
+/*------------------------*/
+/*        Select DD       */
+/*------------------------*/
+
+.selectdd {
+  .lable {
+    font-size: 1.6rem;
+    color: var(--color-secondry);
+    margin-bottom: 7px;
+  }
+
+  .form-select {
+    padding: 9px 2rem;
+    font-size: 1.6rem;
+    color: var(--color-primary);
+    background-color: var(--color-white);
+    border: 1px solid #c8d0da;
+    border-radius: 1rem;
+  }
+}
+
+/*------------------------*/
+/*        Select DD       */
+/*------------------------*/
+/*------------------------*/
+/*       App CheckBox     */
+/*------------------------*/
+
+.check-container {
+  display: flex;
+  align-items: center;
+
+  .app-checkbox {
+    height: 2rem;
+    width: 2rem;
+    border: 1px solid #c8d0da;
+    border-radius: 4px;
+    margin-right: 6px;
+
+    &:checked {
+      background-color: #1d4655;
+    }
+  }
+
+  .checklable {
+    font-size: 1.6rem;
+  }
+}
+
+/*------------------------*/
+/*       App CheckBox     */
+/*------------------------*/
+/*------------------------*/
+/*      Video Player      */
+/*------------------------*/
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/*------------------------*/
+/*      Video Player      */
+/*------------------------*/
+/*------------------------*/
+/*        carousel        */
+/*------------------------*/
+.carousel {
+  height: 78%;
+  .carousel-indicators {
+  }
+  .carousel-indicators [data-bs-target] {
+    width: 9px;
+    height: 9px;
+    background-color: var(--color-primary);
+    border-radius: 100%;
+  }
+}
+
+/*------------------------*/
+/*        carousel        */
+/*------------------------*/

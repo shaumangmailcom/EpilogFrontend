@@ -1,0 +1,29 @@
+.icon_bttn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:18px;
+    padding: 7px 13px;
+    height: 36px;
+    width: max-content;
+    background-color: var(--color-primary-dark);
+    cursor: pointer;
+    padding: 10px;
+    img{
+      margin-left: 7px;
+      width: 7px;
+    }
+    .icon_bttn_p {
+      color: var(--color-white);
+      font-size: 15px;
+      text-transform: capitalize;
+      letter-spacing: 0.2px;
+    }
+  }
+  .icon_bttn:hover {
+    transform: translateY(-2px);
+  }
+  
+  
+  
+  

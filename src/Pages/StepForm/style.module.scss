@@ -1,0 +1,17 @@
+.qa {
+  .banner {
+    background-image: url("../../Assets/images/cloud.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 20vh;
+    width: 100%;
+  }
+  .row {
+    min-height: calc(80vh - 54px);
+    justify-content: center;
+    .grid {
+      padding: 3.7rem;
+    }
+  }
+}
