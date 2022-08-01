@@ -65,7 +65,7 @@ html {
   --color-primary-dark: #4059ad;
   --color-primary-light: #ccdbff;
   --color-info: #bdd2f9;
-  --color-info-light: #CCDBFF;
+  --color-info-light: #ccdbff;
   --color-success: #68dab7;
   --color-dark: #000000;
   --color-white: #fff;
@@ -298,23 +298,31 @@ html {
 /*       App CheckBox     */
 /*------------------------*/
 /*------------------------*/
-/*      Video Player      */
+/*      Range Slider      */
 /*------------------------*/
-
-.player-wrapper {
-  position: relative;
-  padding-top: 56.25%;
-  /* Player ratio: 100 / (1280 / 720) */
+.rangeslider-horizontal {
+  height: 5px;
+  margin: 20px 0 8px;
+  background: #cfd3e8;
+  box-shadow: none;
+  .rangeslider__fill {
+    background-color: #082996;
+  }
+  .rangeslider__handle {
+    width: 21px;
+    height: 21px;
+    border-radius: 30px;
+    background-color: #082996;
+    border: 2px solid #fff;
+    box-shadow: none;
+    &::after{
+      display: none;
+    }
+}
 }
 
-.react-player {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 /*------------------------*/
-/*      Video Player      */
+/*      Range Slider      */
 /*------------------------*/
 /*------------------------*/
 /*        carousel        */

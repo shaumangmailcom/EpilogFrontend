@@ -1,5 +1,7 @@
 import React from "react";
+import AppButton from "../Button";
 import { Range } from "../SmallComponents";
+import right from "../../Assets/images/right.svg"
 import styles from "./style.module.scss";
 
 export const StepCard = ({ text, cardHeight, color }) => {
@@ -13,13 +15,13 @@ export const StepCard = ({ text, cardHeight, color }) => {
 export const SliderCard = ({ img, title, desc, options = [] }) => {
   return (
     <div className={styles.sliderCard}>
-      <div className={styles.imgSec}>
+      {img && <div className={styles.imgSec}>
         <img src={img} />
-      </div>
+      </div>}
       <p className={styles.title}>{title}</p>
       {desc && <p className={styles.desc}>{desc}</p>}
-      {options.map((text, ind) => (
-        <Range title="Work" />
+      {options.map((obj, ind) => (
+        <Range className={styles.rgSlider} key={ind} {...obj} />
       ))}
     </div>
   );
