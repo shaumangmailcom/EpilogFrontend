@@ -1,1 +1,18 @@
-
+.range {
+  .content {
+    padding: 25px 20px;
+    .row {
+      justify-content: center;
+    }
+    .btnRow {
+        justify-content: center;
+      .btn {
+        height: 48px;
+        width: 48px;
+        border-radius: 100%;
+        margin-top: 5rem;
+        float: right;
+      }
+    }
+  }
+}

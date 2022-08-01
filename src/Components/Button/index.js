@@ -18,6 +18,7 @@ const AppButton = ({
   onClick,
   className,
   hrefLink
+  imgMargin
 }) => {
   return (
     <div>
@@ -43,7 +44,7 @@ const AppButton = ({
         >
         {title}
       </p>
-        {src && <img width={imgWidth} src={src} />}
+        {src && <img style={{margin: imgMargin, width: imgWidth}} src={src} />}
     </div>
     </a>
     </div>

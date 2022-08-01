@@ -1,0 +1,51 @@
+.medical {
+    .header{
+        padding: 3rem 2rem 2.4rem;
+        background: linear-gradient(108.29deg, #FFFFFF 50.21%, #E8EBFE 86.64%);
+        position: relative;
+        overflow: hidden;
+        min-height: 113px;
+        display: flex;
+        align-items: center;
+        p{
+            font-size: 20px;
+            font-family: ubuntu;
+            color: var(--color-primary);
+            @media only screen and (max-width: 428px) {
+                width: 60%;
+            }
+        }
+        img{
+            position: absolute;
+            right: -10rem;
+            top: 0;
+        }
+    }
+    .content {
+      padding: 25px 20px;
+      .row {
+        justify-content: center;
+        .crdSec{
+            .title{
+                font-size: 24px;
+                color: var(--color-primary);
+                font-family: ubuntu;
+                line-height: 127%;
+                text-align: center;
+                margin: 24px 0 32px;
+            }
+        }
+      }
+      .btnRow {
+          justify-content: center;
+        .btn {
+          height: 48px;
+          width: 48px;
+          border-radius: 100%;
+          margin-top: 5rem;
+          float: right;
+        }
+      }
+    }
+  }
+  

@@ -5,6 +5,8 @@ import {
   Routes
 } from "react-router-dom";
 import Home from "../../Pages/Home";
+import Match from "../../Pages/Match";
+import Medical from "../../Pages/Medical";
 import Range from "../../Pages/RangeSlider";
 import QA from "../../Pages/StepForm";
 import ThankYou from "../../Pages/Thankyou";
@@ -20,6 +22,7 @@ const AppRouting = () => (
       <Route path="/range" element={<Range/>} />
       <Route path="/thankyou" element={<ThankYou/>} />
       <Route path="/jounrey" element={<Journey/>} />
+      <Route path="/medical" element={<Medical/>} />
 
     </Routes>
   </Router>
