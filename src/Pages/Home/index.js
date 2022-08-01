@@ -44,13 +44,14 @@ const Home = () => {
   };
 
   return (
+    
     <div className={styles.home}>
-      <AppHeader />
+      {/* <AppHeader /> */}
       <div className={styles.banner} />
       <Row className={styles.row}>
         <Col xs={6} className={styles.grid}>
           {data.length > 0 && (
-            <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel activeIndex={index} onSelect={handleSelect} interval='1500' pause="hover" >
               {data.map((item) => (
                 <Carousel.Item>
                   <div className={styles.slidContent}>
@@ -62,11 +63,12 @@ const Home = () => {
             </Carousel>
           )}
           <Row className={styles.btnRow}>
-            <AppButton title="Let’s Start" src={right} minWidth="118px" />
+            <AppButton hrefLink="/information" title="Let’s Start" src={right} minWidth="118px" />
           </Row>
         </Col>
       </Row>
     </div>
+    
   );
 };
 

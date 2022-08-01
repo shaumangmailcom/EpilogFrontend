@@ -2,10 +2,15 @@ import React from "react";
 import { Range } from "../SmallComponents";
 import styles from "./style.module.scss";
 
-export const StepCard = ({ text, cardHeight, color }) => {
+export const StepCard = ({ text, cardHeight, color, rightImg,textWidth='100%',imgWidth }) => {
   return (
     <div className={styles.stepCard} style={{ height: cardHeight }}>
-      <p style={{ color }}>{text}</p>
+      <div style={{ width: textWidth }}>
+        <p style={{ color }}>{text}</p>
+      </div>
+      <div style={{ width: imgWidth  }}>
+        <img src={rightImg} />
+      </div>
     </div>
   );
 };

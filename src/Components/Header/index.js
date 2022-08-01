@@ -5,7 +5,7 @@ import left from "../../Assets/images/left.svg"
 const AppHeader = ({back}) => {
   return (
     <div className="header">
-      {back && <img src={left} className="back" />}
+      {back && <a href="#"><img src={left} className="back" /></a>}
       <img src={logo} className="logo" />
     </div>
   );

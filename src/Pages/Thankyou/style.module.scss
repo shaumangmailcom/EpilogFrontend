@@ -1,0 +1,32 @@
+.thankyou{
+    .banner {
+        background-image: url("../../Assets/images/bannerD.svg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: repeat-x ;
+        height: 30vh;
+        width: 100%;
+      }
+      .row {
+        justify-content: center;
+        margin: 0;
+        // height: calc(70vh - 80px);
+        .grid {
+            padding: 5rem 0;
+         h3{
+             font-size: 2.9rem;
+             padding-bottom: 15px;
+             text-align: center;
+             font-weight: 500;
+         }
+         p{
+             font-size: 1.8rem;
+             line-height: 26px;
+         }
+          .btnRow{
+            margin-top: 6rem;
+            justify-content: center;
+          }
+        }
+      }
+}

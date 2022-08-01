@@ -16,9 +16,12 @@ const AppButton = ({
   imgWidth,
   margin,
   onClick,
-  className
+  className,
+  hrefLink
 }) => {
   return (
+    <div>
+         <a className={styles.buttonHref} href={hrefLink}>
     <div
       onClick={onClick}
       style={{
@@ -41,6 +44,8 @@ const AppButton = ({
         {title}
       </p>
         {src && <img width={imgWidth} src={src} />}
+    </div>
+    </a>
     </div>
   )
 }
