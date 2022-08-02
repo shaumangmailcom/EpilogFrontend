@@ -11,6 +11,7 @@ import Range from "../../Pages/RangeSlider";
 import QA from "../../Pages/StepForm";
 import ThankYou from "../../Pages/Thankyou";
 import Journey from "../../Pages/JourneyHome";
+import MediEnd from "../../Pages/MedicalEndScreen";
 
 
 
@@ -23,6 +24,7 @@ const AppRouting = () => (
       <Route path="/thankyou" element={<ThankYou/>} />
       <Route path="/jounrey" element={<Journey/>} />
       <Route path="/medical" element={<Medical/>} />
+      <Route path="/mediend" element={<MediEnd/>} />
 
     </Routes>
   </Router>

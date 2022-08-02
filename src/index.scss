@@ -37,6 +37,14 @@ html {
   font-family: heebo;
   src: url("./Assets/fonts/Heebo-Regular.ttf");
 }
+@font-face {
+  font-family: heebo500;
+  src: url("./Assets/fonts/Heebo-Medium.ttf");
+}
+@font-face {
+  font-family: heebo700;
+  src: url("./Assets/fonts/Heebo-Bold.ttf");
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -82,6 +90,16 @@ html {
     text-align: center;
   }
 }
+.title24 {
+  font-size: 24px;
+  line-height: 127%;
+  font-family: ubuntu;
+  color: var(--color-primary);
+  @media screen and (max-width: 428px) {
+    text-align: center;
+  }
+}
+
 
 .desc {
   font-size: 1.8rem;
@@ -89,6 +107,25 @@ html {
   margin: 3.2rem 0;
   font-family: heebo;
 
+  @media screen and (max-width: 428px) {
+    text-align: center;
+  }
+}
+.desc18 {
+  font-size: 18px;
+  line-height: 2.6rem;
+  margin: 36px 0 19px;
+  font-family: heebo;
+
+  @media screen and (max-width: 428px) {
+    text-align: center;
+  }
+}
+.desc18b {
+  font-size: 18px;
+  line-height: 2.6rem;
+  margin: 2rem 0;
+  font-family: heebo500;
   @media screen and (max-width: 428px) {
     text-align: center;
   }

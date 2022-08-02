@@ -17,7 +17,7 @@ const AppButton = ({
   margin,
   onClick,
   className,
-  hrefLink
+  hrefLink,
   imgMargin
 }) => {
   return (

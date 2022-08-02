@@ -17,7 +17,7 @@
         }
         img{
             position: absolute;
-            right: -10rem;
+            right: 0;
             top: 0;
         }
     }
@@ -25,6 +25,13 @@
       padding: 25px 20px;
       .row {
         justify-content: center;
+        .textSec{
+          margin-top: 40px;
+          .tsBtn{
+            height: 36px;
+            width: 135px;
+          }
+        }
         .crdSec{
             .title{
                 font-size: 24px;
