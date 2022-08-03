@@ -37,16 +37,31 @@ const MediEnd = () => {
               number="03"
               desc="Lastly, your tendency towards rationality means you would forgo antibiotics when their impact becomes highly limited. "
             />
-            <CheckCard title="Your form, based on your answers, filled by our experts:"  />
+            <CheckCard
+              title="Your form, based on your answers, filled by our experts:"
+              options={[
+                {
+                  question: "Attempt resuscitation if your heart stops?"
+                },
+                {
+                  question: "Attempt aggressive treatments such as intubation and mechanical ventilation?"
+                },
+                {
+                  question: "Use antibiotics even if those cannot impact the main course of the illness?"
+                },
+                {
+                  question: "Use tubes or intravenous feeding if you can’t eat on your own?"
+                },
+              ]}
+            />
           </Col>
         </Row>
-            <AppButton
-              hrefLink="/information"
-              title="Explore my journeys"
-              src={right}
-              minWidth="118px"
-              margin="7rem auto 0"
-            />
+        <AppButton
+          // hrefLink="/information"
+          title="Back to my journeys"
+          minWidth="118px"
+          margin="7rem auto 0"
+        />
       </div>
     </div>
   );

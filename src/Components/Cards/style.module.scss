@@ -71,12 +71,19 @@
   background: var(--color-white);
   border: 1px solid #f1f4fb;
   border-radius: 16px;
-  padding: 16px 25px;
+  padding: 16px 20px;
   margin-bottom: 16px;
   .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    .head {
+      padding: 5px 10px;
+      p {
+        font-size: 14px;
+        font-family: heebo500;
+      }
+    }
     .lbl {
       font-size: 36px;
       color: #4059ad;
@@ -101,18 +108,22 @@
   background: var(--color-white);
   border: 1px solid #f1f4fb;
   border-radius: 16px;
-  padding: 12px;
-  .title{
+  padding: 12px 25px;
+  .title {
     font-size: 23px;
     color: var(--color-primary);
     font-family: ubuntu;
     text-align: center;
   }
-  .content{
-    .dtl{
-      font-size: 24px;
+  .descSec {
+    padding: 14px 23px;
+    background-color: #f0f1fd;
+    border-radius: 15px;
+    margin: 75px 0 18px;
+    p {
+      font-size: 16px;
       color: var(--color-primary);
-      line-height: 35px;
+      line-height: 23.5px;
       text-align: center;
     }
   }
@@ -120,4 +131,43 @@
 
 /*------------------------*/
 /*      Check Card        */
+/*------------------------*/
+/*------------------------*/
+/*      Match Card        */
+/*------------------------*/
+
+.matchCard {
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: var(--color-white);
+  border: 1px solid #f1f4fb;
+  border-radius: 16px;
+  margin-top: 8px;
+  .imgSec{
+    height: 52px;
+    width: 52px;
+    border-radius: 100%;
+    background-color: #4059ad;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .dtl{
+    font-size: 16px;
+    color: var(--color-primary);
+    span{
+      font-family: heebo700;
+    }
+  }
+}
+
+/*------------------------*/
+/*      Match Card        */
 /*------------------------*/

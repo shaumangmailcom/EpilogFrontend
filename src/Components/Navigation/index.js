@@ -12,6 +12,10 @@ import QA from "../../Pages/StepForm";
 import ThankYou from "../../Pages/Thankyou";
 import Journey from "../../Pages/JourneyHome";
 import MediEnd from "../../Pages/MedicalEndScreen";
+import StepEnd from "../../Pages/StepFormEnd";
+import MatchThank from "../../Pages/Match/ThankYou";
+import MatchEnd from "../../Pages/Match/MatchEnd";
+import MatchStart from "../../Pages/Match/MatchStart";
 
 
 
@@ -25,6 +29,11 @@ const AppRouting = () => (
       <Route path="/jounrey" element={<Journey/>} />
       <Route path="/medical" element={<Medical/>} />
       <Route path="/mediend" element={<MediEnd/>} />
+      <Route path="/stepEnd" element={<StepEnd/>} />
+      <Route path="/match" element={<Match/>} />
+      <Route path="/matchThank" element={<MatchThank/>} />
+      <Route path="/matchEnd" element={<MatchEnd/>} />
+      <Route path="/matchStart" element={<MatchStart/>} />
 
     </Routes>
   </Router>

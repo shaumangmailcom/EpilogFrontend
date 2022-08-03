@@ -38,14 +38,18 @@
 /*   Lable   */
 .lableSec {
   background-color: var(--color-info-light);
-  padding: 5px 2.1rem;
+  padding: 0 2.1rem;
   border-radius: 7.4rem;
   width: max-content;
+  height: 33px;
+  display: flex;
+  align-items: center;
   p {
     font-size: 18px;
     color: var(--color-primary);
     font-family: ubuntu;
     text-transform: capitalize;
+    line-height: 23px;
   }
 }
 /*   Lable   */

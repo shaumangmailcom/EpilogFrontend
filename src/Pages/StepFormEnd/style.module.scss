@@ -1,0 +1,28 @@
+.stepEnd {
+  .row {
+    justify-content: center;
+    margin: 0;
+    .grid {
+      padding: 3.6rem 2rem;
+      .content {
+        margin-bottom: 50px;
+        .head {
+          font-size: 24px;
+          color: var(--color-primary);
+          font-family: ubuntu;
+          line-height: 127.9%;
+          margin: 16px 0 10px;
+        }
+        .desc{
+            font-size: 18px;
+            color: var(--color-primary);
+            line-height: 26px;
+        }
+      }
+      .btnRow {
+        margin-top: 6rem;
+        justify-content: center;
+      }
+    }
+  }
+}
