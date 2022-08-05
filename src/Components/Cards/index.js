@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useCallback } from "react";
 import AppButton from "../Button";
 import { Lable, Range } from "../SmallComponents";
 import right from "../../Assets/images/right.svg";
 import Form from "react-bootstrap/Form";
 import styles from "./style.module.scss";
-import { Col ,  Row} from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
+import classNames from "classnames";
 
 export const StepCard = ({
   text,
@@ -13,9 +14,15 @@ export const StepCard = ({
   rightImg,
   textWidth = "100%",
   imgWidth,
+  onClick,
+  active,
 }) => {
   return (
-    <div className={styles.stepCard} style={{ height: cardHeight }}>
+    <div
+      className={classNames(styles.stepCard, active ? styles.active : "")}
+      onClick={onClick}
+      style={{ height: cardHeight }}
+    >
       <div style={{ width: textWidth }}>
         <p style={{ color }}>{text}</p>
       </div>
@@ -26,7 +33,20 @@ export const StepCard = ({
   );
 };
 
-export const SliderCard = ({ img, title, desc, options = [] }) => {
+export const SliderCard = ({
+  img,
+  title,
+  desc,
+  options = [],
+  onChange,
+  data = {},
+}) => {
+  const changeItem = useCallback(
+    (id, value) => {
+      onChange?.({ [id]: value });
+    },
+    [onChange]
+  );
   return (
     <div className={styles.sliderCard}>
       {img && (
@@ -37,7 +57,13 @@ export const SliderCard = ({ img, title, desc, options = [] }) => {
       <p className={styles.title}>{title}</p>
       {desc && <p className={styles.desc}>{desc}</p>}
       {options.map((obj, ind) => (
-        <Range className={styles.rgSlider} key={ind} {...obj} />
+        <Range
+          onChange={changeItem}
+          value={data[obj.id] ?? 0}
+          className={styles.rgSlider}
+          key={ind}
+          {...obj}
+        />
       ))}
     </div>
   );
@@ -84,8 +110,8 @@ export const CheckBox = ({ question }) => {
 export const MatchCard = ({ img, desc, point, imgBg }) => {
   return (
     <Row className={styles.matchCard}>
-      <Col xs={2} >
-        <div className={styles.imgSec} style={{backgroundColor: imgBg}}>
+      <Col xs={2}>
+        <div className={styles.imgSec} style={{ backgroundColor: imgBg }}>
           <img src={img} />
         </div>
       </Col>

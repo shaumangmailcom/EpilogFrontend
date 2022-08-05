@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 import AppHeader from "../../Components/Header";
 import styles from "./style.module.scss";
 import AppButton from "../../Components/Button";
-import right from "../../Assets/images/right.svg"
+import right from "../../Assets/images/right.svg";
 
 const data = [
   {
@@ -44,16 +44,20 @@ const Home = () => {
   };
 
   return (
-    
     <div className={styles.home}>
       {/* <AppHeader /> */}
       <div className={styles.banner} />
       <Row className={styles.row}>
         <Col xs={6} className={styles.grid}>
           {data.length > 0 && (
-            <Carousel activeIndex={index} onSelect={handleSelect} interval='1500' pause="hover" >
-              {data.map((item) => (
-                <Carousel.Item>
+            <Carousel
+              activeIndex={index}
+              onSelect={handleSelect}
+              interval="1500"
+              pause="hover"
+            >
+              {data.map((item, ind) => (
+                <Carousel.Item key={ind}>
                   <div className={styles.slidContent}>
                     <p className="title">{item.title}</p>
                     <p className="desc">{item.desc}</p>
@@ -63,12 +67,16 @@ const Home = () => {
             </Carousel>
           )}
           <Row className={styles.btnRow}>
-            <AppButton hrefLink="/information" title="Let’s Start" src={right} minWidth="118px" />
+            <AppButton
+              hrefLink="/basic"
+              title="Let’s Start"
+              src={right}
+              minWidth="118px"
+            />
           </Row>
         </Col>
       </Row>
     </div>
-    
   );
 };
 

@@ -6,11 +6,13 @@ import AppButton from "../../Components/Button";
 import matchT from "../../Assets/images/matchT.svg";
 import right from "../../Assets/images/right.svg";
 import { CatgCard, CheckCard } from "../../Components/Cards";
+import { useNavigate } from "react-router-dom";
 
 const MatchEnd = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.thankyou}>
-      <AppHeader back />
+      <AppHeader back onClickBack={()=>navigate('/share-thank')} />
       <div className={styles.content}>
         <img src={matchT} className={styles.icon} />
         <Row className={styles.row}>
@@ -36,7 +38,7 @@ const MatchEnd = () => {
           </Col>
         </Row>
         <AppButton
-          // hrefLink="/information"
+          hrefLink="/journey"
           title="Back to my journeys"
           minWidth="118px"
           margin="2rem auto 0"

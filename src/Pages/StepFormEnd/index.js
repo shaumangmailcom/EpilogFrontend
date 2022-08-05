@@ -5,6 +5,7 @@ import AppHeader from "../../Components/Header";
 import AppButton from "../../Components/Button";
 import right from "../../Assets/images/right.svg";
 import { Lable } from "../../Components/SmallComponents";
+import { useNavigate } from "react-router-dom";
 const data = [
   {
     title: "Now",
@@ -24,20 +25,21 @@ const data = [
 ];
 
 export default function StepEnd() {
+  const navigate = useNavigate()
   return (
     <div className={styles.stepEnd}>
-      <AppHeader back />
+      <AppHeader back onClickBack={()=>{ navigate('/basic')}}/>
       <Row className={styles.row}>
         <Col xs={12} md={8} lg={6} xl={4} className={styles.grid}>
-          {data.map((item) => (
-            <div className={styles.content}>
+          {data.map((item, ind) => (
+            <div key={ind} className={styles.content}>
               <Lable lable={item.title} />
               <p className={styles.head}>{item.qs}</p>
               <p className={styles.desc}>{item.dtl}</p>
             </div>
           ))}
           <AppButton
-            // hrefLink="/information"
+            hrefLink="/range"
             title="Next"
             minWidth="129px"
           />

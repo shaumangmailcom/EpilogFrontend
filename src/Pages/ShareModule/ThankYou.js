@@ -9,6 +9,7 @@ import users from "../../Assets/images/users.svg";
 import leaf from "../../Assets/images/leaf.svg";
 import hands from "../../Assets/images/hands.svg";
 import { CatgCard, CheckCard, MatchCard } from "../../Components/Cards";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -37,9 +38,10 @@ const data = [
 ];
 
 const MatchThank = () => {
+  const navigate = useNavigate()
   return (
     <div className={styles.thankyou}>
-      <AppHeader back />
+      <AppHeader back onClickBack={()=>navigate('/share')}/>
       <div className={styles.content}>
         <img src={matchT} className={styles.icon} />
         <Row className={styles.row}>
@@ -66,7 +68,7 @@ const MatchThank = () => {
           </Col>
         </Row>
         <AppButton
-          // hrefLink="/information"
+          hrefLink="/share-end"
           title="See our recommendations"
           minWidth="234px"
           margin="40px auto 0"

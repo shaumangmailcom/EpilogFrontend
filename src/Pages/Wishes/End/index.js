@@ -1,16 +1,18 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
 import styles from "./style.module.scss";
-import AppHeader from "../../Components/Header";
-import AppButton from "../../Components/Button";
-import plus from "../../Assets/images/plus.svg";
-import right from "../../Assets/images/right.svg";
-import { CatgCard, CheckCard } from "../../Components/Cards";
+import AppHeader from "../../../Components/Header";
+import AppButton from "../../../Components/Button";
+import plus from "../../../Assets/images/plus.svg";
+import right from "../../../Assets/images/right.svg";
+import { CatgCard, CheckCard } from "../../../Components/Cards";
+import { useNavigate } from "react-router-dom";
 
-const MediEnd = () => {
+const WishesEnd = () => {
+  const navigate = useNavigate();
   return (
     <div className={styles.thankyou}>
-      <AppHeader back />
+      <AppHeader back onClickBack={() => navigate("/wishes")} />
       <div className={styles.content}>
         <img src={plus} className={styles.icon} />
         <Row className={styles.row}>
@@ -41,23 +43,26 @@ const MediEnd = () => {
               title="Your form, based on your answers, filled by our experts:"
               options={[
                 {
-                  question: "Attempt resuscitation if your heart stops?"
+                  question: "Attempt resuscitation if your heart stops?",
                 },
                 {
-                  question: "Attempt aggressive treatments such as intubation and mechanical ventilation?"
+                  question:
+                    "Attempt aggressive treatments such as intubation and mechanical ventilation?",
                 },
                 {
-                  question: "Use antibiotics even if those cannot impact the main course of the illness?"
+                  question:
+                    "Use antibiotics even if those cannot impact the main course of the illness?",
                 },
                 {
-                  question: "Use tubes or intravenous feeding if you can’t eat on your own?"
+                  question:
+                    "Use tubes or intravenous feeding if you can’t eat on your own?",
                 },
               ]}
             />
           </Col>
         </Row>
         <AppButton
-          // hrefLink="/information"
+          hrefLink="/journey"
           title="Back to my journeys"
           minWidth="118px"
           margin="7rem auto 0"
@@ -66,4 +71,4 @@ const MediEnd = () => {
     </div>
   );
 };
-export default MediEnd;
+export default WishesEnd;

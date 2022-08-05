@@ -1,9 +1,15 @@
-import AppRouting from './Components/Navigation';
-
+import AppRouting from "./Components/Navigation";
+import { DeviceUUID } from "device-uuid";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setDeviceId } from "./store/reducers/user";
 function App() {
-  return (
-    <AppRouting/>
-  );
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const deviceID = new DeviceUUID();
+    dispatch(setDeviceId(deviceID.get()));
+  }, [dispatch]);
+  return <AppRouting />;
 }
 
 export default App;

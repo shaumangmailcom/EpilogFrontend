@@ -1,6 +1,7 @@
-import classNames from 'classnames'
-import React from 'react'
-import styles from './style.module.scss'
+import classNames from "classnames";
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import styles from "./style.module.scss";
 
 const AppButton = ({
   height,
@@ -18,37 +19,42 @@ const AppButton = ({
   onClick,
   className,
   hrefLink,
-  imgMargin
+  imgMargin,
 }) => {
+  const navigate = useNavigate();
   return (
     <div>
-         <a className={styles.buttonHref} href={hrefLink}>
-    <div
-      onClick={onClick}
-      style={{
-        height,
-        width,
-        backgroundColor,
-        borderRadius,
-        margin,
-        padding,
-        color,
-        fontSize,
-        minWidth
-      }}
-      className={classNames(styles.icon_bttn, className)}
-    >
-      <p
-        style={{ color, fontSize }}
-        className={styles.icon_bttn_p}
+      <span
+        className={styles.buttonHref}
+        onClick={() => {
+          hrefLink && navigate(hrefLink);
+        }}
+      >
+        <div
+          onClick={onClick}
+          style={{
+            height,
+            width,
+            backgroundColor,
+            borderRadius,
+            margin,
+            padding,
+            color,
+            fontSize,
+            minWidth,
+          }}
+          className={classNames(styles.icon_bttn, className)}
         >
-        {title}
-      </p>
-        {src && <img style={{margin: imgMargin, width: imgWidth}} src={src} />}
+          <p style={{ color, fontSize }} className={styles.icon_bttn_p}>
+            {title}
+          </p>
+          {src && (
+            <img style={{ margin: imgMargin, width: imgWidth }} src={src} />
+          )}
+        </div>
+      </span>
     </div>
-    </a>
-    </div>
-  )
-}
+  );
+};
 
 export default AppButton;

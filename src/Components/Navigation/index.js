@@ -1,41 +1,36 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../../Pages/Home";
-import Match from "../../Pages/Match";
-import Medical from "../../Pages/Medical";
+import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
 import QA from "../../Pages/StepForm";
 import ThankYou from "../../Pages/Thankyou";
 import Journey from "../../Pages/JourneyHome";
-import MediEnd from "../../Pages/MedicalEndScreen";
+import WishesEnd from "../../Pages/Wishes/End";
 import StepEnd from "../../Pages/StepFormEnd";
-import MatchThank from "../../Pages/Match/ThankYou";
-import MatchEnd from "../../Pages/Match/MatchEnd";
-import MatchStart from "../../Pages/Match/MatchStart";
-
-
+import ShareThank from "../../Pages/ShareModule/ThankYou";
+import ShareEnd from "../../Pages/ShareModule/ShareEnd";
+import ShareStart from "../../Pages/ShareModule/ShareStart";
+import Wishes from "../../Pages/Wishes";
+import WishesStart from "../../Pages/Wishes/Start";
 
 const AppRouting = () => (
   <Router>
     <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/information" element={<QA/>} />
-      <Route path="/range" element={<Range/>} />
-      <Route path="/thankyou" element={<ThankYou/>} />
-      <Route path="/jounrey" element={<Journey/>} />
-      <Route path="/medical" element={<Medical/>} />
-      <Route path="/mediend" element={<MediEnd/>} />
-      <Route path="/stepEnd" element={<StepEnd/>} />
-      <Route path="/match" element={<Match/>} />
-      <Route path="/matchThank" element={<MatchThank/>} />
-      <Route path="/matchEnd" element={<MatchEnd/>} />
-      <Route path="/matchStart" element={<MatchStart/>} />
-
+      <Route path="/" element={<Home />} />
+      <Route path="/basic" element={<QA />} />
+      <Route path="/stepEnd" element={<StepEnd />} />
+      <Route path="/range" element={<Range />} />
+      <Route path="/thankyou" element={<ThankYou />} />
+      <Route path="/journey" element={<Journey />} />
+      <Route path="/share-start" element={<ShareStart />} />
+      <Route path="/share" element={<ShareModule />} />
+      <Route path="/share-thank" element={<ShareThank />} />
+      <Route path="/share-end" element={<ShareEnd />} />
+      <Route path="/wishes-start" element={<WishesStart />} />
+      <Route path="/wishes" element={<Wishes />} />
+      <Route path="/wishes-end" element={<WishesEnd />} />
     </Routes>
   </Router>
-)
+);
 export default AppRouting;
