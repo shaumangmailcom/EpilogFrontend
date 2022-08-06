@@ -25,24 +25,27 @@ const data = [
 ];
 
 export default function StepEnd() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className={styles.stepEnd}>
-      <AppHeader back onClickBack={()=>{ navigate('/basic')}}/>
+      <AppHeader
+        back
+        onClickBack={() => {
+          navigate("/basic");
+        }}
+      />
       <Row className={styles.row}>
-        <Col xs={12} md={8} lg={6} xl={4} className={styles.grid}>
-          {data.map((item, ind) => (
-            <div key={ind} className={styles.content}>
-              <Lable lable={item.title} />
-              <p className={styles.head}>{item.qs}</p>
-              <p className={styles.desc}>{item.dtl}</p>
-            </div>
-          ))}
-          <AppButton
-            hrefLink="/range"
-            title="Next"
-            minWidth="129px"
-          />
+        <Col xs={12} md={12} className={styles.grid}>
+          <div>
+            {data.map((item, ind) => (
+              <div key={ind} className={styles.content}>
+                <Lable lable={item.title} />
+                <p className={styles.head}>{item.qs}</p>
+                <p className={styles.desc}>{item.dtl}</p>
+              </div>
+            ))}
+          </div>
+          <AppButton hrefLink="/range" title="Next" minWidth="129px" />
         </Col>
       </Row>
     </div>

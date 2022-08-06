@@ -57,9 +57,9 @@ const Wishes = () => {
         <img src={journeyImg2} />
       </div>
       <div className={styles.content}>
-        <Indicator active={current_page} items={wishesStateKeys.length} />
         <Row className={styles.row}>
-          <Col xs={12} md={8} lg={6} xl={4}>
+          <Col xs={12} md={8} lg={8} xl={5}>
+            <Indicator active={current_page} items={wishesStateKeys.length} />
             {current_page === 0 && (
               <SliderCard
                 options={[

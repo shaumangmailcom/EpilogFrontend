@@ -16,7 +16,7 @@ const MatchEnd = () => {
       <div className={styles.content}>
         <img src={matchT} className={styles.icon} />
         <Row className={styles.row}>
-          <Col xs={12} md={8} lg={6} xl={4} className={styles.grid}>
+          <Col xs={12} md={12} lg={8} xl={6} className={styles.grid}>
             <p className="title24" style={{ textAlign: "center", marginTop: 50, marginBottom: 50 }}>
               Our experts have formulated the following recommendations for you
             </p>

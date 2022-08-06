@@ -1,17 +1,18 @@
-.qa {
+ .qa {
+  min-height: 100vh;
   .banner {
     background-image: url("../../Assets/images/cloudD.svg");
     background-position: center;
-    background-size: contain;
+    background-size: auto;
     background-repeat: no-repeat;
     height: 15vh;
     width: 100%;
   }
   .row {
-    min-height: calc(80vh - 54px);
+    min-height: calc(85vh - 54px);
     justify-content: center;
     .grid {
-      padding: 3.7rem;
+      padding: 3.5rem;
     }
   }
 }

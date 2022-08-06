@@ -45,10 +45,9 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      {/* <AppHeader /> */}
       <div className={styles.banner} />
       <Row className={styles.row}>
-        <Col xs={6} className={styles.grid}>
+        <Col xs={12} md={8} lg={6}  className={styles.grid}>
           {data.length > 0 && (
             <Carousel
               activeIndex={index}

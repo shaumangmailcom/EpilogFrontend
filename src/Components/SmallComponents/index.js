@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import Slider from "react-rangeslider";
 import styles from "./style.module.scss";
 
-export const Indicator = ({ active, items }) => {
+export const Indicator = ({ active, items, className }) => {
   return (
-    <div className={styles.questionDots}>
+    <div className={classNames(styles.questionDots, className)}>
       {[...Array(items)].map((_, ind) => (
         <div key={ind} className={ind <= active && styles.active} />
       ))}

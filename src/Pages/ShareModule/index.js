@@ -56,9 +56,9 @@ const ShareModule = () => {
         <img src={c1} />
       </div>
       <div className={styles.content}>
-        <Indicator active={current_page} items={shareStateKeys.length} />
         <Row className={styles.row}>
-          <Col xs={12} md={8} lg={6} xl={4}>
+          <Col xs={12} md={8} lg={8} xl={5}>
+            <Indicator active={current_page} items={shareStateKeys.length} />
             {current_page === 0 && (
               <SliderCard
                 title="In general, how freely do you share your personal life with your close..."
@@ -181,7 +181,7 @@ const ShareModule = () => {
           </Col>
         </Row>
         <Row className={styles.btnRow}>
-          <Col xs={12} md={8} lg={6} xl={4}>
+          <Col xs={12} md={8} lg={8} xl={5}>
             <AppButton
               className={styles.btn}
               src={right}

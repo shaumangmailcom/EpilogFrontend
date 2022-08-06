@@ -1,17 +1,8 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { SliderCard, StepCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
-import { Indicator } from "../../Components/SmallComponents";
 import styles from "./style.module.scss";
-import time from "../../Assets/images/time.svg";
-import cup from "../../Assets/images/cup.svg";
-import heart from "../../Assets/images/heart.svg";
-import sunset from "../../Assets/images/sunset.svg";
-import stars from "../../Assets/images/stars.svg";
-import bird from "../../Assets/images/bird.svg";
 import c1 from "../../Assets/images/c1.svg";
-import right from "../../Assets/images/right.svg";
 import AppButton from "../../Components/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -26,7 +17,7 @@ const MatchStart = () => {
       </div>
       <div className={styles.content}>
         <Row className={styles.row}>
-          <Col xs={12} md={8} lg={6} xl={4}>
+          <Col xs={12} md={12} lg={8} xl={6}>
             <p className="title24" style={{ textAlign: "left" }}>
               Finding your sharing style
             </p>

@@ -13,19 +13,17 @@ export default function ThankYou() {
       <AppHeader back onClickBack={() => navigate("/range")} />
       <div className={styles.banner} />
       <Row className={styles.row}>
-        <Col xs={8} className={styles.grid}>
+        <Col xs={12} md={10} lg={8} xl={6} className={styles.grid}>
           <h3>Thank you</h3>
-          <p>
+          <p className={styles.desc}>
             Now we know you a little better. Next, our system will examine many
             potential journeys that could help you at this point.
           </p>
-        </Col>
-        <Col xs={8}>
           <AppButton
             hrefLink="/journey"
             title="Explore my journeys"
-            src={right}
-            minWidth="118px"
+            fontSize="15px"
+            className={styles.tBtn}
           />
         </Col>
       </Row>

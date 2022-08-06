@@ -55,7 +55,7 @@
   .desc {
     font-size: 18px;
     color: var(--color-primary);
-    line-height: 2.6rem;
+    line-height: 26px;
     text-align: center;
     margin-top: 2rem;
   }
@@ -172,3 +172,39 @@
 /*------------------------*/
 /*      Match Card        */
 /*------------------------*/
+/*--------------------------*/
+/*      Journey Card        */
+/*--------------------------*/
+
+.jcrd {
+  height: 100px;
+  font-size: 18px;
+  background-color: var(--color-white);
+  border-radius: 12px;
+  box-shadow: -1px -5px 28px rgba(156, 166, 215, 0.308056);
+  padding: 24px 27px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 24px;
+  color: var(--color-primary);
+  cursor: pointer;
+  &:hover{
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  .title {
+    font-size: 18px;
+    width: 60%;
+  }
+  img {
+    position: absolute;
+    right: 0;
+    width: 135px;
+  }
+}
+
+/*--------------------------*/
+/*      Journey Card        */
+/*--------------------------*/

@@ -1,4 +1,5 @@
 .thankyou{
+  min-height: 100vh;
     .banner {
         background-image: url("../../Assets/images/bannerD.svg");
         background-position: center;
@@ -6,26 +7,34 @@
         background-repeat: repeat-x ;
         height: 30vh;
         width: 100%;
+        @media screen and (max-width: 428px) {
+          background-image: url('../../Assets/images/tmb.svg');
+          background-repeat: no-repeat;
+          background-size: auto;
+          background-position: bottom;
+        }
       }
       .row {
         justify-content: center;
         margin: 0;
-        // height: calc(70vh - 80px);
+       min-height: calc(70vh - 54px);
         .grid {
-            padding: 5rem 0;
+            padding: 5rem 3.7rem;
          h3{
-             font-size: 2.9rem;
-             padding-bottom: 15px;
+             font-size: 29px;
+             font-family: ubuntu;
              text-align: center;
-             font-weight: 500;
          }
-         p{
-             font-size: 1.8rem;
+         .desc{
+             font-size: 18px;
              line-height: 26px;
+             text-align: center;
+             margin-top: 14px;
          }
-          .btnRow{
-            margin-top: 6rem;
-            justify-content: center;
+          .tBtn{
+            margin-top: 61px;
+            min-width: 181px;
+            height: 36px;
           }
         }
       }

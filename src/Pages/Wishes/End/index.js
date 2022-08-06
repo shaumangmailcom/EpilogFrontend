@@ -4,7 +4,6 @@ import styles from "./style.module.scss";
 import AppHeader from "../../../Components/Header";
 import AppButton from "../../../Components/Button";
 import plus from "../../../Assets/images/plus.svg";
-import right from "../../../Assets/images/right.svg";
 import { CatgCard, CheckCard } from "../../../Components/Cards";
 import { useNavigate } from "react-router-dom";
 
@@ -16,7 +15,7 @@ const WishesEnd = () => {
       <div className={styles.content}>
         <img src={plus} className={styles.icon} />
         <Row className={styles.row}>
-          <Col xs={12} md={8} lg={6} xl={4} className={styles.grid}>
+          <Col xs={12} md={12} lg={8} xl={6}  className={styles.grid}>
             <p className="desc" style={{ textAlign: "center" }}>
               Based on your responses, if you were about to fill in a form that
               represents your wishes for medical care when you are no longer

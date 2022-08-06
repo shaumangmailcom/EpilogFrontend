@@ -1,7 +1,5 @@
 import React, { useCallback } from "react";
-import AppButton from "../Button";
 import { Lable, Range } from "../SmallComponents";
-import right from "../../Assets/images/right.svg";
 import Form from "react-bootstrap/Form";
 import styles from "./style.module.scss";
 import { Col, Row } from "react-bootstrap";
@@ -16,10 +14,15 @@ export const StepCard = ({
   imgWidth,
   onClick,
   active,
+  className,
 }) => {
   return (
     <div
-      className={classNames(styles.stepCard, active ? styles.active : "")}
+      className={classNames(
+        styles.stepCard,
+        active ? styles.active : "",
+        className
+      )}
       onClick={onClick}
       style={{ height: cardHeight }}
     >
@@ -110,17 +113,26 @@ export const CheckBox = ({ question }) => {
 export const MatchCard = ({ img, desc, point, imgBg }) => {
   return (
     <Row className={styles.matchCard}>
-      <Col xs={2}>
+      <Col xs={2} md={2}>
         <div className={styles.imgSec} style={{ backgroundColor: imgBg }}>
           <img src={img} />
         </div>
       </Col>
-      <Col xs={9}>
+      <Col xs={9} md={10}>
         <p className={styles.dtl}>
           {desc}
           <span> {point}</span>
         </p>
       </Col>
     </Row>
+  );
+};
+
+export const JourneyCard = ({src, title, onClick}) => {
+  return (
+    <div className={styles.jcrd} onClick={onClick}>
+      <p className={styles.title}>{title}</p>
+      <img src={src} />
+    </div>
   );
 };

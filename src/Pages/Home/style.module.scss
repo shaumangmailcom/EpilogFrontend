@@ -1,4 +1,5 @@
 .home {
+min-height: 100vh;
   .banner {
     background-image: url("../../Assets/images/bannerD.svg");
     background-position: center;
@@ -10,9 +11,9 @@
   .row {
     justify-content: center;
     margin: 0;
-    height: calc(70vh - 80px);
+    min-height: 70vh;
     .grid {
-        padding: 5rem 0;
+        padding: 5rem 3.5rem;
       .slidContent {
         text-align: center;
       }

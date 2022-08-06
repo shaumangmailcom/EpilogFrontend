@@ -15,22 +15,22 @@ const data = [
   {
     img: smile,
     desc: "Relative to others, sharing something personal about yourself with others makes you feel generally better",
-    imgBg: "#EAEFFF"
+    imgBg: "#EAEFFF",
   },
   {
-    img:users,
+    img: users,
     desc: "Your sharing modality of choice is",
     point: "in person",
     imgBg: "#DFF3FB",
   },
   {
-    img:leaf,
+    img: leaf,
     desc: "Your level of comfort sharing freely is",
     point: "higher than most people",
     imgBg: "#FFE5B1",
   },
   {
-    img:users,
+    img: users,
     desc: "Your preference for allowing other people to take an active role in important decisions is",
     point: "above average",
     imgBg: "#FFCFC0",
@@ -38,14 +38,14 @@ const data = [
 ];
 
 const MatchThank = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className={styles.thankyou}>
-      <AppHeader back onClickBack={()=>navigate('/share')}/>
+      <AppHeader back onClickBack={() => navigate("/share")} />
       <div className={styles.content}>
         <img src={matchT} className={styles.icon} />
         <Row className={styles.row}>
-          <Col xs={12} md={8} lg={6} xl={4} className={styles.grid}>
+          <Col xs={12} md={10} lg={8} xl={6} className={styles.grid}>
             <p className="title" style={{ textAlign: "center", marginTop: 20 }}>
               Thank you!
             </p>
@@ -59,11 +59,16 @@ const MatchThank = () => {
               sharing can add resilience to our life, as well as add support and
               empathy.
             </p>
-            <p className="desc18b" style={{textAlign: "center"}}>
+            <p className="desc18b" style={{ textAlign: "center" }}>
               Based on your responses, our experts identified the following:
             </p>
             {data.map((item) => (
-              <MatchCard img={item.img} desc={item.desc} point={item.point} imgBg={item.imgBg} />
+              <MatchCard
+                img={item.img}
+                desc={item.desc}
+                point={item.point}
+                imgBg={item.imgBg}
+              />
             ))}
           </Col>
         </Row>
