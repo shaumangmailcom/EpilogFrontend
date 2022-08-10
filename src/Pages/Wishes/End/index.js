@@ -61,9 +61,9 @@ const WishesEnd = () => {
           </Col>
         </Row>
         <AppButton
-          hrefLink="/journey"
-          title="Back to my journeys"
-          minWidth="118px"
+          hrefLink="/complex-situation"
+          title="I am Done"
+          minWidth="173px"
           margin="7rem auto 0"
         />
       </div>

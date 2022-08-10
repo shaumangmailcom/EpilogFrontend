@@ -36,6 +36,12 @@ const initialState = {
   illness_treatment: 0,
   good_times_attention: 0,
   general_attention: 0,
+  complex_situation:0,
+  shairing_preferences:0,
+  face_to_face:0,
+  family_digitally:0,
+  sharing_recommendations:0,
+  captured:0,
   current_page: 0,
 };
 

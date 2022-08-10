@@ -399,3 +399,26 @@ html {
 /*------------------------*/
 /*        carousel        */
 /*------------------------*/
+/*------------------------*/
+/*         Modal          */
+/*------------------------*/
+
+.modal-dialog{
+  .modal-content{
+    .modal-header{
+      border-bottom: 0;
+      justify-content: flex-end;
+    }
+    .modal-body{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+/*------------------------*/
+/*         Modal          */
+/*------------------------*/

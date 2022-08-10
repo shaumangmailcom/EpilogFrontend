@@ -13,6 +13,8 @@ import ShareEnd from "../../Pages/ShareModule/ShareEnd";
 import ShareStart from "../../Pages/ShareModule/ShareStart";
 import Wishes from "../../Pages/Wishes";
 import WishesStart from "../../Pages/Wishes/Start";
+import ComplexSituation from "../../Pages/Wishes/ComplexSituation";
+import ShairComplex from "../../Pages/ShareModule/ShairComplex";
 
 const AppRouting = () => (
   <Router>
@@ -27,9 +29,11 @@ const AppRouting = () => (
       <Route path="/share" element={<ShareModule />} />
       <Route path="/share-thank" element={<ShareThank />} />
       <Route path="/share-end" element={<ShareEnd />} />
+      <Route path="/shair-complex" element={<ShairComplex />} />
       <Route path="/wishes-start" element={<WishesStart />} />
       <Route path="/wishes" element={<Wishes />} />
       <Route path="/wishes-end" element={<WishesEnd />} />
+      <Route path="/complex-situation" element={<ComplexSituation />} />
     </Routes>
   </Router>
 );

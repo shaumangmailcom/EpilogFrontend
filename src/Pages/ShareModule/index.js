@@ -18,7 +18,7 @@ import styles from "./style.module.scss";
 
 const ShareModule = () => {
   const shareDone = useSelector(shareDoneSelector);
-  const shareState = useSelector(allStateSelector);
+  const shareState = useSelector(allStateSelector); 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   if (shareDone) {

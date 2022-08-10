@@ -27,6 +27,7 @@ export const wishesStateKeys = [
   {
     take_treatment: "take_treatment",
   },
+
 ];
 const initialState = {
   think_large_decision: 0,
@@ -44,6 +45,12 @@ const initialState = {
   goals_of_care: 0,
   take_treatment: 0,
   current_page: 0,
+  complex_situation:0,
+  captured:0,
+  wishes_for_medical:0,
+  preferances:0,
+
+
 };
 
 export const wishesSlice = createSlice({

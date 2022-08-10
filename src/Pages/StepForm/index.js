@@ -1,7 +1,8 @@
-import React, { useCallback } from "react";
-import { Row, Col } from "react-bootstrap";
+import React, { useCallback,useState } from "react";
+import { Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import AppModal from "../../Components/AppModal";
 import AppHeader from "../../Components/Header";
 import Steps from "../../Components/Steps";
 import {
@@ -15,6 +16,7 @@ import {
 import styles from "./style.module.scss";
 
 const QA = () => {
+  const [modalShow, setModalShow] = React.useState();
   const basicDone = useSelector(basicDoneSelector);
   const basicState = useSelector(allStateSelector);
   const dispatch = useDispatch();
@@ -115,6 +117,10 @@ const QA = () => {
           )}
         </Col>
       </Row>
+      <Button onClick={() => setModalShow(true)}>
+        Modal Open
+      </Button>
+      <AppModal show={modalShow} onHide={() => setModalShow(false)}/>
     </div>
   );
 };
