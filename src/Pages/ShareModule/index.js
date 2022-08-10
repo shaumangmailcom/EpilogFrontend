@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import c1 from "../../Assets/images/c1.svg";
 import right from "../../Assets/images/right.svg";
+import AppModal from "../../Components/AppModal";
 import AppButton from "../../Components/Button";
 import { SliderCard, StepCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
@@ -13,17 +14,21 @@ import { setShareState, shareStateKeys } from "../../store/reducers/share";
 import {
   allStateSelector,
   shareDoneSelector,
+  sumOfAllSelector,
 } from "../../store/selectors/share";
 import styles from "./style.module.scss";
 
 const ShareModule = () => {
+  const [modalShow, setModalShow] = React.useState();
   const shareDone = useSelector(shareDoneSelector);
-  const shareState = useSelector(allStateSelector); 
+  const shareState = useSelector(allStateSelector);
+  const { sum } = useSelector(sumOfAllSelector);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   if (shareDone) {
     // navigate("/");
   }
+  console.log(sum);
   const current_page = shareState.current_page;
 
   const submitForm = useCallback(() => {
@@ -31,7 +36,10 @@ const ShareModule = () => {
   }, [shareState]);
   const nextPage = useCallback(() => {
     const isLast = current_page === shareStateKeys.length - 1;
-    if (isLast) return navigate("/share-thank");
+    if (isLast) {
+      if (sum < 20) return setModalShow(true);
+      return navigate("/share-thank");
+    }
     dispatch(
       setShareState({
         current_page: isLast ? current_page : current_page + 1,
@@ -39,7 +47,7 @@ const ShareModule = () => {
     );
     console.log("isLast", isLast);
     // if (isLast) setTimeout(submitForm, 300);
-  }, [current_page, dispatch, navigate]);
+  }, [current_page, dispatch, navigate, sum]);
   const prevPage = useCallback(() => {
     if (current_page === 0) return navigate("/share-start");
     dispatch(
@@ -192,6 +200,46 @@ const ShareModule = () => {
           </Col>
         </Row>
       </div>
+      <AppModal show={modalShow} onHide={() => setModalShow(false)}>
+        <p className="desc">
+          You did not answer all the questions, which limits our ability to give
+          accurate recommendations.
+        </p>
+        <Row>
+          <Col>
+            <AppButton
+              title="Let’s go back"
+              width="150px"
+              height="36px"
+              borderRadius="50px "
+              fontSize="15px"
+              backgroundColor="lightgray"
+              color="#000"
+              onClick={() => {
+                setModalShow(false);
+                dispatch(
+                  setShareState({
+                    current_page: 0,
+                  })
+                );
+              }}
+            />
+          </Col>
+          <Col>
+            <AppButton
+              title="Fine by me"
+              width="150px"
+              height="36px"
+              fontSize="15px"
+              borderRadius="50px "
+              onClick={() => {
+                setModalShow(false);
+                return navigate("/share-thank");
+              }}
+            />
+          </Col>
+        </Row>
+      </AppModal>
     </div>
   );
 };

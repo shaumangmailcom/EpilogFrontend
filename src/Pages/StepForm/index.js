@@ -1,8 +1,9 @@
-import React, { useCallback,useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Row, Col, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AppModal from "../../Components/AppModal";
+import AppButton from "../../Components/Button";
 import AppHeader from "../../Components/Header";
 import Steps from "../../Components/Steps";
 import {
@@ -14,7 +15,7 @@ import {
   basicDoneSelector,
 } from "../../store/selectors/basicInfo";
 import styles from "./style.module.scss";
-
+const LoveOne = "A loved one";
 const QA = () => {
   const [modalShow, setModalShow] = React.useState();
   const basicDone = useSelector(basicDoneSelector);
@@ -33,6 +34,9 @@ const QA = () => {
   }, [basicState]);
   const nextPage = useCallback(
     (value) => {
+      if (value === LoveOne) {
+        return setModalShow(true);
+      }
       const isLast = current_page === basicStateKeys.length - 1;
       dispatch(
         setBasicInfoState({
@@ -65,7 +69,7 @@ const QA = () => {
               onClick={nextPage}
               title="Who is facing this challenge?"
               desc="If you are here it is most likely because you, or someone you love, has a life-threatening illness."
-              options={["Me", "A loved one"]}
+              options={["Me", LoveOne]}
               data={currentData}
             />
           )}
@@ -117,10 +121,29 @@ const QA = () => {
           )}
         </Col>
       </Row>
-      <Button onClick={() => setModalShow(true)}>
-        Modal Open
-      </Button>
-      <AppModal show={modalShow} onHide={() => setModalShow(false)}/>
+      <AppModal show={modalShow} onHide={() => setModalShow(false)}>
+        <h4 className="title24">Thank You</h4>
+        <p className="desc">
+          For the rest of your journey with us, please answer as if
+          <span className="desc18b"> you are </span> your loved one facing the
+          complex medical diagnosis.
+        </p>
+        <AppButton
+          title="OK"
+          width="100px"
+          borderRadius="5px "
+          onClick={() => {
+            setModalShow(false);
+            dispatch(
+              setBasicInfoState({
+                current_page: current_page + 1,
+                [questionKey]: LoveOne,
+              })
+            );
+          }}
+          // onClick={onClickOk}
+        />
+      </AppModal>
     </div>
   );
 };

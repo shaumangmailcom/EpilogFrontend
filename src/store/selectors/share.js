@@ -40,7 +40,7 @@ export const shareTwoQAvgSelector = createDraftSafeSelector(
   [goodTimeState, generalState],
   (good_times_attention, general) => (good_times_attention + general) / 2
 );
-export const shareAvgTenSelector = createDraftSafeSelector(
+export const sumOfAllSelector = createDraftSafeSelector(
   [
     familyState,
     friendsState,
@@ -52,5 +52,9 @@ export const shareAvgTenSelector = createDraftSafeSelector(
     generalState,
     usualFeelingState,
   ],
-  (...all) => all.reduce((a, b) => a + b, 0) / all.length
+  (...all) => ({ sum: all.reduce((a, b) => a + b, 0), length: all.length })
+);
+export const shareAvgTenSelector = createDraftSafeSelector(
+  [sumOfAllSelector],
+  ({ sum, length }) => sum / length
 );
