@@ -15,6 +15,7 @@ import Wishes from "../../Pages/Wishes";
 import WishesStart from "../../Pages/Wishes/Start";
 import ComplexSituation from "../../Pages/Wishes/ComplexSituation";
 import ShairComplex from "../../Pages/ShareModule/ShairComplex";
+import LastPhase from "../../Pages/LastPhase";
 
 const AppRouting = () => (
   <Router>
@@ -34,6 +35,7 @@ const AppRouting = () => (
       <Route path="/wishes" element={<Wishes />} />
       <Route path="/wishes-end" element={<WishesEnd />} />
       <Route path="/complex-situation" element={<ComplexSituation />} />
+      <Route path="/phase" element={<LastPhase />} />
     </Routes>
   </Router>
 );
