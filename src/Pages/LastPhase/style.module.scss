@@ -1,0 +1,46 @@
+.phase {
+    min-height: 100vh;
+    .content {
+      .row {
+        justify-content: center;
+        .grid {
+          min-height: calc(100vh - 54px);
+          padding: 25px 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          height: 100%;
+          .indi{
+            margin-bottom: 3.5rem;
+          }
+          .btnRow {
+            margin-top: 5rem;
+            .btn {
+              height: 48px;
+              width: 48px;
+              border-radius: 100%;
+              float: right;
+            }
+          }
+          .sec3{
+            .fillSec{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: baseline;
+                font-size: 18px;
+                color: var(--color-primary);
+                @media screen and (max-width: 428px) {
+                    text-align: center;
+                    justify-content: center;
+                }
+            }
+            .submitBtn{
+                width: 120px;
+                margin: 40px auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  
