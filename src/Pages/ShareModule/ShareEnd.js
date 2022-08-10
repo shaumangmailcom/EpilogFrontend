@@ -38,9 +38,9 @@ const MatchEnd = () => {
           </Col>
         </Row>
         <AppButton
-          hrefLink="/journey"
-          title="Back to my journeys"
-          minWidth="118px"
+          hrefLink="/shair-complex"
+          title="I am Done"
+          minWidth="173px"
           margin="2rem auto 0"
         />
       </div>

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import journeyImg2 from "../../Assets/images/journey2.svg";
 import right from "../../Assets/images/right.svg";
 import AppButton from "../../Components/Button";
-import { SliderCard } from "../../Components/Cards";
+import { CheckBox, CheckCard, SliderCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
 import { Indicator } from "../../Components/SmallComponents";
 import Steps from "../../Components/Steps";
@@ -210,7 +210,7 @@ const Wishes = () => {
           </Col>
         </Row>
         <Row className={styles.btnRow}>
-          <Col xs={12} md={8} lg={6} xl={4}>
+          <Col xs={12} md={8} lg={8} xl={5}>
             <AppButton
               className={styles.btn}
               src={right}
