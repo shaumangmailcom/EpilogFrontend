@@ -15,7 +15,7 @@ export const shareStateKeys = [
   {
     feel_pain: "feel_pain",
 
-    empathize_your_pain: "empathize_your_pain",
+    // empathize_your_pain: "empathize_your_pain",
     illness: "illness",
     illness_treatment: "illness_treatment",
   },
@@ -31,7 +31,7 @@ const initialState = {
   usual_feeling: 0,
   personal_info: null,
   feel_pain: 0,
-  empathize_your_pain: 0,
+  // empathize_your_pain: 0,
   illness: 0,
   illness_treatment: 0,
   good_times_attention: 0,

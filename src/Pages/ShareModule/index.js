@@ -126,13 +126,13 @@ const ShareModule = () => {
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
-                  {
-                    id: "empathize_your_pain",
-                    quetion:
-                      "To what degree do you want people to empathize with your pain?",
-                    sLableOne: "Not at all",
-                    sLableTwo: "Very much",
-                  },
+                  // {
+                  //   id: "empathize_your_pain",
+                  //   quetion:
+                  //     "To what degree do you want people to empathize with your pain?",
+                  //   sLableOne: "Not at all",
+                  //   sLableTwo: "Very much",
+                  // },
                   {
                     id: "illness",
                     quetion:
