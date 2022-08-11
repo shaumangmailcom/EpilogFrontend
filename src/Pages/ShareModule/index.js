@@ -74,19 +74,19 @@ const ShareModule = () => {
                   {
                     id: "family",
                     lable: "Family",
-                    sLableOne: "Not Very",
+                    sLableOne: "Not very",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "friends",
                     lable: "Friends",
-                    sLableOne: "Not Very",
+                    sLableOne: "Not very",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "co_workers",
                     lable: "Co-workers",
-                    sLableOne: "Not Very",
+                    sLableOne: "Not very",
                     sLableTwo: "Very much",
                   },
                 ]}
@@ -168,7 +168,7 @@ const ShareModule = () => {
                   {
                     id: "good_times_attention",
                     quetion:
-                      "To what degree do you enjoy being the center of attention in good times?",
+                      <span>To what degree do you enjoy being the center of attention in<span className="ubuntu700"> good times?</span></span>,
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },

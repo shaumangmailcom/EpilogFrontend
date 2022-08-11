@@ -73,7 +73,7 @@ const Wishes = () => {
                   {
                     id: "want_to_think_large_decision",
                     quetion:
-                      "Do you want to think rationally or emotionally about your large decisions?",
+                      <span>Do you<span className="ubuntu700"> want</span> to think rationally or emotionally about your large decisions?</span>,
                     sLableOne: "Mostly rationally",
                     sLableTwo: "Mostly emotionally",
                   },

@@ -37,7 +37,7 @@ const RenderOtherInvolved = () => {
       "You do not necessarily see the overall value from having others involved in your life. However you do realize there is high value in sharing some of the burden we experience in bad times with others. We recommend you to practice sharing more about your life with others. One of the most effective ways to share when it doesn’t feel natural for us is using digital tools. We will be able to offer some of these to you soon.";
   }
   return (
-    <CatgCard title="Letting others get involved" number="01" desc={desc} />
+    <CatgCard title="Letting Others Get Involved" number="01" desc={desc} />
   );
 };
 const RenderKeepSharing = () => {
@@ -58,7 +58,7 @@ const RenderKeepSharing = () => {
     desc =
       "You are not a big fan of sharing information about yourself with other people. You know that this may be beneficial for some people, but perhaps not for you. Our recommendation for you is to find one person that you may feel comfortable sharing something personal about yourself with, and follow your choice over the next month. If this is difficult for you, perhaps you should try sharing electronically- this may feel easier.";
   }
-  return <CatgCard title="Keep sharing" number="02" desc={desc} />;
+  return <CatgCard title="Keep Sharing" number="02" desc={desc} />;
 };
 const MatchEnd = () => {
   const navigate = useNavigate();
@@ -79,7 +79,7 @@ const MatchEnd = () => {
             <RenderKeepSharing />
 
             <CatgCard
-              title="Share more online"
+              title="Share More Online"
               number="03"
               desc="Sometimes you have second thoughts or concerns on sharing but without doubt you have a lot to gain from it, so we recommend you try to share some information electronically."
             />
