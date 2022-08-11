@@ -65,43 +65,43 @@ const Range = () => {
                 <SliderCard
                   img={time}
                   title="During a typical day, how much time do you spend on:"
-                  desc="Distress is an unpleasant experience of a mental, physical, social or spiritual nature. It can affect the way you think, feel, or act. Distress may make it harder to cope with a severe illness, its symptoms, or its treatment."
+                  desc="Distress is an unpleasant experience of a mental, physical, social or spiritual nature. It can affect the way you think, feel, or act. Distress may make it harder to cope with a severe illness, its symptoms, or its treatment?"
                   options={[
                     {
                       id: "work",
                       lable: "work",
-                      sLableOne: "Not Enough",
-                      sLableTwo: "Too Much",
+                      sLableOne: "Not enough",
+                      sLableTwo: "Too much",
                     },
                     {
                       id: "friends_Family",
                       lable: "Friends & Family",
-                      sLableOne: "Not Enough",
-                      sLableTwo: "Too Much",
+                      sLableOne: "Not enough",
+                      sLableTwo: "Too much",
                     },
                     {
                       id: "health",
                       lable: "Health",
-                      sLableOne: "Not Enough",
-                      sLableTwo: "Too Much",
+                      sLableOne: "Not enough",
+                      sLableTwo: "Too much",
                     },
                     {
                       id: "other_activities",
                       lable: "Other meaningful activities",
-                      sLableOne: "Not Enough",
-                      sLableTwo: "Too Much",
+                      sLableOne: "Not enough",
+                      sLableTwo: "Too much",
                     },
                     {
                       id: "sleep",
                       lable: "Sleep",
-                      sLableOne: "Not Enough",
-                      sLableTwo: "Too Much",
+                      sLableOne: "Not enough",
+                      sLableTwo: "Too much",
                     },
                     {
                       id: "fun",
                       lable: "Having Fun",
-                      sLableOne: "Not Enough",
-                      sLableTwo: "Too Much",
+                      sLableOne: "Not enough",
+                      sLableTwo: "Too much",
                     },
                   ]}
                   onChange={(obj) => {
@@ -119,7 +119,7 @@ const Range = () => {
                     {
                       id: "wake_up",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very Much",
+                      sLableTwo: "Very much",
                     },
                   ]}
                   onChange={(obj) => {
@@ -131,13 +131,13 @@ const Range = () => {
               {current_page === 2 && (
                 <SliderCard
                   img={heart}
-                  title="How much distress you are experiencing in the past few days, including today."
+                  title="How much distress you are experiencing in the past few days, including today?"
                   desc="Distress is an unpleasant experience of a mental, physical, social or spiritual nature. It can affect the way you think, feel, or act. Distress may make it harder to cope with a severe illness, its symptoms, or its treatment."
                   options={[
                     {
                       id: "distress",
                       sLableOne: "No distress",
-                      sLableTwo: "No distress",
+                      sLableTwo: "Extreme distress",
                     },
                   ]}
                   onChange={(obj) => {
@@ -154,13 +154,13 @@ const Range = () => {
                   options={[
                     {
                       id: "pain_level",
-                      sLableOne: "No distress",
+                      sLableOne: "No pain",
                       sLableTwo: "Worst pain",
                     },
                     {
                       id: "pain_level_week",
                       quetion: "How about 2 weeks ago?",
-                      sLableOne: "No distress",
+                      sLableOne: "No pain",
                       sLableTwo: "Worst pain",
                     },
                   ]}
@@ -174,7 +174,7 @@ const Range = () => {
                 <SliderCard
                   img={stars}
                   title="Do you feel any difficulties falling asleep, or staying asleep?"
-                  desc="On a scale from not at all to constantly please select"
+                  desc="On a scale from Not at all to constantly please select"
                   options={[
                     {
                       id: "sleeping_deficulty",
@@ -199,7 +199,7 @@ const Range = () => {
                 <SliderCard
                   img={bird}
                   title="Are you experiencing concerns regarding any of your significant relationships?"
-                  desc="On a scale from not at all to constantly please select"
+                  desc="On a scale from Not at all to constantly please select"
                   options={[
                     {
                       id: "relationship",
@@ -223,7 +223,7 @@ const Range = () => {
                 <SliderCard
                   img={prop}
                   title="Are you experiencing concerns regarding any “practical” element of your life? (taking care of yourself/others, finances, work)"
-                  desc="On a scale from not at all to constantly please select"
+                  desc="On a scale from Not at all to constantly please select"
                   options={[
                     {
                       id: "practical_life",

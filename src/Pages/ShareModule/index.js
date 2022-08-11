@@ -75,19 +75,19 @@ const ShareModule = () => {
                     id: "family",
                     lable: "Family",
                     sLableOne: "Not Very",
-                    sLableTwo: "Very Much",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "friends",
                     lable: "Friends",
                     sLableOne: "Not Very",
-                    sLableTwo: "Very Much",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "co_workers",
                     lable: "Co-workers",
                     sLableOne: "Not Very",
-                    sLableTwo: "Very Much",
+                    sLableTwo: "Very much",
                   },
                 ]}
                 onChange={(obj) => {

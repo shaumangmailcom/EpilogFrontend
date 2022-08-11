@@ -179,34 +179,34 @@ const LastPhase = () => {
                     {
                       quetion: "My primary care physician",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very Much",
+                      sLableTwo: "Very much",
                     },
                     {
                       quetion:
                         "A specialist doctor (oncologist, cardiologist, else)",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very Much",
+                      sLableTwo: "Very much",
                     },
                     {
                       quetion: "My health plan",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very Much",
+                      sLableTwo: "Very much",
                     },
                     {
                       quetion:
                         "A nurse att the hospital or a SNF (skilled nursing facility)",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very Much",
+                      sLableTwo: "Very much",
                     },
                     {
                       quetion: "A family member",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very Much",
+                      sLableTwo: "Very much",
                     },
                     {
                       quetion: "Finding it following a web search",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very Much",
+                      sLableTwo: "Very much",
                     },
                   ]}
                 />

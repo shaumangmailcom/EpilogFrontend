@@ -95,22 +95,22 @@ const Wishes = () => {
                     id: "general_feel",
                     quetion:
                       "To what extent is it important for you to feel in control in general?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "your_health",
                     quetion:
                       "To what extent is it important for you to feel in control when it comes to your health?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "health_decisions",
                     quetion:
                       "To what extent are you willing to trust others to make health decisions for you?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                 ]}
               />
@@ -126,29 +126,29 @@ const Wishes = () => {
                     id: "patient_experience",
                     quetion:
                       "Do you have much experience as a patient in hospital?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "being_hospitalized",
                     quetion:
                       "To what extent will your quality of life be impacted by being hospitalized?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "visit_experience",
                     quetion:
                       "Do you have much experience as a visitor of a loved one in hospital?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "life_quality",
                     quetion:
                       "To what extent has your quality of life impacted by visiting a loved one in hospital?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                 ]}
               />
@@ -171,15 +171,15 @@ const Wishes = () => {
                     id: "moral_belief",
                     quetion:
                       "Do you have any moral or religious beliefs that would get you to hold onto life at all cost?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "living_yourself",
                     quetion:
                       "To what degree do you feel that you are living for yourself vs for other people?",
-                    sLableOne: "Not At All",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not at all",
+                    sLableTwo: "Very much",
                   },
                 ]}
               />
