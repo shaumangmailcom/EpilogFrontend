@@ -37,7 +37,7 @@ const ShareModule = () => {
       if (sum < 20) return setModalShow(true);
       return navigate("/share-thank");
     }
-    if(current_page===2 && !shareState.personal_info){
+    if (current_page === 2 && !shareState.personal_info) {
       return alert("Kindly Select any one of the options");
     }
     dispatch(
@@ -47,7 +47,7 @@ const ShareModule = () => {
     );
     console.log("isLast", isLast);
     // if (isLast) setTimeout(submitForm, 300);
-  }, [current_page, dispatch, navigate, sum,shareState]);
+  }, [current_page, dispatch, navigate, sum, shareState]);
   const prevPage = useCallback(() => {
     if (current_page === 0) return navigate("/share-start");
     dispatch(
@@ -74,20 +74,20 @@ const ShareModule = () => {
                   {
                     id: "family",
                     lable: "Family",
-                    sLableOne: "Not Very",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not very",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "friends",
                     lable: "Friends",
-                    sLableOne: "Not Very",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not very",
+                    sLableTwo: "Very much",
                   },
                   {
                     id: "co_workers",
                     lable: "Co-workers",
-                    sLableOne: "Not Very",
-                    sLableTwo: "Very Much",
+                    sLableOne: "Not very",
+                    sLableTwo: "Very much",
                   },
                 ]}
                 onChange={(obj) => {
@@ -167,8 +167,14 @@ const ShareModule = () => {
                 options={[
                   {
                     id: "good_times_attention",
-                    question:
-                      "To what degree do you enjoy being the center of attention in good times?",
+
+                    quetion: (
+                      <span>
+                        To what degree do you enjoy being the center of
+                        attention in
+                        <span className="ubuntu700"> good times?</span>
+                      </span>
+                    ),
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },

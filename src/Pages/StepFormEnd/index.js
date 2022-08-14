@@ -37,7 +37,7 @@ function StepEnd() {
         }}
       />
       <Row className={styles.row}>
-        <Col xs={12} md={12} className={styles.grid}>
+        <Col xs={12} md={8} xl={4} lg={6} className={styles.grid}>
           <div>
             {data.map((item, ind) => (
               <div key={ind} className={styles.content}>

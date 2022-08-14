@@ -17,7 +17,7 @@ function JourneyHome() {
       <div className={styles.content}>
         <Row className={styles.row}>
           <Col xs={12} md={10} lg={8} xl={6} className={styles.grid}>
-            <h3>Your suggested journey</h3>
+            <h3>Your suggested journeys</h3>
             <p>
               The system, based on your information, and the journeys that are
               currently available, has picked for you these journeys

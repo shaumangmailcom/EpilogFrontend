@@ -39,7 +39,7 @@ const WishesStart = () => {
               <Col xs={12}>
                 <AppButton
                   hrefLink="/wishes"
-                  title="Let’s Go"
+                  title="Let’s go"
                   className={styles.tsBtn}
                   fontSize="15px"
                 />

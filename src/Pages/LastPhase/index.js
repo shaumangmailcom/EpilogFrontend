@@ -228,6 +228,7 @@ const LastPhase = (props) => {
                       question: "Getting the best out of doctors’ appointment",
                       sLableOne: "Not helpful at all",
                       sLableTwo: "Very helpful",
+
                     },
                   ]}
                   onChange={(obj) => {
