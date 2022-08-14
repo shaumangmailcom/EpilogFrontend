@@ -5,6 +5,7 @@ import styles from "./style.module.scss";
 import c1 from "../../Assets/images/c1.svg";
 import AppButton from "../../Components/Button";
 import { useNavigate } from "react-router-dom";
+import { withLoader } from "../../Components/Loader";
 
 const MatchStart = () => {
   const navigate = useNavigate();
@@ -50,4 +51,4 @@ const MatchStart = () => {
   );
 };
 
-export default MatchStart;
+export default withLoader (MatchStart);

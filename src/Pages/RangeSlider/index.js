@@ -20,8 +20,12 @@ import {
   moreDoneSelector,
 } from "../../store/selectors/moreInfo";
 import { moreStateKeys, setMoreInfoState } from "../../store/reducers/moreInfo";
+import { asyncCreateMoreInfo } from "../../store/actions/moreInfo";
+import { useNavigationValidator } from "../../hooks/navigation";
+import { withLoader } from "../../Components/Loader";
 
 const Range = () => {
+
   const moreDone = useSelector(moreDoneSelector);
   const moreState = useSelector(allStateSelector);
   const navigate = useNavigate();
@@ -31,12 +35,18 @@ const Range = () => {
   }
   const current_page = moreState.current_page;
 
-  const submitForm = useCallback(() => {
-    console.log("submit form", moreState);
-  }, [moreState]);
+  const submitForm = useCallback(async() => {
+    let { success } = await dispatch(asyncCreateMoreInfo()).unwrap();
+    if (success) {
+      console.log("success");
+      return navigate("/thankyou");
+    }
+    alert("error");
+    
+  }, [dispatch, navigate]);
   const nextPage = useCallback(() => {
     const isLast = current_page === moreStateKeys.length - 1;
-    if (isLast) return navigate("/thankyou");
+    if (isLast) return submitForm();
     dispatch(
       setMoreInfoState({
         current_page: isLast ? current_page : current_page + 1,
@@ -44,7 +54,7 @@ const Range = () => {
     );
     console.log("isLast", isLast);
     // if (isLast) setTimeout(submitForm, 300);
-  }, [current_page, dispatch, navigate]);
+  }, [current_page, dispatch, submitForm]);
   const prevPage = useCallback(() => {
     if (current_page === 0) return navigate("/stepEnd");
     dispatch(
@@ -159,7 +169,7 @@ const Range = () => {
                     },
                     {
                       id: "pain_level_week",
-                      quetion: "How about 2 weeks ago?",
+                      question: "How about 2 weeks ago?",
                       sLableOne: "No distress",
                       sLableTwo: "Worst pain",
                     },
@@ -177,13 +187,13 @@ const Range = () => {
                   desc="On a scale from not at all to constantly please select"
                   options={[
                     {
-                      id: "sleeping_deficulty",
+                      id: "sleeping_difficulty",
                       sLableOne: "Not at all",
                       sLableTwo: "Constantly",
                     },
                     {
-                      id: "sleeping_deficulty_week",
-                      quetion: "How about 2 weeks ago?",
+                      id: "sleeping_difficulty_week",
+                      question: "How about 2 weeks ago?",
                       sLableOne: "Not at all",
                       sLableTwo: "Constantly",
                     },
@@ -208,7 +218,7 @@ const Range = () => {
                     },
                     {
                       id: "relationship_week",
-                      quetion: "How about 2 weeks ago?",
+                      question: "How about 2 weeks ago?",
                       sLableOne: "Not at all",
                       sLableTwo: "Constantly",
                     },
@@ -232,7 +242,7 @@ const Range = () => {
                     },
                     {
                       id: "practical_life_week",
-                      quetion: "How about 2 weeks ago?",
+                      question: "How about 2 weeks ago?",
                       sLableOne: "Not at all",
                       sLableTwo: "Constantly",
                     },
@@ -260,4 +270,4 @@ const Range = () => {
   );
 };
 
-export default Range;
+export default withLoader(Range);

@@ -5,7 +5,10 @@ import { useNavigate } from "react-router-dom";
 import AppModal from "../../Components/AppModal";
 import AppButton from "../../Components/Button";
 import AppHeader from "../../Components/Header";
+import { withLoader } from "../../Components/Loader";
 import Steps from "../../Components/Steps";
+import { useNavigationValidator } from "../../hooks/navigation";
+import { asyncCreateBasic } from "../../store/actions/basic";
 import {
   basicStateKeys,
   setBasicInfoState,
@@ -29,9 +32,15 @@ const QA = () => {
   const current_page = basicState.current_page;
   const questionKey = basicStateKeys[current_page];
   const currentData = basicState[questionKey];
-  const submitForm = useCallback(() => {
-    console.log("submit form", basicState);
-  }, [basicState]);
+  const submitForm = useCallback(async () => {
+    // console.log("submit form", basicState)
+    let { success } = await dispatch(asyncCreateBasic()).unwrap();
+    if (success) {
+      console.log("success");
+      return navigate("/stepEnd");
+    }
+    alert("error");
+  }, [dispatch, navigate]);
   const nextPage = useCallback(
     (value) => {
       if (value === LoveOne) {
@@ -44,10 +53,12 @@ const QA = () => {
           [questionKey]: value,
         })
       );
-      if (isLast) navigate("/stepEnd");
+      if (isLast)
+        //navigate("/stepEnd");
+        submitForm();
       // if (isLast) setTimeout(submitForm, 300);
     },
-    [current_page, questionKey, dispatch, navigate]
+    [current_page, questionKey, dispatch, submitForm]
   );
   const prevPage = useCallback(() => {
     if (current_page === 0) return;
@@ -148,4 +159,4 @@ const QA = () => {
   );
 };
 
-export default QA;
+export default withLoader(QA);

@@ -6,9 +6,10 @@ import journeyImg2 from "../../Assets/images/journey2.svg";
 import parashoot from "../../Assets/images/parashoot.svg";
 import { StepCard, JourneyCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
+import { withLoader } from "../../Components/Loader";
 import styles from "./style.module.scss";
 
-export default function JourneyHome() {
+function JourneyHome() {
   const navigate = useNavigate();
   return (
     <div className={styles.jounrey}>
@@ -24,23 +25,23 @@ export default function JourneyHome() {
           </Col>
         </Row>
         <Row className={styles.crdRow}>
-          <Col xs={12} md={6} xl={4} >
+          <Col xs={12} md={6} xl={4}>
             <JourneyCard
               title="Sharing with family and friends"
               src={journeyImg1}
               onClick={() => navigate("/share-start")}
             />
           </Col>
-          <Col xs={12} md={6} xl={4} >
+          <Col xs={12} md={6} xl={4}>
             <JourneyCard
               title="Wishes for medical care"
               src={journeyImg2}
               onClick={() => navigate("/wishes-start")}
             />
-          </Col> 
+          </Col>
         </Row>
         <Row className={styles.jBox}>
-          <Col xs={12} md={10} lg={8} xl={6} >
+          <Col xs={12} md={10} lg={8} xl={6}>
             <div className={styles.parashootBox}>
               <img src={parashoot} />
               <p className={styles.dtl}>
@@ -55,3 +56,5 @@ export default function JourneyHome() {
     </div>
   );
 }
+
+export default withLoader(JourneyHome);

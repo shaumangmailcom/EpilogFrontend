@@ -46,28 +46,28 @@ const ComplexSituation = () => {
               options={[
                 {
                   id: "complex_situation",
-                  quetion:
+                  question:
                     "If you were in a complex medical situation, to what extent would you accept its recommendations and use it to fill in a formal “wishes for medical care” form?",
                   sLableOne: "Not at all",
                   sLableTwo: "Very much",
                 },
                 {
                   id: "captured",
-                  quetion:
+                  question:
                     "To what extent do you feel that your wishes for medical care are correctly captured by the way the form ended up being filled?",
                   sLableOne: "Not at all",
                   sLableTwo: "Very much",
                 },
                 {
                   id: "wishes_for_medical",
-                  quetion:
+                  question:
                     "To what extent do you think that in a few weeks you are going to want and change the way in which your “wishes for medical care” form was filled?",
                   sLableOne: "Not at all",
                   sLableTwo: "Very much",
                 },
                 {
                   id: "preferances",
-                  quetion:
+                  question:
                     "If a loved one filled out their “wishes for medical care” form using this system, to what extent would you trust that the form correctly reflects their true preferences?",
                   sLableOne: "Not at all",
                   sLableTwo: "Very much",

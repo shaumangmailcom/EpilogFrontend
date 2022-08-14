@@ -6,6 +6,8 @@ import AppButton from "../../Components/Button";
 import right from "../../Assets/images/right.svg";
 import { Lable } from "../../Components/SmallComponents";
 import { useNavigate } from "react-router-dom";
+import { useNavigationValidator } from "../../hooks/navigation";
+import { withLoader } from "../../Components/Loader";
 const data = [
   {
     title: "Now",
@@ -24,7 +26,7 @@ const data = [
   },
 ];
 
-export default function StepEnd() {
+function StepEnd() {
   const navigate = useNavigate();
   return (
     <div className={styles.stepEnd}>
@@ -51,3 +53,5 @@ export default function StepEnd() {
     </div>
   );
 }
+
+export default withLoader(StepEnd);

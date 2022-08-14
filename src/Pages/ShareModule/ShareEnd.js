@@ -15,6 +15,7 @@ import {
   shareAvgTenSelector,
   shareTwoQAvgSelector,
 } from "../../store/selectors/share";
+import { withLoader } from "../../Components/Loader";
 
 const RenderOtherInvolved = () => {
   const illnessTreatment = useSelector(generalState);
@@ -95,4 +96,4 @@ const MatchEnd = () => {
     </div>
   );
 };
-export default MatchEnd;
+export default withLoader(MatchEnd);

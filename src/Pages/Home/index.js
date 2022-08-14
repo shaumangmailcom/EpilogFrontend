@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import { Col, Row } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
-import { Row, Col } from "react-bootstrap";
-import AppHeader from "../../Components/Header";
-import styles from "./style.module.scss";
-import AppButton from "../../Components/Button";
 import right from "../../Assets/images/right.svg";
-
+import AppButton from "../../Components/Button";
+import { withLoader } from "../../Components/Loader";
+import styles from "./style.module.scss";
 const data = [
   {
     title: "Welcome to Epilog",
@@ -38,7 +37,6 @@ const data = [
 ];
 const Home = () => {
   const [index, setIndex] = useState(0);
-
   const handleSelect = (selectedIndex, e) => {
     setIndex(selectedIndex);
   };
@@ -47,7 +45,7 @@ const Home = () => {
     <div className={styles.home}>
       <div className={styles.banner} />
       <Row className={styles.row}>
-        <Col xs={12} md={8} lg={6}  className={styles.grid}>
+        <Col xs={12} md={8} lg={6} className={styles.grid}>
           {data.length > 0 && (
             <Carousel
               activeIndex={index}
@@ -79,4 +77,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withLoader(Home);
