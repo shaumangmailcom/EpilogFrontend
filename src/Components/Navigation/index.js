@@ -56,6 +56,7 @@ const AppRouting = () => {
         <Route path="/shair-complex" element={<ShareComplex />} />
         <Route path="/wishes-start" element={<WishesStart />} />
         <Route path="/wishes" element={<Wishes />} />
+        <Route path="/wishes-person" element={<TypeOfPerson />} />
         <Route path="/wishes-end" element={<WishesEnd />} />
         <Route path="/complex-situation" element={<ComplexSituation />} />
         <Route path="/feedback" element={<LastPhase />} />
