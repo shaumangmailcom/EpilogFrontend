@@ -26,12 +26,9 @@ const Wishes = () => {
   }
   const current_page = wishesState.current_page;
 
-  const submitForm = useCallback(() => {
-    console.log("submit form", wishesState);
-  }, [wishesState]);
   const nextPage = useCallback(() => {
     const isLast = current_page === wishesStateKeys.length - 1;
-    if (isLast) return navigate("/wishes-end");
+    if (isLast) return navigate("/wishes-person");
     dispatch(
       setWishesState({
         current_page: isLast ? current_page : current_page + 1,
@@ -64,7 +61,7 @@ const Wishes = () => {
               <SliderCard
                 options={[
                   {
-                    id: "think_large_decisions",
+                    id: "think_large_decision",
                     question:
                       "Do you think rationally or emotionally about your large decisions?",
                     sLableOne: "Mostly rationally",

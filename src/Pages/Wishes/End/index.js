@@ -11,17 +11,14 @@ const WishesEnd = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.thankyou}>
-      <AppHeader back onClickBack={() => navigate("/wishes")} />
+      <AppHeader back onClickBack={() => navigate("/wishes-person")} />
       <div className={styles.content}>
         <img src={plus} className={styles.icon} />
         <Row className={styles.row}>
-          <Col xs={12} md={12} lg={8} xl={6}  className={styles.grid}>
+          <Col xs={12} md={12} lg={8} xl={6} className={styles.grid}>
             <p className="desc" style={{ textAlign: "center" }}>
-              Based on your responses, if you were about to fill in a form that
-              represents your wishes for medical care when you are no longer
-              able to give orders (The official form is often called POLST-
-              physician orders for life sustaining treatment), our experts would
-              recommend the following:
+              Our experts formulated their recommendations based on your
+              responses, which include, among else, the following findings:
             </p>
             <CatgCard
               title="Getting the most out of life"
