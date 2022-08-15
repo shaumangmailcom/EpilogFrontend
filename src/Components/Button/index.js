@@ -23,8 +23,8 @@ const AppButton = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <div>
-      <span
+    <div className={styles.buttonBox}>
+      <div
         className={styles.buttonHref}
         onClick={() => {
           hrefLink && navigate(hrefLink);
@@ -52,7 +52,7 @@ const AppButton = ({
             <img style={{ margin: imgMargin, width: imgWidth }} src={src} />
           )}
         </div>
-      </span>
+      </div>
     </div>
   );
 };

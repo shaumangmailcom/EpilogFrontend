@@ -1,6 +1,11 @@
+.buttonBox{
+  width: min-content;
+  display: contents;
+}
 .buttonHref{
-  width: 100%;
+  width: min-content;
   text-decoration: none;
+  margin: auto;
 }
 .icon_bttn {
   margin: auto;

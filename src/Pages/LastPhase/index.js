@@ -246,7 +246,12 @@ const LastPhase = (props) => {
                     link if it came from each of them:
                   </p>
                   <div className={styles.fillSec}>
+                  <span>
+
                     If I got a link for this system from
+                  </span>
+                  <span>
+
                     <Form className="iForm">
                       <Form.Control
                         onChange={({ target: { value: link_for_system } }) =>
@@ -257,8 +262,11 @@ const LastPhase = (props) => {
                         placeholder=""
                       />
                     </Form>
+                  </span>
+                    <span>
                     the likelihood that I would follow the link and start using
                     it are:
+                    </span>
                   </div>
                   <SliderCard
                     options={[

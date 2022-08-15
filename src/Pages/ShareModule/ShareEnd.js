@@ -22,20 +22,16 @@ const RenderOtherInvolved = () => {
   const goodTime = useSelector(goodTimeState);
   const avg = useSelector(shareTwoQAvgSelector);
   const diff9_10 = Math.abs(illnessTreatment - goodTime);
-  let title = "Letting Others Get Involved";
+  let title = "Letting others get involved";
   let desc = "";
 
   if (avg > 4 && diff9_10 >= 2) {
     desc = (
-      <span>
+      <span >
         You generally gain high personal value from having others involved in
         your life. Even though it may be difficult, we recommend making the
-        effort to{" "}
-        <span className="desc18b">
-          share about yourself in hard times as well
-        </span>
-        , since it will most likely have a{" "}
-        <span className="desc18b"> positive impact on you</span>.
+        effort to{" "}<span className="desc18b">share about yourself in hard times as well</span>
+        , since it will most likely have a{" "}<span className="desc18b"> positive impact on you</span>.
       </span>
     );
   } else if (avg > 4 && diff9_10 < 2) {
@@ -53,8 +49,8 @@ const RenderOtherInvolved = () => {
 };
 const RenderKeepSharing = () => {
   const avg = useSelector(shareAvgTenSelector);
-  let title = "Keep Sharing";
-  let title2 = "Sharing Online";
+  let title = "Keep sharing";
+  let title2 = "Sharing online";
   let desc = (
     <span>
       You dislike sharing. We understand this feels difficult, but it is
