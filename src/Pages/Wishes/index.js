@@ -152,6 +152,7 @@ const Wishes = () => {
                     id: "life_quality",
                     question:
                       "To what extent has your quality of life impacted by visiting a loved one in hospital?",
+                    validateKey: "visit_experience",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
