@@ -19,8 +19,8 @@ export const moreStateKeys = [
     pain_level_week: "pain_level_week",
   },
   {
-    sleeping_deficulty: "sleeping_deficulty",
-    sleeping_deficulty_week: "sleeping_deficulty_week",
+    sleeping_difficulty: "sleeping_difficulty",
+    sleeping_difficulty_week: "sleeping_difficulty_week",
   },
   {
     relationship: "relationship",
@@ -42,8 +42,8 @@ const initialState = {
   distress: 0,
   pain_level: 0,
   pain_level_week: 0,
-  sleeping_deficulty: 0,
-  sleeping_deficulty_week: 0,
+  sleeping_difficulty: 0,
+  sleeping_difficulty_week: 0,
   relationship: 0,
   relationship_week: 0,
   practical_life: 0,
@@ -54,7 +54,9 @@ const initialState = {
 export const moreInfoSlice = createSlice({
   name: "moreInfo",
   initialState,
+  
   reducers: {
+    resetMoreInfo: () => initialState,
     setMoreInfoState: (state, { payload }) => ({ ...state, ...payload }),
     setCurrentPage: (state, { payload }) => {
       state.current_page = payload;
@@ -63,6 +65,6 @@ export const moreInfoSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setMoreInfoState, setCurrentPage } = moreInfoSlice.actions;
+export const { setMoreInfoState, setCurrentPage, resetMoreInfo } = moreInfoSlice.actions;
 
 export default moreInfoSlice.reducer;

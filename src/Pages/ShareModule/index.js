@@ -8,6 +8,7 @@ import AppModal from "../../Components/AppModal";
 import AppButton from "../../Components/Button";
 import { SliderCard, StepCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
+import { withLoader } from "../../Components/Loader";
 import { Indicator } from "../../Components/SmallComponents";
 import Steps from "../../Components/Steps";
 import { setShareState, shareStateKeys } from "../../store/reducers/share";
@@ -28,17 +29,16 @@ const ShareModule = () => {
   if (shareDone) {
     // navigate("/");
   }
-  console.log(sum);
   const current_page = shareState.current_page;
 
-  const submitForm = useCallback(() => {
-    console.log("submit form", shareState);
-  }, [shareState]);
   const nextPage = useCallback(() => {
     const isLast = current_page === shareStateKeys.length - 1;
     if (isLast) {
       if (sum < 20) return setModalShow(true);
       return navigate("/share-thank");
+    }
+    if (current_page === 2 && !shareState.personal_info) {
+      return alert("Kindly Select any one of the options");
     }
     dispatch(
       setShareState({
@@ -47,7 +47,7 @@ const ShareModule = () => {
     );
     console.log("isLast", isLast);
     // if (isLast) setTimeout(submitForm, 300);
-  }, [current_page, dispatch, navigate, sum]);
+  }, [current_page, dispatch, navigate, sum, shareState]);
   const prevPage = useCallback(() => {
     if (current_page === 0) return navigate("/share-start");
     dispatch(
@@ -74,19 +74,19 @@ const ShareModule = () => {
                   {
                     id: "family",
                     lable: "Family",
-                    sLableOne: "Not Very",
+                    sLableOne: "Not very",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "friends",
                     lable: "Friends",
-                    sLableOne: "Not Very",
+                    sLableOne: "Not very",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "co_workers",
                     lable: "Co-workers",
-                    sLableOne: "Not Very",
+                    sLableOne: "Not very",
                     sLableTwo: "Very much",
                   },
                 ]}
@@ -136,21 +136,21 @@ const ShareModule = () => {
                   },
                   // {
                   //   id: "empathize_your_pain",
-                  //   quetion:
+                  //   question:
                   //     "To what degree do you want people to empathize with your pain?",
                   //   sLableOne: "Not at all",
                   //   sLableTwo: "Very much",
                   // },
                   {
                     id: "illness",
-                    quetion:
+                    question:
                       "To what degree do you want people who are close to you to talk to you about your illness?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "illness_treatment",
-                    quetion:
+                    question:
                       "To what degree do you really want to get advice about your illness and treatment from people who are close to you?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
@@ -167,14 +167,20 @@ const ShareModule = () => {
                 options={[
                   {
                     id: "good_times_attention",
-                    quetion:
-                      "To what degree do you enjoy being the center of attention in good times?",
+
+                    quetion: (
+                      <span>
+                        To what degree do you enjoy being the center of
+                        attention in
+                        <span className="ubuntu700"> good times?</span>
+                      </span>
+                    ),
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "general_attention",
-                    quetion:
+                    question:
                       "To what degree do you enjoy being the center of attention in general?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
@@ -244,4 +250,4 @@ const ShareModule = () => {
   );
 };
 
-export default ShareModule;
+export default withLoader(ShareModule);

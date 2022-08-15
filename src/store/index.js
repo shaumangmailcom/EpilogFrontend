@@ -5,6 +5,8 @@ import basicInfoReducer from "./reducers/basicInfo";
 import moreInfoReducer from "./reducers/moreInfo";
 import shareReducer from "./reducers/share";
 import wishesReducer from "./reducers/wishes";
+import feedbackReducer from "./reducers/feedback";
+import commonReducer from "./reducers/common";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +16,7 @@ export const store = configureStore({
     more: moreInfoReducer,
     share: shareReducer,
     wishes: wishesReducer,
+    feedback: feedbackReducer,
+    common: commonReducer,
   },
 });

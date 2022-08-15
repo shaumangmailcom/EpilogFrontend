@@ -4,6 +4,14 @@ const initialState = {
   deviceId: null,
   user: null,
   latestTry: null,
+  isLoaded: false,
+  // {
+  //   basicInfo: {},
+  //   moreInfo: {},
+  //   share: null,
+  //   wishes: null,
+  //   journey: null,
+  // },
 };
 
 export const userSlice = createSlice({
@@ -12,6 +20,7 @@ export const userSlice = createSlice({
   reducers: {
     setUser: (state, { payload }) => {
       state.user = payload;
+      state.isLoaded = true;
     },
     setDeviceId: (state, { payload }) => {
       state.deviceId = payload;
@@ -24,6 +33,7 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser, setDeviceId, setUserState } = userSlice.actions;
+export const { setUser, setDeviceId, setLatestTry, setUserState } =
+  userSlice.actions;
 
 export default userSlice.reducer;

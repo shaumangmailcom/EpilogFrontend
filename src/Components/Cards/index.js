@@ -59,15 +59,19 @@ export const SliderCard = ({
       )}
       <p className={styles.title}>{title}</p>
       {desc && <p className={styles.desc}>{desc}</p>}
-      {options.map((obj, ind) => (
-        <Range
-          onChange={changeItem}
-          value={data[obj.id] ?? 0}
-          className={styles.rgSlider}
-          key={ind}
-          {...obj}
-        />
-      ))}
+      {options.map((obj, ind) => {
+        let value = data[obj.id] || 0;
+        if (obj.validateKey && data[obj.validateKey] < 1) return null;
+        return (
+          <Range
+            onChange={changeItem}
+            value={value}
+            className={styles.rgSlider}
+            key={ind}
+            {...obj}
+          />
+        );
+      })}
     </div>
   );
 };
@@ -128,7 +132,7 @@ export const MatchCard = ({ img, desc, point, imgBg }) => {
   );
 };
 
-export const JourneyCard = ({src, title, onClick}) => {
+export const JourneyCard = ({ src, title, onClick }) => {
   return (
     <div className={styles.jcrd} onClick={onClick}>
       <p className={styles.title}>{title}</p>

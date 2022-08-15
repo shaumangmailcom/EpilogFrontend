@@ -16,6 +16,7 @@ import {
   shareSecondThreeQAvgSelector,
   shareThreeQAvgSelector,
 } from "../../store/selectors/share";
+import { withLoader } from "../../Components/Loader";
 
 const RenderRelative = () => {
   const usual_feeling = useSelector((s) => s.share.usual_feeling);
@@ -111,4 +112,4 @@ const MatchThank = () => {
     </div>
   );
 };
-export default MatchThank;
+export default withLoader(MatchThank);

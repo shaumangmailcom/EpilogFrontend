@@ -19,7 +19,7 @@ export const Range = ({
   sLableOne,
   sLableTwo,
   sLableCenter,
-  quetion,
+  question,
   id,
   value = 0,
   onChange,
@@ -30,7 +30,7 @@ export const Range = ({
   return (
     <div className={classNames(styles.range, className)}>
       {lable && <Lable className={styles.rgLabel} lable={lable} />}
-      {quetion && <p className={styles.qs}>{quetion}</p>}
+      {question && <p className={styles.qs}>{question}</p>}
       <Slider
         min={0}
         max={10}

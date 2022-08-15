@@ -36,12 +36,21 @@ const initialState = {
   illness_treatment: 0,
   good_times_attention: 0,
   general_attention: 0,
-  complex_situation:0,
-  shairing_preferences:0,
-  face_to_face:0,
-  family_digitally:0,
-  sharing_recommendations:0,
-  captured:0,
+  complex_situation: 0,
+  shairing_preferences: 0,
+  face_to_face: 0,
+  family_digitally: 0,
+  sharing_recommendations: 0,
+  captured: 0,
+
+  // new properties for complex situation
+  understand_sharing_preferences: 0,
+  confident_in_sharing_preferences: 0,
+  face_to_face_situation: 0,
+  friends_family_digitally: 0,
+  system_sharing_recommendations: 0,
+  capture_sharing_preferences: 0,
+
   current_page: 0,
 };
 
@@ -49,6 +58,7 @@ export const shareSlice = createSlice({
   name: "share",
   initialState,
   reducers: {
+    resetShare:() => initialState,
     setShareState: (state, { payload }) => ({ ...state, ...payload }),
     setCurrentPage: (state, { payload }) => {
       state.current_page = payload;
@@ -57,6 +67,6 @@ export const shareSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setShareState, setCurrentPage } = shareSlice.actions;
+export const { setShareState, setCurrentPage,resetShare } = shareSlice.actions;
 
 export default shareSlice.reducer;

@@ -65,15 +65,20 @@ const Wishes = () => {
                 options={[
                   {
                     id: "think_large_decisions",
-                    quetion:
+                    question:
                       "Do you think rationally or emotionally about your large decisions?",
                     sLableOne: "Mostly rationally",
                     sLableTwo: "Mostly emotionally",
                   },
                   {
                     id: "want_to_think_large_decision",
-                    quetion:
-                      "Do you want to think rationally or emotionally about your large decisions?",
+
+                    quetion: (
+                      <span>
+                        Do you<span className="ubuntu700"> want</span> to think
+                        rationally or emotionally about your large decisions?
+                      </span>
+                    ),
                     sLableOne: "Mostly rationally",
                     sLableTwo: "Mostly emotionally",
                   },
@@ -93,21 +98,21 @@ const Wishes = () => {
                 options={[
                   {
                     id: "general_feel",
-                    quetion:
+                    question:
                       "To what extent is it important for you to feel in control in general?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "your_health",
-                    quetion:
+                    question:
                       "To what extent is it important for you to feel in control when it comes to your health?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "health_decisions",
-                    quetion:
+                    question:
                       "To what extent are you willing to trust others to make health decisions for you?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
@@ -124,29 +129,30 @@ const Wishes = () => {
                 options={[
                   {
                     id: "patient_experience",
-                    quetion:
+                    question:
                       "Do you have much experience as a patient in hospital?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "being_hospitalized",
-                    quetion:
+                    question:
                       "To what extent will your quality of life be impacted by being hospitalized?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "visit_experience",
-                    quetion:
+                    question:
                       "Do you have much experience as a visitor of a loved one in hospital?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "life_quality",
-                    quetion:
+                    question:
                       "To what extent has your quality of life impacted by visiting a loved one in hospital?",
+                    validateKey: "visit_experience",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
@@ -162,21 +168,21 @@ const Wishes = () => {
                 options={[
                   {
                     id: "suffering_pain",
-                    quetion:
+                    question:
                       "Relative to other people how much do you suffer from pain?",
                     sLableOne: "Less than others",
                     sLableTwo: "More than others",
                   },
                   {
                     id: "moral_belief",
-                    quetion:
+                    question:
                       "Do you have any moral or religious beliefs that would get you to hold onto life at all cost?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
                   },
                   {
                     id: "living_yourself",
-                    quetion:
+                    question:
                       "To what degree do you feel that you are living for yourself vs for other people?",
                     sLableOne: "Not at all",
                     sLableTwo: "Very much",
