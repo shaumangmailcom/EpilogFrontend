@@ -12,6 +12,7 @@ import ShareThank from "../../Pages/ShareModule/ThankYou";
 import ShareEnd from "../../Pages/ShareModule/ShareEnd";
 import ShareStart from "../../Pages/ShareModule/ShareStart";
 import Wishes from "../../Pages/Wishes";
+import TypeOfPerson from "../../Pages/Wishes/TypeOfPerson";
 import WishesStart from "../../Pages/Wishes/Start";
 import ComplexSituation from "../../Pages/Wishes/ComplexSituation";
 import ShairComplex from "../../Pages/ShareModule/ShairComplex";
@@ -34,6 +35,7 @@ const AppRouting = () => (
       <Route path="/wishes-start" element={<WishesStart />} />
       <Route path="/wishes" element={<Wishes />} />
       <Route path="/wishes-end" element={<WishesEnd />} />
+      <Route path="/wishes-type-of-person" element={<TypeOfPerson />} />
       <Route path="/complex-situation" element={<ComplexSituation />} />
       <Route path="/phase" element={<LastPhase />} />
     </Routes>
