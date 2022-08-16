@@ -7,8 +7,10 @@ import right from "../../Assets/images/right.svg";
 import AppButton from "../../Components/Button";
 import { CheckBox, CheckCard, SliderCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
+import { withLoader } from "../../Components/Loader";
 import { Indicator } from "../../Components/SmallComponents";
 import Steps from "../../Components/Steps";
+import { asyncCreateWishes } from "../../store/actions/wishes";
 import { setWishesState, wishesStateKeys } from "../../store/reducers/wishes";
 import {
   allStateSelector,
@@ -17,16 +19,18 @@ import {
 import styles from "./style.module.scss";
 
 const ComplexSituation = () => {
-  const wishesDone = useSelector(wishesDoneSelector);
   const wishesState = useSelector(allStateSelector);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  if (wishesDone) {
-    // navigate("/");
-  }
-  const current_page = wishesState.current_page;
-
-
+  const nextPage = useCallback(async () => {
+    let { success } = await dispatch(asyncCreateWishes()).unwrap();
+    if (success) {
+      console.log("success");
+      return navigate("/feedback");
+    }
+    alert("error");
+    // if (isLast) setTimeout(submitForm, 300);
+  }, [dispatch, navigate]);
   return (
     <div className={styles.medical}>
       <AppHeader back onClickBack={() => navigate("/wishes-end")} />
@@ -37,7 +41,12 @@ const ComplexSituation = () => {
       <div className={styles.content}>
         <Row className={styles.row}>
           <Col xs={12} md={8} lg={8} xl={5}>
-            <CheckBox question="This system is not yet operational. If it was, and assuming you were in a complex medical situation, would you accept its recommendations and use it to fill in a formal “wishes for medical care” form?" />
+            <CheckBox
+              id="operational_system"
+              value={wishesState.operational_system}
+              onClick={(id, value) => dispatch(setWishesState({ [id]: value }))}
+              question="This system is not yet operational. If it was, and assuming you were in a complex medical situation, would you accept its recommendations and use it to fill in a formal “wishes for medical care” form?"
+            />
             <SliderCard
               onChange={(obj) => {
                 dispatch(setWishesState({ ...obj }));
@@ -45,28 +54,28 @@ const ComplexSituation = () => {
               data={wishesState}
               options={[
                 {
-                  id: "complex_situation",
+                  id: "complex_medical_situations",
                   question:
                     "If you were in a complex medical situation, to what extent would you accept its recommendations and use it to fill in a formal “wishes for medical care” form?",
                   sLableOne: "Not at all",
                   sLableTwo: "Very much",
                 },
                 {
-                  id: "captured",
+                  id: "correct_medical_care",
                   question:
                     "To what extent do you feel that your wishes for medical care are correctly captured by the way the form ended up being filled?",
                   sLableOne: "Not at all",
                   sLableTwo: "Very much",
                 },
                 {
-                  id: "wishes_for_medical",
+                  id: "want_and_change_the_way",
                   question:
                     "To what extent do you think that in a few weeks you are going to want and change the way in which your “wishes for medical care” form was filled?",
                   sLableOne: "Not at all",
                   sLableTwo: "Very much",
                 },
                 {
-                  id: "preferances",
+                  id: "true_preferences",
                   question:
                     "If a loved one filled out their “wishes for medical care” form using this system, to what extent would you trust that the form correctly reflects their true preferences?",
                   sLableOne: "Not at all",
@@ -83,7 +92,7 @@ const ComplexSituation = () => {
               src={right}
               imgWidth="10px"
               imgMargin="0"
-            //   onClick={nextPage}
+              onClick={nextPage}
             />
           </Col>
         </Row>
@@ -92,4 +101,4 @@ const ComplexSituation = () => {
   );
 };
 
-export default ComplexSituation;
+export default withLoader(ComplexSituation);

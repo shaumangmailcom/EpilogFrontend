@@ -88,12 +88,12 @@ export const CatgCard = ({ title, number, desc }) => {
   );
 };
 
-export const CheckCard = ({ title, question, options = [] }) => {
+export const CheckCard = ({ title, question, options = [], onClick }) => {
   return (
     <div className={styles.checkCard}>
       <p className={styles.title}>{title}</p>
       {options.map((obj, ind) => (
-        <CheckBox key={ind} {...obj} />
+        <CheckBox key={ind} {...obj} onClick={onClick} />
       ))}
       <div className={styles.descSec}>
         <p>
@@ -104,13 +104,47 @@ export const CheckCard = ({ title, question, options = [] }) => {
     </div>
   );
 };
-export const CheckBox = ({ question }) => {
+export const CheckBox = ({ question, id, value, onClick }) => {
   return (
-    <Form className="chkbx">
+    <div className="chkbx">
       <p className="qs">{question}</p>
-      <Form.Check label="Yes" name="group1" />
-      <Form.Check label="No" name="group1" />
-    </Form>
+      <div
+        className={classNames(
+          styles.parent_check,
+          value === "Yes" ? styles.active : ""
+        )}
+        onClick={() => {
+          onClick?.(id, "Yes");
+        }}
+      >
+        <Form.Check
+          label="Yes"
+          name="group1"
+          className={styles.form_check_new}
+          // style={{ margin: 0 }}
+          checked={value === "Yes"}
+          onChange={(e) => console.log(e.target.checked)}
+        />
+      </div>
+      <div
+        className={classNames(
+          styles.parent_check,
+          value === "No" ? styles.active : ""
+        )}
+        onClick={() => {
+          onClick?.(id, "No");
+        }}
+      >
+        <Form.Check
+          onChange={(e) => console.log(e.target.checked)}
+          label="No"
+          name="group1"
+          className={styles.form_check_new}
+          // style={{ margin: 0 }}
+          checked={value === "No"}
+        />
+      </div>
+    </div>
   );
 };
 

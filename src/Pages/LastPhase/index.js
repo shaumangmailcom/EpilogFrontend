@@ -247,7 +247,7 @@ const LastPhase = (props) => {
                   </p>
                   <div className={styles.fillSec}>
                     If I got a link for this system from
-                    <Form className="iForm">
+                    <div className="iForm">
                       <Form.Control
                         onChange={({ target: { value: link_for_system } }) =>
                           dispatch(setFeedbackState({ link_for_system }))
@@ -256,7 +256,7 @@ const LastPhase = (props) => {
                         type="url"
                         placeholder=""
                       />
-                    </Form>
+                    </div>
                     the likelihood that I would follow the link and start using
                     it are:
                   </div>
@@ -319,7 +319,7 @@ const LastPhase = (props) => {
                   </p>
                   <div className={styles.fillSec}>
                     Email:
-                    <Form className="iForm">
+                    <div className="iForm">
                       <Form.Control
                         onChange={({ target: { value: email } }) =>
                           dispatch(setFeedbackState({ email }))
@@ -328,7 +328,7 @@ const LastPhase = (props) => {
                         type="email"
                         placeholder=""
                       />
-                    </Form>
+                    </div>
                   </div>
                   <AppButton
                     title="Submit"

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import journeyImg2 from "../../Assets/images/journey2.svg";
 import AppButton from "../../Components/Button";
 import AppHeader from "../../Components/Header";
+import { withLoader } from "../../Components/Loader";
 import styles from "./style.module.scss";
 
 function TypeOfPerson() {
@@ -62,4 +63,4 @@ function TypeOfPerson() {
   );
 }
 
-export default TypeOfPerson;
+export default withLoader(TypeOfPerson);

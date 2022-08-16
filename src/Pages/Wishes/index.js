@@ -7,11 +7,15 @@ import right from "../../Assets/images/right.svg";
 import AppButton from "../../Components/Button";
 import { CheckBox, CheckCard, SliderCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
+import { withLoader } from "../../Components/Loader";
 import { Indicator } from "../../Components/SmallComponents";
 import Steps from "../../Components/Steps";
 import { setWishesState, wishesStateKeys } from "../../store/reducers/wishes";
 import {
   allStateSelector,
+  q13State,
+  q14State,
+  wishesAvgSelector,
   wishesDoneSelector,
 } from "../../store/selectors/wishes";
 import styles from "./style.module.scss";
@@ -19,6 +23,7 @@ import styles from "./style.module.scss";
 const Wishes = () => {
   const wishesDone = useSelector(wishesDoneSelector);
   const wishesState = useSelector(allStateSelector);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   if (wishesDone) {
@@ -28,6 +33,11 @@ const Wishes = () => {
 
   const nextPage = useCallback(() => {
     const isLast = current_page === wishesStateKeys.length - 1;
+    if (
+      (current_page === 4 && !wishesState.goals_of_care) ||
+      (current_page === 5 && !wishesState.take_treatment)
+    )
+      return alert("Kindly Select any one of the options");
     if (isLast) return navigate("/wishes-person");
     dispatch(
       setWishesState({
@@ -36,7 +46,7 @@ const Wishes = () => {
     );
     console.log("isLast", isLast);
     // if (isLast) setTimeout(submitForm, 300);
-  }, [current_page, dispatch, navigate]);
+  }, [current_page, dispatch, navigate, wishesState]);
   const prevPage = useCallback(() => {
     if (current_page === 0) return navigate("/wishes-start");
     dispatch(
@@ -69,8 +79,7 @@ const Wishes = () => {
                   },
                   {
                     id: "want_to_think_large_decision",
-
-                    quetion: (
+                    question: (
                       <span>
                         Do you<span className="ubuntu700"> want</span> to think
                         rationally or emotionally about your large decisions?
@@ -228,4 +237,4 @@ const Wishes = () => {
   );
 };
 
-export default Wishes;
+export default withLoader(Wishes);

@@ -45,6 +45,7 @@ const wishes = [
   "/wishes",
   "/wishes-end",
   "/complex-situation",
+  "/wishes-person",
 ];
 const journey = [...range, "/journey", ...share, ...wishes];
 const feedback = [...journey, "/feedback"];

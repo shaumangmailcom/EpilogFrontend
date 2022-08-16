@@ -2,6 +2,7 @@ import axios from "axios";
 import { store } from "../store";
 import { setLoading } from "../store/reducers/common";
 
+// const BASE_URL = "https://api.epilog.world/";
 const BASE_URL = "https://epilog.thecodingbuzz.com/";
 export const callApi = ({
   path = "",
