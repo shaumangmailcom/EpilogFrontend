@@ -228,7 +228,6 @@ const LastPhase = (props) => {
                       question: "Getting the best out of doctors’ appointment",
                       sLableOne: "Not helpful at all",
                       sLableTwo: "Very helpful",
-
                     },
                   ]}
                   onChange={(obj) => {
@@ -246,7 +245,7 @@ const LastPhase = (props) => {
                     link if it came from each of them:
                   </p>
                   <div className={styles.fillSec}>
-                    If I got a link for this system from
+                    <span>If I got a link for this system from</span>
                     <div className="iForm">
                       <Form.Control
                         onChange={({ target: { value: link_for_system } }) =>
@@ -257,8 +256,10 @@ const LastPhase = (props) => {
                         placeholder=""
                       />
                     </div>
-                    the likelihood that I would follow the link and start using
-                    it are:
+                    <span>
+                      the likelihood that I would follow the link and start
+                      using it are:
+                    </span>
                   </div>
                   <SliderCard
                     options={[

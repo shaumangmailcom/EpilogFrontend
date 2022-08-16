@@ -1,6 +1,7 @@
 import Modal from "react-bootstrap/Modal";
 import AppButton from "../Button";
 import styles from "./style.module.scss";
+import crossIcon from '../../Assets/images/cross.png'
 
 const AppModal = ({ props, show, onHide, children }) => {
   return (
@@ -14,12 +15,9 @@ const AppModal = ({ props, show, onHide, children }) => {
       className={styles.modal}
     >
       <Modal.Header>
-        <AppButton
-          title="X"
-          className={styles.cBtn}
-          color="#112548"
-          onClick={onHide}
-        />
+        <div className={styles.closeBtn}>
+          <img onClick={onHide} src={crossIcon} />
+        </div>
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
     </Modal>

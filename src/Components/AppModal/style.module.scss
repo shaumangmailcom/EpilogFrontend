@@ -1,8 +1,14 @@
 .modal {
-  .cBtn {
+  .closeBtn{
     height: 20px;
     width: 20px;
     border-radius: 0;
     background-color: transparent;
+    cursor: pointer;
   }
+  .closeBtn{
+    // height: 50px;
+    margin: 5px 5px ;
+  }
+
 }
