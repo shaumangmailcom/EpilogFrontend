@@ -6,6 +6,7 @@ import styles from "./style.module.scss";
 const AppButton = ({
   height,
   width,
+  boxMargin="0px 0px 0px auto",
   minWidth,
   padding,
   backgroundColor,
@@ -26,6 +27,7 @@ const AppButton = ({
     <div className={styles.buttonBox}>
       <div
         className={styles.buttonHref}
+        style={{margin:boxMargin}}
         onClick={() => {
           hrefLink && navigate(hrefLink);
         }}

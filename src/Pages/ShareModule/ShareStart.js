@@ -43,6 +43,7 @@ const MatchStart = () => {
               height="36px"
               margin="50px auto 0"
               fontSize="15px"
+              boxMargin="auto"
             />
           </Col>
         </Row>

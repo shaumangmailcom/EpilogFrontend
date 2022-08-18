@@ -13,7 +13,7 @@ export const asyncCreate_FetchUser = createAsyncThunk(
   async (_, { dispatch, getState }) => {
     const { deviceId, user } = getState().user;
     const res = await callApi({
-      path: "user",
+      path: "/user",
       method: "POST",
       // body: { deviceId },
       token: user?.deviceId ?? deviceId,

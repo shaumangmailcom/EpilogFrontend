@@ -69,6 +69,7 @@ const Home = () => {
               title="Let’s Start"
               src={right}
               minWidth="118px"
+              boxMargin="auto"
             />
           </Row>
         </Col>

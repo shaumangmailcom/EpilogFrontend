@@ -24,6 +24,7 @@ export default function ThankYou() {
             title="Explore my journeys"
             fontSize="15px"
             className={styles.tBtn}
+            boxMargin="auto"
           />
         </Col>
       </Row>

@@ -6,6 +6,7 @@
   width: min-content;
   text-decoration: none;
   margin: auto;
+  
 }
 .icon_bttn {
   margin: auto;
@@ -14,7 +15,7 @@
     align-items: center;
     border-radius:18px;
     padding: 7px 13px;
-    
+    box-shadow: 0px 0px 14px rgba(129, 144, 192, 0.37);
     height: 40px;
     width: max-content;
     background-color: var(--color-primary-dark);
@@ -26,7 +27,8 @@
     }
     .icon_bttn_p {
       color: var(--color-white);
-      font-size: 20px;
+      font-size: 16px;
+      margin-top: 0px;
       // text-transform: capitalize;
       letter-spacing: 0.2px;
       
