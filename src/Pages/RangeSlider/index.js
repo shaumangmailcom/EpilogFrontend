@@ -172,7 +172,7 @@ const Range = () => {
                     {
                       id: "pain_level_week",
 
-                      quetion: "How about 2 weeks ago?",
+                      question: "How about 2 weeks ago?",
                       sLableOne: "No pain",
                       sLableTwo: "Worst pain",
                     },

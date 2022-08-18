@@ -47,7 +47,7 @@ function StepEnd() {
               </div>
             ))}
           </div>
-          <AppButton hrefLink="/range" title="Next" minWidth="129px" />
+          <AppButton hrefLink="/range" title="Next" minWidth="129px" boxMargin="auto" />
         </Col>
       </Row>
     </div>

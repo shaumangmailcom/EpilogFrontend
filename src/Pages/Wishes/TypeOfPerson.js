@@ -54,6 +54,7 @@ function TypeOfPerson() {
                 title="CLICK HERE"
                 className={styles.tsBtn}
                 fontSize="15px"
+                boxMargin="auto"
               />
             </Col>
           </Row>

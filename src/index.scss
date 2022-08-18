@@ -292,6 +292,7 @@ html {
       background-color: transparent;
       border: 1.3px solid #b8bdda;
       border-radius: 5px;
+      cursor: pointer;
     }
     .form-check-label {
       font-size: 16px;
@@ -450,7 +451,7 @@ html {
     margin: 0 5px;
     padding: 0;
     color: #082996;
-    background-color: transparent;
+    background-color: #4059ad42;
     border: none;
     border-bottom: 1px solid var(--color-primary);
     border-radius: 0;

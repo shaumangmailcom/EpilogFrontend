@@ -2,7 +2,7 @@ import React, { useCallback } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import journeyImg2 from "../../Assets/images/journey2.svg";
+import journeyImg1 from "../../Assets/images/c1.svg";
 import right from "../../Assets/images/right.svg";
 import AppButton from "../../Components/Button";
 import { SliderCard } from "../../Components/Cards";
@@ -30,8 +30,8 @@ const ShareComplex = () => {
     <div className={styles.match}>
       <AppHeader back onClickBack={() => navigate("/share-end")} />
       <div className={styles.header}>
-        <p>Wishes for medical care</p>
-        <img src={journeyImg2} />
+        <p>Sharing with family and friends</p>
+        <img src={journeyImg1} />
       </div>
       <div className={styles.content}>
         <Row className={styles.row}>
@@ -43,45 +43,45 @@ const ShareComplex = () => {
                   question:
                     "If you were in a complex medical situation, to what extent do you feel that, now, after reflecting on your sharing style, that you understand your sharing preferences?",
                   sLableOne: "Not at all",
-                  sLableTwo: "Very much",
+                  sLableTwo: "Very much"
                 },
                 {
                   id: "confident_in_sharing_preferences",
                   question:
                     "If you were in a complex medical situation, to what extent do you feel that, now, after reflecting on your sharing style, that you are confident in your sharing preferences?",
                   sLableOne: "Not at all",
-                  sLableTwo: "Very much",
+                  sLableTwo: "Very much"
                 },
                 {
                   id: "face_to_face_situation",
                   question:
                     "If you were in a complex medical situation, to what extent do you feel that you would share about your situation with friends and family face to face?",
                   sLableOne: "Not at all",
-                  sLableTwo: "Very much",
+                  sLableTwo: "Very much"
                 },
                 {
                   id: "friends_family_digitally",
                   question:
                     "If you were in a complex medical situation, to what extent do you feel that you would share about your situation with friends and family digitally?",
                   sLableOne: "Not at all",
-                  sLableTwo: "Very much",
+                  sLableTwo: "Very much"
                 },
                 {
                   id: "system_sharing_recommendations",
                   question:
                     "If you were in a complex medical situation, to what extent would you act according to the system’s sharing recommendations?",
                   sLableOne: "Not at all",
-                  sLableTwo: "Very much",
+                  sLableTwo: "Very much"
                 },
                 {
                   id: "capture_sharing_preferences",
                   question:
                     "To what extent do you feel that our experts correctly captured your sharing preferences?",
                   sLableOne: "Not at all",
-                  sLableTwo: "Very much",
-                },
+                  sLableTwo: "Very much"
+                }
               ]}
-              onChange={(obj) => {
+              onChange={obj => {
                 dispatch(setShareState({ ...obj }));
               }}
               data={shareState}

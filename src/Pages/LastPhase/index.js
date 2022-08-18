@@ -3,6 +3,8 @@ import { Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import right from "../../Assets/images/right.svg";
+import journeyImg1 from "../../Assets/images/c1.svg";
+import journeyImg2 from "../../Assets/images/journey2.svg";
 import AppButton from "../../Components/Button";
 import { SliderCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
@@ -14,10 +16,12 @@ import {
   setFeedbackState,
 } from "../../store/reducers/feedback";
 import styles from "./style.module.scss";
+import { auto } from "@popperjs/core";
 
 const LastPhase = (props) => {
   // const shareDone = useSelector();
   const feedbackState = useSelector((state) => state.feedback);
+  const latestTry = useSelector((state) => state.user.latestTry);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -52,6 +56,20 @@ const LastPhase = (props) => {
   return (
     <div className={styles.phase}>
       <AppHeader back onClickBack={prevPage} />
+      {
+        latestTry.wishes == 'null' ? 
+
+        <div className={styles.header}>
+        <p>Sharing with family and friends</p>
+        <img src={journeyImg1} />
+      </div>
+       : 
+       <div className={styles.header}>
+       <p>Sharing with family and friends</p>
+       <img src={journeyImg2} />
+     </div>
+     
+      }
       <div className={styles.content}>
         <Row className={styles.row}>
           <Col xs={12} md={8} lg={8} xl={5} className={styles.grid}>
@@ -310,7 +328,7 @@ const LastPhase = (props) => {
                   <p className="desc">
                     You've reached the end of our trial system. As a gratitude
                     for your participattion, we would like to offer you a ticket
-                    to a lottery for a $300 Amazon gift card.
+                    to a lottery for a <span className="desc18b" > $300 Amazon gift card</span>.
                   </p>
                   <p className="desc">
                     if you are interested in participating, please leave your
@@ -336,8 +354,9 @@ const LastPhase = (props) => {
                     className={styles.submitBtn}
                     fontSize="15px"
                     onClick={submitForm}
+                    boxMargin="auto"
                   />
-                  <p className="desc18b">Thank you for participating!</p>
+                  <p className="desc18b" style={{textAlign:"center"}}>Thank you for participating!</p>
                 </div>
               )}
             </div>

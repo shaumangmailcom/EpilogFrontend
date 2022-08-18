@@ -130,9 +130,10 @@ const WishesEnd = () => {
         </Row>
         <AppButton
           hrefLink="/complex-situation"
-          title="I am Done"
+          title="I am done"
           minWidth="173px"
           margin="7rem auto 0"
+          boxMargin="auto"
         />
       </div>
     </div>

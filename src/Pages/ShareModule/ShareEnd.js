@@ -134,9 +134,10 @@ const MatchEnd = () => {
         </Row>
         <AppButton
           hrefLink="/shair-complex"
-          title="I am Done"
+          title="I am done"
           minWidth="173px"
           margin="2rem auto 0"
+          boxMargin="auto"
         />
       </div>
     </div>

@@ -168,7 +168,7 @@ const ShareModule = () => {
                   {
                     id: "good_times_attention",
 
-                    quetion: (
+                    question: (
                       <span>
                         To what degree do you enjoy being the center of
                         attention in

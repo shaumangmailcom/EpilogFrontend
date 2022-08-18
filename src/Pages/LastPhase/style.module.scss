@@ -1,5 +1,28 @@
 .phase {
     min-height: 100vh;
+    .header {
+      padding: 3rem 2rem 2.4rem;
+      background: linear-gradient(108.29deg, #ffffff 50.21%, #e8ebfe 86.64%);
+      position: relative;
+      overflow: hidden;
+      min-height: 113px;
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 20px;
+        font-family: ubuntu;
+        color: var(--color-primary);
+        @media only screen and (max-width: 428px) {
+          width: 60%;
+        }
+      }
+      img {
+        position: absolute;
+        right: -40px;
+        top: 0;
+        height: 113px;
+      }
+    }
     .content {
       .row {
         justify-content: center;

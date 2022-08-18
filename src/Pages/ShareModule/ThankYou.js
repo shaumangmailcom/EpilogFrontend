@@ -107,6 +107,7 @@ const MatchThank = () => {
           minWidth="234px"
           margin="40px auto 0"
           fontSize="15px"
+          boxMargin="auto"
         />
       </div>
     </div>

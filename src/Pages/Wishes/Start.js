@@ -17,8 +17,8 @@ const WishesStart = () => {
         <img src={journeyImg2} />
       </div>
       <div className={styles.content}>
-        <Row className={styles.row}>
-          <Col xs={12} md={12}>
+      <Row className={styles.row}>
+          <Col xs={12} md={12} lg={8} xl={6}>
             <div className={styles.textSec}>
               <p className="title24" style={{ textAlign: "left" }}>
                 We are about to ask you a few questions, aimed to help
@@ -36,16 +36,18 @@ const WishesStart = () => {
                 in this regard.
               </p>
             </div>
-            <Row className={styles.wBtnRow}>
-              <Col xs={12}>
+           
                 <AppButton
                   hrefLink="/wishes"
                   title="Let’s go"
                   className={styles.tsBtn}
+                  margin="50px auto 0"
                   fontSize="15px"
+                  boxMargin="auto"
+                  minWidth="130px"
+                  // height="36px"
                 />
-              </Col>
-            </Row>
+             
           </Col>
         </Row>
       </div>
