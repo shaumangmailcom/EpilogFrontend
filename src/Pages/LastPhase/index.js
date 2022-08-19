@@ -28,12 +28,12 @@ const LastPhase = (props) => {
   const current_page = feedbackState.current_page;
 
   const submitForm = useCallback(async () => {
-    let { success } = await dispatch(asyncCreateFeedback()).unwrap();
+    let { success ,message} = await dispatch(asyncCreateFeedback()).unwrap();
     if (success) {
       console.log("success");
       return navigate("/");
     }
-    alert("error");
+    alert(message ?? "error");
   }, [dispatch, navigate]);
   const nextPage = useCallback(() => {
     dispatch(
