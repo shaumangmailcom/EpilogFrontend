@@ -77,7 +77,7 @@ const Range = () => {
                 <SliderCard
                   img={time}
                   title="During a typical day, how much time do you spend on:"
-                  desc="Distress is an unpleasant experience of a mental, physical, social or spiritual nature. It can affect the way you think, feel, or act. Distress may make it harder to cope with a severe illness, its symptoms, or its treatment?"
+                  // desc="Distress is an unpleasant experience of a mental, physical, social or spiritual nature. It can affect the way you think, feel, or act. Distress may make it harder to cope with a severe illness, its symptoms, or its treatment?"
                   options={[
                     {
                       id: "work",
@@ -187,7 +187,7 @@ const Range = () => {
                 <SliderCard
                   img={stars}
                   title="Do you feel any difficulties falling asleep, or staying asleep?"
-                  desc="On a scale from Not at all to constantly please select"
+                  desc="On a scale from not at all to constantly please select"
                   options={[
                     {
                       id: "sleeping_difficulty",
@@ -212,7 +212,7 @@ const Range = () => {
                 <SliderCard
                   img={bird}
                   title="Are you experiencing concerns regarding any of your significant relationships?"
-                  desc="On a scale from Not at all to constantly please select"
+                  desc="On a scale from not at all to constantly please select"
                   options={[
                     {
                       id: "relationship",
@@ -236,7 +236,7 @@ const Range = () => {
                 <SliderCard
                   img={prop}
                   title="Are you experiencing concerns regarding any “practical” element of your life? (taking care of yourself/others, finances, work)"
-                  desc="On a scale from Not at all to constantly please select"
+                  desc="On a scale from not at all to constantly please select"
                   options={[
                     {
                       id: "practical_life",

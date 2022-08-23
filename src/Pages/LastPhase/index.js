@@ -28,12 +28,12 @@ const LastPhase = props => {
   const current_page = feedbackState.current_page;
 
   const submitForm = useCallback(async () => {
-    let { success } = await dispatch(asyncCreateFeedback()).unwrap();
+    let { success ,message} = await dispatch(asyncCreateFeedback()).unwrap();
     if (success) {
       console.log("success");
       return navigate("/");
     }
-    alert("error");
+    alert(message ?? "error");
   }, [dispatch, navigate]);
   const nextPage = useCallback(() => {
     dispatch(
@@ -259,7 +259,7 @@ const LastPhase = props => {
                     entities. Please indicate how likely are you to follow the
                     link if it came from each of them:
                   </p>
-                  <div className={styles.fillSec}>
+                  {/* <div className={styles.fillSec}>
                     <span>If I got a link for this system from</span>
                     <div className="iForm">
                       <Form.Control
@@ -275,46 +275,46 @@ const LastPhase = props => {
                       the likelihood that I would follow the link and start
                       using it are:
                     </span>
-                  </div>
+                  </div> */}
                   <SliderCard
                     options={[
                       {
                         id: "care_physician",
                         question: "My primary care physician",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very Much"
+                        sLableTwo: "Very much"
                       },
                       {
                         id: "specialist_doctor",
                         question:
                           "A specialist doctor (oncologist, cardiologist, else)",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very Much"
+                        sLableTwo: "Very much"
                       },
                       {
                         id: "health_plan",
                         question: "My health plan",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very Much"
+                        sLableTwo: "Very much"
                       },
                       {
                         id: "SNF",
                         question:
                           "A nurse att the hospital or a SNF (skilled nursing facility)",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very Much"
+                        sLableTwo: "Very much"
                       },
                       {
                         id: "family_member",
                         question: "A family member",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very Much"
+                        sLableTwo: "Very much"
                       },
                       {
                         id: "web_search",
                         question: "Finding it following a web search",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very Much"
+                        sLableTwo: "Very much"
                       }
                     ]}
                     onChange={obj => {

@@ -12,7 +12,7 @@ const data = [
   {
     title: "Now",
     qs: "We are about to ask you all kinds of questions",
-    dtl: "Before we do, we want to make it clear that this is your information and that we will never share with anyone.",
+    dtl: "Before we do, we want to make it clear that this is your information and that we will never share it with anyone.",
   },
   {
     title: "After",

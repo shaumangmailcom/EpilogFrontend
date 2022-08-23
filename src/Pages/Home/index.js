@@ -50,7 +50,7 @@ const Home = () => {
             <Carousel
               activeIndex={index}
               onSelect={handleSelect}
-              interval="1500"
+              interval="7000"
               pause="hover"
             >
               {data.map((item, ind) => (

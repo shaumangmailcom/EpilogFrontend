@@ -7,8 +7,11 @@ export const asyncCreateFeedback = createAsyncThunk(
   "feedback/create",
   async (_, { dispatch, getState }) => {
     const { deviceId, user } = getState().user;
-    const body = getState().share;
+    const body = getState().feedback;
     console.log(body, "body");
+    if(!body.email ){
+      return {success : false , message : "Please enter your email"};
+    }
     let res = await callApi({
       path: "/journey",
       method: "POST",
