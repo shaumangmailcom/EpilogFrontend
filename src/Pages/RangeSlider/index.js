@@ -45,6 +45,7 @@ const Range = () => {
   const nextPage = useCallback(() => {
     const isLast = current_page === moreStateKeys.length - 1;
     if (isLast) return submitForm();
+    window.scrollTo(0, 0);
     dispatch(
       setMoreInfoState({
         current_page: isLast ? current_page : current_page + 1,
@@ -55,6 +56,7 @@ const Range = () => {
   }, [current_page, dispatch, submitForm]);
   const prevPage = useCallback(() => {
     if (current_page === 0) return navigate("/stepEnd");
+    window.scrollTo(0, 0);
     dispatch(
       setMoreInfoState({
         current_page: current_page - 1,

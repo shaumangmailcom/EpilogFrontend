@@ -42,11 +42,13 @@ const QA = () => {
     alert("error");
   }, [dispatch, navigate]);
   const nextPage = useCallback(
+    
     (value) => {
       if (value === LoveOne) {
         return setModalShow(true);
       }
       const isLast = current_page === basicStateKeys.length - 1;
+      window.scrollTo(0, 0);
       dispatch(
         setBasicInfoState({
           current_page: isLast ? current_page : current_page + 1,

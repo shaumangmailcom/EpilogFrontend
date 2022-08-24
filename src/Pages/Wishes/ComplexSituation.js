@@ -26,6 +26,7 @@ const ComplexSituation = () => {
     let { success } = await dispatch(asyncCreateWishes()).unwrap();
     if (success) {
       console.log("success");
+      window.scrollTo(0, 0);
       return navigate("/feedback");
     }
     alert("error");

@@ -40,6 +40,7 @@ const ShareModule = () => {
     if (current_page === 2 && !shareState.personal_info) {
       return alert("Kindly Select any one of the options");
     }
+    window.scrollTo(0, 0);
     dispatch(
       setShareState({
         current_page: isLast ? current_page : current_page + 1,

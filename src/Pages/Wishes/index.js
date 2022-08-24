@@ -39,6 +39,7 @@ const Wishes = () => {
     )
       return alert("Kindly Select any one of the options");
     if (isLast) return navigate("/wishes-person");
+    window.scrollTo(0, 0);
     dispatch(
       setWishesState({
         current_page: isLast ? current_page : current_page + 1,

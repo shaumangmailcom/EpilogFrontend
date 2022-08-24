@@ -90,6 +90,11 @@ html {
 .ubuntu700{
   font-family: ubuntu700;
 }
+.row{
+  @media screen and (max-width:528px){
+      margin:0px;
+  }
+}
 .title {
   font-size: 29px;
   line-height: 127%;

@@ -35,10 +35,14 @@ const LastPhase = props => {
     }
     alert(message ?? "error");
   }, [dispatch, navigate]);
+
   const nextPage = useCallback(() => {
+    window.scrollTo(0, 0);
     dispatch(
       setFeedbackState({
         current_page: current_page + 1
+        
+        
       })
     );
     // if (isLast) setTimeout(submitForm, 300);
@@ -46,6 +50,7 @@ const LastPhase = props => {
   console.log("isLast", location, props);
 
   const prevPage = useCallback(() => {
+    window.scrollTo(0, 0);
     if (current_page === 0) return navigate(-1);
     dispatch(
       setFeedbackState({

@@ -7,6 +7,7 @@ import {
   useNavigate,
   useRoutes,
 } from "react-router-dom";
+import ScrollToTop from './ScrollToTop'
 import Home from "../../Pages/Home";
 import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
@@ -27,7 +28,6 @@ import LastPhase from "../../Pages/LastPhase";
 import { useDispatch, useSelector } from "react-redux";
 import ReactLoading from "react-loading";
 import { asyncCreate_FetchUser } from "../../store/actions/user";
-
 import { latestTrySelector, routes } from "../../store/selectors/route";
 
 const AppRouting = () => {
@@ -42,6 +42,7 @@ const AppRouting = () => {
 
   return (
     <Router>
+      <ScrollToTop >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/basic" element={<QA />} />
@@ -61,7 +62,9 @@ const AppRouting = () => {
         <Route path="/complex-situation" element={<ComplexSituation />} />
         <Route path="/feedback" element={<LastPhase />} />
       </Routes>
+      </ScrollToTop>
     </Router>
+
   );
 };
 export default AppRouting;
