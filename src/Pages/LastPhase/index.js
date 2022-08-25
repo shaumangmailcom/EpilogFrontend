@@ -13,36 +13,37 @@ import { Indicator } from "../../Components/SmallComponents";
 import { asyncCreateFeedback } from "../../store/actions/feedback";
 import {
   feedbackStateKeys,
-  setFeedbackState
+  setFeedbackState,
 } from "../../store/reducers/feedback";
 import styles from "./style.module.scss";
 import { auto } from "@popperjs/core";
 
-const LastPhase = props => {
+const LastPhase = (props) => {
   // const shareDone = useSelector();
-  const feedbackState = useSelector(state => state.feedback);
-  const latestTry = useSelector(state => state.user.latestTry);
+  const feedbackState = useSelector((state) => state.feedback);
+  const latestTry = useSelector((state) => state.user.latestTry);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const current_page = feedbackState.current_page;
 
-  const submitForm = useCallback(async () => {
-    let { success ,message} = await dispatch(asyncCreateFeedback()).unwrap();
-    if (success) {
-      console.log("success");
-      return navigate("/");
-    }
-    alert(message ?? "error");
-  }, [dispatch, navigate]);
+  const submitForm = useCallback(
+    async (want_amazon_gift = true) => {
+      let { success, message } = await dispatch(asyncCreateFeedback({want_amazon_gift})).unwrap();
+      if (success) {
+        console.log("success");
+        return navigate("/");
+      }
+      alert(message ?? "error");
+    },
+    [dispatch, navigate]
+  );
 
   const nextPage = useCallback(() => {
     window.scrollTo(0, 0);
     dispatch(
       setFeedbackState({
-        current_page: current_page + 1
-        
-        
+        current_page: current_page + 1,
       })
     );
     // if (isLast) setTimeout(submitForm, 300);
@@ -54,14 +55,14 @@ const LastPhase = props => {
     if (current_page === 0) return navigate(-1);
     dispatch(
       setFeedbackState({
-        current_page: current_page - 1
+        current_page: current_page - 1,
       })
     );
   }, [current_page, dispatch, navigate]);
   return (
     <div className={styles.phase}>
       <AppHeader back onClickBack={prevPage} />
-      {latestTry.wishes == "null" ? (
+      {latestTry?.wishes === null ? (
         <div className={styles.header}>
           <p>Sharing with family and friends</p>
           <img src={journeyImg1} />
@@ -90,24 +91,24 @@ const LastPhase = props => {
                       question:
                         "When our system is fully ready: To what extent would you recommend using it to others?",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very much"
+                      sLableTwo: "Very much",
                     },
                     {
                       id: "use_our_system",
                       question:
                         "If you were in a complex medical situation: To what extent would you want to use our system?",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very much"
+                      sLableTwo: "Very much",
                     },
                     {
                       id: "modest_fee",
                       question:
                         "To what extent would you be willing to pay a modest fee to use this system?    ",
                       sLableOne: "Not at all",
-                      sLableTwo: "Very much"
-                    }
+                      sLableTwo: "Very much",
+                    },
                   ]}
-                  onChange={obj => {
+                  onChange={(obj) => {
                     dispatch(setFeedbackState({ ...obj }));
                   }}
                   data={feedbackState}
@@ -121,136 +122,136 @@ const LastPhase = props => {
                       id: "dealing_with_fear",
                       question: "Dealing with fear of death",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "decreasing_fear",
                       question: "Decreasing fear of death",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "human_limits",
                       question: "Accepting our human limits",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "purpose_meaning",
                       question: "Finding purpose and meaning",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "care_goals",
                       question: "Understanding my care goals",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "medical_care",
                       question: "My wishes for medical care",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "important_relationships",
                       question: "Improving important relationships",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "new_skill",
                       question: "Learning a new skill",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "medical_information",
                       question: "Sharing medical information with others",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "leaving_legacy",
                       question: "Leaving a legacy",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "personalized_will",
                       question: "Creating a personalized Will",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "home_environment",
                       question: "Setting my home environment the right way",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "eating_better",
                       question: "Eating better",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "dealing_with_stress",
                       question: "Dealing better with stress",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "my_finances",
                       question: "Figuring out my finances",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "bucket_list",
                       question: "Experience bucket list",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "best_distraction",
                       question: "Finding my best distraction",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "best_exercise",
                       question: "Figuring out my best exercise",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "my_pain",
                       question: "Managing my pain",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "other_symptoms",
                       question: "Managing other symptoms",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "hospital",
                       question: "Staying away from hospital",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
+                      sLableTwo: "Very helpful",
                     },
                     {
                       id: "appointment",
                       question: "Getting the best out of doctors’ appointment",
                       sLableOne: "Not helpful at all",
-                      sLableTwo: "Very helpful"
-                    }
+                      sLableTwo: "Very helpful",
+                    },
                   ]}
-                  onChange={obj => {
+                  onChange={(obj) => {
                     dispatch(setFeedbackState({ ...obj }));
                   }}
                   data={feedbackState}
@@ -287,42 +288,42 @@ const LastPhase = props => {
                         id: "care_physician",
                         question: "My primary care physician",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very much"
+                        sLableTwo: "Very much",
                       },
                       {
                         id: "specialist_doctor",
                         question:
                           "A specialist doctor (oncologist, cardiologist, else)",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very much"
+                        sLableTwo: "Very much",
                       },
                       {
                         id: "health_plan",
                         question: "My health plan",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very much"
+                        sLableTwo: "Very much",
                       },
                       {
                         id: "SNF",
                         question:
                           "A nurse att the hospital or a SNF (skilled nursing facility)",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very much"
+                        sLableTwo: "Very much",
                       },
                       {
                         id: "family_member",
                         question: "A family member",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very much"
+                        sLableTwo: "Very much",
                       },
                       {
                         id: "web_search",
                         question: "Finding it following a web search",
                         sLableOne: "Not at all",
-                        sLableTwo: "Very much"
-                      }
+                        sLableTwo: "Very much",
+                      },
                     ]}
-                    onChange={obj => {
+                    onChange={(obj) => {
                       dispatch(setFeedbackState({ ...obj }));
                     }}
                     data={feedbackState}
@@ -356,20 +357,20 @@ const LastPhase = props => {
                     title="Submit"
                     className={styles.submitBtn}
                     fontSize="15px"
-                    onClick={submitForm}
+                    onClick={() => submitForm(true)}
                     boxMargin="auto"
                   />
                   <div className={styles.cancelAmazonCard}>
-                  <AppButton
-                    title="Don't want amazon gift"
-                    width="200px"
-                    className={styles.submitBtn}
-                    fontSize="15px"
-                    onClick={submitForm}
-                    boxMargin="auto"
-                    backgroundColor="lightgray"
-                    color="#000"
-                  />
+                    <AppButton
+                      title="Don't want amazon gift"
+                      width="200px"
+                      className={styles.submitBtn}
+                      fontSize="15px"
+                      onClick={() => submitForm(false)}
+                      boxMargin="auto"
+                      backgroundColor="lightgray"
+                      color="#000"
+                    />
                     {/* <div class="form-group">
                       <input
                         type="checkbox"
@@ -384,7 +385,6 @@ const LastPhase = props => {
                         Help text
                       </small> */}
                     {/* </div> */}
-
                   </div>
                   <p className="desc18b" style={{ textAlign: "center" }}>
                     Thank you for participating!

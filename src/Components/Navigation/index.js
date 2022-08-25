@@ -7,7 +7,7 @@ import {
   useNavigate,
   useRoutes,
 } from "react-router-dom";
-import ScrollToTop from './ScrollToTop'
+import ScrollToTop from "./ScrollToTop";
 import Home from "../../Pages/Home";
 import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
@@ -42,29 +42,27 @@ const AppRouting = () => {
 
   return (
     <Router>
-      <ScrollToTop >
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/basic" element={<QA />} />
-        <Route path="/stepEnd" element={<StepEnd />} />
-        <Route path="/range" element={<Range />} />
-        <Route path="/thankyou" element={<ThankYou />} />
-        <Route path="/journey" element={<Journey />} />
-        <Route path="/share-start" element={<ShareStart />} />
-        <Route path="/share" element={<ShareModule />} />
-        <Route path="/share-thank" element={<ShareThank />} />
-        <Route path="/share-end" element={<ShareEnd />} />
-        <Route path="/shair-complex" element={<ShareComplex />} />
-        <Route path="/wishes-start" element={<WishesStart />} />
-        <Route path="/wishes" element={<Wishes />} />
-        <Route path="/wishes-person" element={<TypeOfPerson />} />
-        <Route path="/wishes-end" element={<WishesEnd />} />
-        <Route path="/complex-situation" element={<ComplexSituation />} />
-        <Route path="/feedback" element={<LastPhase />} />
-      </Routes>
-      </ScrollToTop>
-    </Router>
 
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/basic" element={<QA />} />
+          <Route path="/stepEnd" element={<StepEnd />} />
+          <Route path="/range" element={<Range />} />
+          <Route path="/thankyou" element={<ThankYou />} />
+          <Route path="/journey" element={<Journey />} />
+          <Route path="/share-start" element={<ShareStart />} />
+          <Route path="/share" element={<ShareModule />} />
+          <Route path="/share-thank" element={<ShareThank />} />
+          <Route path="/share-end" element={<ShareEnd />} />
+          <Route path="/shair-complex" element={<ShareComplex />} />
+          <Route path="/wishes-start" element={<WishesStart />} />
+          <Route path="/wishes" element={<Wishes />} />
+          <Route path="/wishes-person" element={<TypeOfPerson />} />
+          <Route path="/wishes-end" element={<WishesEnd />} />
+          <Route path="/complex-situation" element={<ComplexSituation />} />
+          <Route path="/feedback" element={<LastPhase />} />
+        </Routes>
+    </Router>
   );
 };
 export default AppRouting;

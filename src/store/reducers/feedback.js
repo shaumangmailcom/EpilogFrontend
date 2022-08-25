@@ -31,7 +31,7 @@ export const feedbackStateKeys = [
     appointment: "appointment",
   },
   {
-    link_for_system: "link_for_system",
+    // link_for_system: "link_for_system",
     care_physician: "care_physician",
     specialist_doctor: "specialist_doctor",
     health_plan: "health_plan",
@@ -72,7 +72,7 @@ const initialState = {
   appointment: 0,
 
   //   page 2
-  link_for_system: "",
+  // link_for_system: "",
   care_physician: 0,
   specialist_doctor: 0,
   health_plan: 0,

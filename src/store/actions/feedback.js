@@ -5,12 +5,13 @@ import { asyncCreate_FetchUser, asyncSetLatestTry } from "./user";
 
 export const asyncCreateFeedback = createAsyncThunk(
   "feedback/create",
-  async (_, { dispatch, getState }) => {
+  async (data, { dispatch, getState }) => {
     const { deviceId, user } = getState().user;
-    const body = getState().feedback;
+    let body = getState().feedback;
+    body = { ...body, ...data };
     console.log(body, "body");
-    if(!body.email ){
-      return {success : false , message : "Please enter your email"};
+    if (!body.email) {
+      return { success: false, message: "Please enter your email" };
     }
     let res = await callApi({
       path: "/journey",
