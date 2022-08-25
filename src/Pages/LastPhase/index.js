@@ -11,6 +11,8 @@ import AppHeader from "../../Components/Header";
 import { withLoader } from "../../Components/Loader";
 import { Indicator } from "../../Components/SmallComponents";
 import { asyncCreateFeedback } from "../../store/actions/feedback";
+import AppModal from "../../Components/AppModal";
+
 import {
   feedbackStateKeys,
   setFeedbackState,
@@ -20,6 +22,7 @@ import { auto } from "@popperjs/core";
 
 const LastPhase = (props) => {
   // const shareDone = useSelector();
+  const [modalShow, setModalShow] = React.useState();
   const feedbackState = useSelector((state) => state.feedback);
   const latestTry = useSelector((state) => state.user.latestTry);
   const dispatch = useDispatch();
@@ -366,25 +369,14 @@ const LastPhase = (props) => {
                       width="200px"
                       className={styles.submitBtn}
                       fontSize="15px"
-                      onClick={() => submitForm(false)}
+                      onClick={() => {
+                        setModalShow(true)
+                      }}
+                      // onClick={() => submitForm(false)}
                       boxMargin="auto"
                       backgroundColor="lightgray"
                       color="#000"
                     />
-                    {/* <div class="form-group">
-                      <input
-                        type="checkbox"
-                        // class="form-control"
-                        name=""
-                        id=""
-                        aria-describedby="helpId"
-                        placeholder=""
-                      />
-                      <label for="">Don't want checkBox</label>
-                      {/* <small id="helpId" class="form-text text-muted">
-                        Help text
-                      </small> */}
-                    {/* </div> */}
                   </div>
                   <p className="desc18b" style={{ textAlign: "center" }}>
                     Thank you for participating!
@@ -406,6 +398,25 @@ const LastPhase = (props) => {
           </Col>
         </Row>
       </div>
+      <AppModal show={modalShow} onHide={() => setModalShow(false)}>
+        <p className="desc">Thank you for participating, you can explore other journeys</p>
+        <Row>
+          <Col>
+            <AppButton
+              title="OK"
+              width="150px"
+              height="36px"
+              fontSize="15px"
+              borderRadius="50px "
+              onClick={() => {
+                setModalShow(false);
+                submitForm(false)
+                // return navigate("/share-thank");
+              }}
+            />
+          </Col>
+        </Row>
+      </AppModal>
     </div>
   );
 };
