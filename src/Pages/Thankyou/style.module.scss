@@ -10,8 +10,9 @@
         @media screen and (max-width: 428px) {
           background-image: url('../../Assets/images/tmb.svg');
           background-repeat: no-repeat;
-          background-size: auto;
+          background-size: contain;
           background-position: bottom;
+          margin-top: 10px
         }
       }
       .row {

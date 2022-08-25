@@ -69,7 +69,7 @@ const LastPhase = (props) => {
         </div>
       ) : (
         <div className={styles.header}>
-          <p>Sharing with family and friends</p>
+          <p>Wishes for medical care</p>
           <img src={journeyImg2} />
         </div>
       )}
