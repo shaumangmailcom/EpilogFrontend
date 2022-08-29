@@ -81,21 +81,30 @@ const initialState = {
   web_search: 0,
   email: "",
   current_page: 0,
+  showModal2: false,
 };
 
 export const feedbackSlice = createSlice({
   name: "feedback",
   initialState,
   reducers: {
-    resetFeedback:() => initialState,
+    resetFeedback: () => initialState,
     setFeedbackState: (state, { payload }) => ({ ...state, ...payload }),
     setCurrentPage: (state, { payload }) => {
       state.current_page = payload;
+    },
+    setShowModal2: (state, { payload }) => {
+      state.showModal2 = payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setFeedbackState, setCurrentPage, resetFeedback } = feedbackSlice.actions;
+export const {
+  setFeedbackState,
+  setCurrentPage,
+  resetFeedback,
+  setShowModal2,
+} = feedbackSlice.actions;
 
 export default feedbackSlice.reducer;

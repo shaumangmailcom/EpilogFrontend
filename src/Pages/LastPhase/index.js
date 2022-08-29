@@ -2,42 +2,50 @@ import React, { useCallback } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import right from "../../Assets/images/right.svg";
 import journeyImg1 from "../../Assets/images/c1.svg";
 import journeyImg2 from "../../Assets/images/journey2.svg";
+import right from "../../Assets/images/right.svg";
+import AppModal from "../../Components/AppModal";
 import AppButton from "../../Components/Button";
 import { SliderCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
 import { withLoader } from "../../Components/Loader";
 import { Indicator } from "../../Components/SmallComponents";
 import { asyncCreateFeedback } from "../../store/actions/feedback";
-import AppModal from "../../Components/AppModal";
+import { asyncCreate_FetchUser } from "../../store/actions/user";
 
 import {
   feedbackStateKeys,
   setFeedbackState,
+  setShowModal2,
 } from "../../store/reducers/feedback";
 import styles from "./style.module.scss";
-import { auto } from "@popperjs/core";
 
 const LastPhase = (props) => {
   // const shareDone = useSelector();
-  const [modalShow, setModalShow] = React.useState();
+  const [modalShow, setModalShow] = React.useState(false);
   const feedbackState = useSelector((state) => state.feedback);
   const latestTry = useSelector((state) => state.user.latestTry);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const current_page = feedbackState.current_page;
-
+  const onCloseModal2 = useCallback(() => {
+    dispatch(setShowModal2(false));
+    dispatch(asyncCreate_FetchUser());
+  }, [dispatch]);
   const submitForm = useCallback(
     async (want_amazon_gift = true) => {
-      let { success, message } = await dispatch(asyncCreateFeedback({want_amazon_gift})).unwrap();
+      let { success, message } = await dispatch(
+        asyncCreateFeedback({ want_amazon_gift })
+      ).unwrap();
       if (success) {
-        console.log("success");
-        return navigate("/");
+        if (!want_amazon_gift) {
+          navigate("/");
+        }
+        return;
       }
-      alert(message ?? "error");
+      if (!success) alert(message ?? "error");
     },
     [dispatch, navigate]
   );
@@ -370,7 +378,7 @@ const LastPhase = (props) => {
                       className={styles.submitBtn}
                       fontSize="15px"
                       onClick={() => {
-                        setModalShow(true)
+                        setModalShow(true);
                       }}
                       // onClick={() => submitForm(false)}
                       boxMargin="auto"
@@ -399,7 +407,9 @@ const LastPhase = (props) => {
         </Row>
       </div>
       <AppModal show={modalShow} onHide={() => setModalShow(false)}>
-        <p className="desc">Thank you for participating, you can explore other journeys</p>
+        <p className="desc">
+          Thank you for participating, you can explore other journeys
+        </p>
         <Row>
           <Col>
             <AppButton
@@ -410,9 +420,26 @@ const LastPhase = (props) => {
               borderRadius="50px "
               onClick={() => {
                 setModalShow(false);
-                submitForm(false)
+                submitForm(false);
                 // return navigate("/share-thank");
               }}
+            />
+          </Col>
+        </Row>
+      </AppModal>
+      <AppModal show={feedbackState.showModal2} onHide={onCloseModal2}>
+        <p className="desc">
+          Thank you for participating, we will contact you soon.
+        </p>
+        <Row>
+          <Col>
+            <AppButton
+              title="OK"
+              width="150px"
+              height="36px"
+              fontSize="15px"
+              borderRadius="50px "
+              onClick={onCloseModal2}
             />
           </Col>
         </Row>

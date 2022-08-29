@@ -6,15 +6,21 @@ import { asyncSetLatestTry } from "./user";
 export const asyncCreateMoreInfo = createAsyncThunk(
   "more/create",
   async (_, { dispatch, getState }) => {
-    const { deviceId, user } = getState().user;
+    const { deviceId, user, latestTry } = getState().user;
     const body = getState().more;
     console.log(body, "body");
-    const res = await callApi({
+    const reqObj = {
       path: "/more_Info",
       method: "POST",
       token: user?.deviceId ?? deviceId,
       body,
-    });
+    };
+    const update = latestTry && latestTry.moreInfo;
+    if (update) {
+      reqObj.path = "/more_Info/" + latestTry.moreInfo.id;
+      reqObj.method = "PUT";
+    }
+    const res = await callApi(reqObj);
     // console.log(res, "res");
     if (res.success) {
       dispatch(asyncSetLatestTry(res.data));

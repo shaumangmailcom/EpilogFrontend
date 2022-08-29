@@ -6,19 +6,26 @@ import { asyncSetLatestTry } from "./user";
 export const asyncCreateBasic = createAsyncThunk(
   "basic/create",
   async (_, { dispatch, getState }) => {
-    const { deviceId, user } = getState().user;
+    const { deviceId, user, latestTry } = getState().user;
     const body = getState().basic;
     console.log(body, "body");
-    const res = await callApi({
+    const reqObj = {
       path: "/basic_Info",
       method: "POST",
       token: user?.deviceId ?? deviceId,
       body,
-    });
+    };
+    const update = latestTry && latestTry.basicInfo;
+    if (update) {
+      reqObj.path = "/basic_Info/" + latestTry.basicInfo.id;
+      reqObj.method = "PUT";
+    }
+
+    const res = await callApi(reqObj);
     console.log(res, "res");
     if (res.success) {
       dispatch(asyncSetLatestTry(res.data));
-      dispatch(asyncShowSuccess('Basic info created successfully'));
+      dispatch(asyncShowSuccess("Basic info created successfully"));
       return res;
     }
     dispatch(asyncShowError(res.message));
