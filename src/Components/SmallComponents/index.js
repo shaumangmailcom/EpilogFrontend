@@ -23,12 +23,13 @@ export const Range = ({
   id,
   value = 0,
   onChange,
+  margin
 }) => {
   // console.log("value", value, id);
   // const [slider, setSlider] = useState(1);
 
   return (
-    <div className={classNames(styles.range, className)}>
+    <div className={classNames(styles.range, className)} style={{margin: margin}}>
       {lable && <Lable className={styles.rgLabel} lable={lable} />}
       {question && <p className={styles.qs}>{question}</p>}
       <Slider

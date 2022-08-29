@@ -84,15 +84,18 @@ html {
   --color-light: #76787c;
   --color-text: #1125486b;
 }
-.heebo500{
+.heebo500 {
   font-family: heebo500;
 }
-.ubuntu700{
+.ubuntu700 {
   font-family: ubuntu700;
 }
-.row{
-  @media screen and (max-width:528px){
-      margin:0px;
+.ubuntu500 {
+  font-family: ubuntu;
+}
+.row {
+  @media screen and (max-width: 528px) {
+    margin: 0px;
   }
 }
 .title {
@@ -145,6 +148,22 @@ html {
   font-size: 16px;
   line-height: 23px;
   margin: 20px 0;
+}
+
+/*------------------------*/
+/*       Text Align       */
+/*------------------------*/
+
+.left {
+  text-align: left;
+}
+
+/*------------------------*/
+/*        Spacing         */
+/*------------------------*/
+.my-5 {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 /*------------------------*/
@@ -420,7 +439,7 @@ html {
 
 .modal-dialog {
   .modal-content {
-    border:none;
+    border: none;
     padding: 10px;
     // box-shadow: 0px 0px 10px #d3d3d3;
     .modal-header {
@@ -445,7 +464,7 @@ html {
 /*------------------------*/
 
 .iForm {
-  width:auto;
+  width: auto;
   line-height: 20px;
   .form-control {
     display: block;
@@ -457,16 +476,27 @@ html {
     padding: 0;
     color: #082996;
     background-color: transparent;
-    padding: 3px 5px; 
+    padding: 3px 5px;
     border: none;
     border: 1px solid var(--color-primary);
     border-radius: 0;
-    &:focus{
+    &:focus {
       box-shadow: none;
     }
   }
 }
-
+.textArea {
+  .form-control {
+    padding: 20px;
+    font-size: 16px;
+    font-family: heebo;
+    color: var(--color-dark);
+    border: none;
+    box-shadow: 1px 5px 28px rgba(156, 166, 215, 0.308056);
+    border-radius: 12px;
+    min-height: 132px;
+  }
+}
 /*------------------------*/
 /*         Form           */
 /*------------------------*/

@@ -15,16 +15,18 @@ const AppButton = ({
   fontSize,
   title,
   src = null,
+  leftIcon,
   imgWidth,
   margin,
   onClick,
   className,
   hrefLink,
   imgMargin,
+
 }) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.buttonBox}>
+    <div className={styles.buttonBox} >
       <div
         className={styles.buttonHref}
         style={{margin:boxMargin}}
@@ -46,7 +48,10 @@ const AppButton = ({
             minWidth,
           }}
           className={classNames(styles.icon_bttn, className)}
-        >
+          >
+          {leftIcon && (
+            <img style={{ margin: imgMargin, width: imgWidth }} className={styles.leftIcon} src={leftIcon} />
+          )}
           <p style={{ color, fontSize }} className={styles.icon_bttn_p}>
             {title}
           </p>

@@ -11,10 +11,10 @@ export const useNavigationValidator = () => {
   useEffect(() => {
     if (isLoaded && (route === "/" || location.pathname !== route)) {
       // console.log("yahan");
-      let pathRoutes = routes[route];
-      if (pathRoutes && !pathRoutes.includes(location.pathname)) {
-        navigation(route);
-      }
+      // let pathRoutes = routes[route];
+      // if (pathRoutes && !pathRoutes.includes(location.pathname)) {
+      //   navigation(route);
+      // }
     }
   }, [route, location, isLoaded, navigation]);
   console.log("yahan", route);

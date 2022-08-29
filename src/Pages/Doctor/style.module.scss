@@ -1,0 +1,17 @@
+.meetingSec{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .banner{
+        width: 200px;
+        margin-bottom: 5rem;
+    }
+}
+
+/*------------------------*/
+/*       Add Question     */
+/*------------------------*/
+.addQbtn{
+    box-shadow: none;
+    background-color: transparent;
+}

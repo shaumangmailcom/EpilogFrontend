@@ -76,14 +76,19 @@ export const SliderCard = ({
   );
 };
 
-export const CatgCard = ({ title, number, desc }) => {
+export const CatgCard = ({ title, number, desc, desc2 }) => {
+  let descs = [];
+  if (typeof desc === "string") descs.push(desc);
+  if (Array.isArray(desc)) descs = [...desc];
   return (
     <div className={styles.catgCard}>
       <div className={styles.header}>
         <Lable lable={title} className={styles.head} />
         <p className={styles.lbl}>{number}</p>
       </div>
-      <p className={styles.dtl}>{desc}</p>
+      {descs.map((text, ind) => (
+        <p className={styles.dtl}>{text}</p>
+      ))}
     </div>
   );
 };

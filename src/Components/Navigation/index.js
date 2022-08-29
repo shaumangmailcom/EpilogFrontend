@@ -29,6 +29,13 @@ import { useDispatch, useSelector } from "react-redux";
 import ReactLoading from "react-loading";
 import { asyncCreate_FetchUser } from "../../store/actions/user";
 import { latestTrySelector, routes } from "../../store/selectors/route";
+import Doctor from "../../Pages/Doctor";
+import Steps from "../../Pages/Doctor/Steps";
+import DMeeting from "../../Pages/Doctor/Meeting";
+import AddQuestion from "../../Pages/Doctor/AddQuestion";
+import Prepare from "../../Pages/Doctor/DoctorModule/Prepare";
+import ManageConversation from "../../Pages/Doctor/DoctorModule/ManageConversation";
+import Treatment from "../../Pages/Doctor/DoctorModule/Treatment";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -61,6 +68,13 @@ const AppRouting = () => {
           <Route path="/wishes-end" element={<WishesEnd />} />
           <Route path="/complex-situation" element={<ComplexSituation />} />
           <Route path="/feedback" element={<LastPhase />} />
+          <Route path="/doctor" element={<Doctor />} />
+          <Route path="/dmeeting" element={<DMeeting/>} />
+          <Route path="/dsteps" element={<Steps/>} />
+          <Route path="/add-question" element={<AddQuestion/>} />
+          <Route path="/prepare" element={<Prepare/>} />
+          <Route path="/manage-conversation" element={<ManageConversation/>} />
+          <Route path="/treatment" element={<Treatment/>} />
         </Routes>
     </Router>
   );
