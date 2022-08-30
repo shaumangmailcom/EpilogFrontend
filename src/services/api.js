@@ -12,6 +12,7 @@ export const callApi = ({
   body = null,
   isForm = false,
   token = null,
+  loading = true,
 }) => {
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
 
@@ -37,10 +38,10 @@ export const callApi = ({
   }
   options.url = urlString;
 
-  store.dispatch(setLoading(true));
+  if (loading) store.dispatch(setLoading(true));
   return axios(options)
     .then((res) => {
-      store.dispatch(setLoading(false));
+      if (loading) store.dispatch(setLoading(false));
       if (res.status === 500)
         return { success: false, status: 500, message: res.statusText };
       if (res.status === 401)
@@ -49,7 +50,7 @@ export const callApi = ({
     })
     .catch((err) => {
       console.log(err);
-      store.dispatch(setLoading(false));
+      if (loading) store.dispatch(setLoading(false));
       return { success: false, status: 500, message: err.message };
     });
 };
