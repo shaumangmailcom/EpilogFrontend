@@ -1,10 +1,7 @@
-import React, { useCallback } from "react";
-import { Col, Row } from "react-bootstrap";
+import React from "react";
 import { SliderCard } from "../../Components/Cards";
 import DoctorLayout from "../../Components/Layout/DoctorLayout";
 import { withLoader } from "../../Components/Loader";
-
-import styles from "./style.module.scss";
 
 const Doctor = () => {
   return (

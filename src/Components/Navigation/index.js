@@ -3,11 +3,7 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useLocation,
-  useNavigate,
-  useRoutes,
 } from "react-router-dom";
-import ScrollToTop from "./ScrollToTop";
 import Home from "../../Pages/Home";
 import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
@@ -26,9 +22,7 @@ import ComplexSituation from "../../Pages/Wishes/ComplexSituation";
 import ShareComplex from "../../Pages/ShareModule/ShareComplex";
 import LastPhase from "../../Pages/LastPhase";
 import { useDispatch, useSelector } from "react-redux";
-import ReactLoading from "react-loading";
 import { asyncCreate_FetchUser } from "../../store/actions/user";
-import { latestTrySelector, routes } from "../../store/selectors/route";
 import Doctor from "../../Pages/Doctor";
 import Steps from "../../Pages/Doctor/Steps";
 import DMeeting from "../../Pages/Doctor/Meeting";
@@ -36,6 +30,9 @@ import AddQuestion from "../../Pages/Doctor/AddQuestion";
 import Prepare from "../../Pages/Doctor/DoctorModule/Prepare";
 import ManageConversation from "../../Pages/Doctor/DoctorModule/ManageConversation";
 import Treatment from "../../Pages/Doctor/DoctorModule/Treatment";
+import Reviewing from "../../Pages/Doctor/DoctorModule/Reviewing";
+import PreparationKit from "../../Pages/Doctor/DoctorModule/PreparationKit";
+import Done from "../../Pages/Doctor/DoctorModule/Done";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -73,8 +70,11 @@ const AppRouting = () => {
           <Route path="/dsteps" element={<Steps/>} />
           <Route path="/add-question" element={<AddQuestion/>} />
           <Route path="/prepare" element={<Prepare/>} />
+          <Route path="/reviewing" element={<Reviewing/>} />
           <Route path="/manage-conversation" element={<ManageConversation/>} />
-          <Route path="/treatment" element={<Treatment/>} />
+          <Route path="/treatment" element={<Treatment />} />
+          <Route path="/preparation-kit" element={<PreparationKit />} />
+          <Route path="/done" element={<Done />} />
         </Routes>
     </Router>
   );

@@ -1,7 +1,8 @@
-import classNames from "classnames";
-import React, { useState } from "react";
+import React from "react";
+import { Form } from "react-bootstrap";
 import Slider from "react-rangeslider";
 import styles from "./style.module.scss";
+import classNames from "classnames";
 
 export const Indicator = ({ active, items, className }) => {
   return (
@@ -23,13 +24,16 @@ export const Range = ({
   id,
   value = 0,
   onChange,
-  margin
+  margin,
 }) => {
   // console.log("value", value, id);
   // const [slider, setSlider] = useState(1);
 
   return (
-    <div className={classNames(styles.range, className)} style={{margin: margin}}>
+    <div
+      className={classNames(styles.range, className)}
+      style={{ margin: margin }}
+    >
       {lable && <Lable className={styles.rgLabel} lable={lable} />}
       {question && <p className={styles.qs}>{question}</p>}
       <Slider
@@ -60,6 +64,24 @@ export const Lable = ({ lable, className }) => {
   return (
     <div className={classNames(styles.lableSec, className)}>
       <p>{lable}</p>
+    </div>
+  );
+};
+
+export const AppInput = ({ as, placeholder, rows, className, margin }) => {
+  return (
+    <div className={classNames("textArea", className)} style={{ margin }}>
+      <Form.Control as={as} placeholder={placeholder} rows={rows} />
+    </div>
+  );
+};
+export const UserCard = ({ profBg, title, img, border, padding, fontFamily }) => {
+  return (
+    <div className={styles.userCard} style={{border, padding}}>
+      <div className={styles.profSec} style={{ backgroundColor: profBg }}>
+        <img src={img} alt="logo" />
+      </div>
+      <p className={styles.title} style={{fontFamily}}>{title}</p>
     </div>
   );
 };

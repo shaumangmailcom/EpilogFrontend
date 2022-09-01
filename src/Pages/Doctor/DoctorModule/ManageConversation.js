@@ -1,11 +1,23 @@
 import React from "react";
-import AppButton from "../../../Components/Button";
-import { CatgCard, SliderCard } from "../../../Components/Cards";
+import { CatgCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
-import share from "../../../Assets/images/share.svg";
 import Steps from "../../../Components/Steps";
-import RangeSlider from "../../RangeSlider";
 import { Range } from "../../../Components/SmallComponents";
+
+const data = [
+  {
+    key: 0,
+    title: "Take notes",
+    number: "01",
+    desc: "Take notes during the meeting. Write down important information as well as follow up on actions needed. This will be helpful during the meeting itself, and also after.",
+  },
+  {
+    key: 1,
+    title: "Record",
+    number: "02",
+    desc: "Ask your doctor for permission to record your understanding of what they are saying while the MD is listening. This will allow you to refer back to the important information that was said in your own words, at your convenience.",
+  },
+];
 
 const ManageConversation = () => {
   return (
@@ -15,20 +27,10 @@ const ManageConversation = () => {
         Having a list of questions with you while at the doctor’s office is very
         important. While there, you need to make sure{" "}
       </p>
-      <CatgCard
-        {...{
-          title: "Take notes",
-          number: "01",
-          desc: "Take notes during the meeting. Write down important information as well as follow up on actions needed. This will be helpful during the meeting itself, and also after.",
-        }}
-      />
-      <CatgCard
-        {...{
-          title: "Record",
-          number: "02",
-          desc: "Ask your doctor for permission to record your understanding of what they are saying while the MD is listening. This will allow you to refer back to the important information that was said in your own words, at your convenience.",
-        }}
-      />
+      {data.map((item, ind) => (
+        <CatgCard {...item} key={ind} />
+      ))}
+
       <Range
         margin="52px 0 0"
         {...{

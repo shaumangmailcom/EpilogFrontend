@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Lable, Range } from "../SmallComponents";
+import { Lable, Range, UserCard } from "../SmallComponents";
 import Form from "react-bootstrap/Form";
 import styles from "./style.module.scss";
 import { Col, Row } from "react-bootstrap";
@@ -30,7 +30,7 @@ export const StepCard = ({
         <p style={{ color }}>{text}</p>
       </div>
       <div style={{ width: imgWidth }}>
-        <img src={rightImg} />
+        <img alt="" src={rightImg} />
       </div>
     </div>
   );
@@ -54,7 +54,7 @@ export const SliderCard = ({
     <div className={styles.sliderCard}>
       {img && (
         <div className={styles.imgSec}>
-          <img src={img} />
+          <img alt="" src={img} />
         </div>
       )}
       <p className={styles.title}>{title}</p>
@@ -76,7 +76,7 @@ export const SliderCard = ({
   );
 };
 
-export const CatgCard = ({ title, number, desc, desc2 }) => {
+export const CatgCard = ({ title, number, desc, dMsg = [], pMsg = [] }) => {
   let descs = [];
   if (typeof desc === "string") descs.push(desc);
   if (Array.isArray(desc)) descs = [...desc];
@@ -88,6 +88,18 @@ export const CatgCard = ({ title, number, desc, desc2 }) => {
       </div>
       {descs.map((text, ind) => (
         <p className={styles.dtl}>{text}</p>
+      ))}
+      {dMsg.map((dMsg, ind) => (
+        <div className={classNames(styles.chat, styles.dTriangle, "bgLight")}>
+          <p className={classNames(styles.title, "primaryDark")}>Doctor</p>
+          <p className={styles.msg}>{dMsg}</p>
+        </div>
+      ))}
+      {pMsg.map((pMsg, ind) => (
+        <div className={classNames(styles.chat, styles.pTriangle, "bgPrimary")}>
+          <p className={classNames(styles.title, "primaryLight")}>You</p>
+          <p className={styles.msg}>{pMsg}</p>
+        </div>
       ))}
     </div>
   );
@@ -158,7 +170,7 @@ export const MatchCard = ({ img, desc, point, imgBg }) => {
     <Row className={styles.matchCard}>
       <Col xs={2} md={2}>
         <div className={styles.imgSec} style={{ backgroundColor: imgBg }}>
-          <img src={img} />
+          <img alt="" src={img} />
         </div>
       </Col>
       <Col xs={9} md={10}>
@@ -175,7 +187,31 @@ export const JourneyCard = ({ src, title, onClick }) => {
   return (
     <div className={styles.jcrd} onClick={onClick}>
       <p className={styles.title}>{title}</p>
-      <img src={src} />
+      <img alt="" src={src} />
+    </div>
+  );
+};
+export const TextSec = ({ text, margin, textAlign, checkLabel }) => {
+  return (
+    <div className={classNames(styles.textSec, 'textSec')} style={{ margin: margin, textAlign }}>
+      {checkLabel && (
+        <Form.Check
+          label={checkLabel}
+          name="group1"
+          className="checkLabel"
+        />
+      )}
+      {text && <p>{text}</p>}
+    </div>
+  );
+};
+export const ReviewCard = ({ title, img, options = [], profBg, margin }) => {
+  return (
+    <div className={styles.reviewCard} style={{ margin }}>
+      <UserCard title={title} img={img} profBg={profBg} border="none" padding="0 0 16px" fontFamily="heebo700" />
+      {options.map((text, ind) => (
+        <TextSec margin="8px 0 0" key={ind} text={text} />
+      ))}
     </div>
   );
 };

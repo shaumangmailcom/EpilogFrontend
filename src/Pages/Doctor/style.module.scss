@@ -1,17 +1,38 @@
-.meetingSec{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .banner{
-        width: 200px;
-        margin-bottom: 5rem;
-    }
+.meetingSec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .banner {
+    width: 200px;
+    margin-bottom: 5rem;
+  }
 }
 
 /*------------------------*/
 /*       Add Question     */
 /*------------------------*/
-.addQbtn{
+.addQbtn {
+  box-shadow: none;
+  background-color: transparent;
+}
+/*------------------------*/
+/*        Reviewing       */
+/*------------------------*/
+.rvbtn {
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px solid var(--color-primary-dark);
+}
+/*------------------------*/
+/*     Preparation kit    */
+/*------------------------*/
+.prepkitBtns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 37px;
+  .mbBtn {
+    background-color: var(--color-white);
     box-shadow: none;
-    background-color: transparent;
+    border: 2px solid var(--color-primary-dark);
+  }
 }
