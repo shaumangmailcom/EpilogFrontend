@@ -59,6 +59,7 @@ const AddQuestion = () => {
         height="40px"
         width="261px"
         boxMargin="32px auto 0"
+        hrefLink="/prepare"
 
       /> 
     </DoctorLayout>

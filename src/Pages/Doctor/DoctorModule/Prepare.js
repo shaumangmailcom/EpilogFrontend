@@ -53,6 +53,7 @@ const Prepare = () => {
         width="270px"
         imgWidth="15px"
         boxMargin="22px auto 0"
+        hrefLink="/reviewing"
       />
     </DoctorLayout>
   );

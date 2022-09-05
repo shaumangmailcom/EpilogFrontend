@@ -560,14 +560,20 @@ html {
 /*------------------------*/
 
 .accordion-item {
-  background-color: var(--color-white);
-  border: 1px solid #f1f4fb;
+  background-color: transparent;
+  border: 0px solid #f1f4fb;
   border-radius: 16px !important;
-  overflow: hidden;
+  // overflow: hidden;
   .accordion-header {
     .accordion-button {
+      
       height: 84px;
       padding: 16px;
+      background-color: var(--color-white);
+      box-shadow: none;
+      margin-bottom: 5px;
+      border-radius: 12px !important;
+      box-shadow: 1px 5px 28px rgba(156, 166, 215, 0.308056);
       .iconSec {
         height: 52px;
         width: 52px;
@@ -618,6 +624,9 @@ html {
     }
   }
   .accordion-collapse {
+    border-radius: 12px !important;
+    box-shadow: 1px 5px 28px rgba(156, 166, 215, 0.308056);
+    background-color: var(--color-white);
     .accordion-body {
       padding: 16px;
     }

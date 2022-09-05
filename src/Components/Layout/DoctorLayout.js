@@ -28,6 +28,7 @@ const DoctorLayout = ({ children, layoutBtn = true , onClick, onClickBack}) => {
                 src={right}
                 imgWidth="10px"
                 imgMargin="0"
+                hrefLink="/DMeeting"
                   onClick={onClick}
               />
             </Col>
