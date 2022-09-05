@@ -15,6 +15,7 @@ import hPlus from "../../Assets/images/hPlus.svg";
 import home from "../../Assets/images/home.svg";
 import bed from "../../Assets/images/bed.svg";
 import { TextSec } from "../../Components/Cards";
+import styles from "./style.module.scss";
 
 const DSteps = () => {
   const doctorState = useSelector((s) => s.doctor);
@@ -40,6 +41,7 @@ const DSteps = () => {
     console.log("isLast", isLast);
     // if (isLast) setTimeout(submitForm, 300);
   }, [current_page, dispatch, navigate, doctorState]);
+
   const prevPage = useCallback(() => {
     if (current_page === 0) return navigate("/doctor-start");
     dispatch(
@@ -55,7 +57,7 @@ const DSteps = () => {
       title: "Managing my symptoms",
       badge: "3",
       label: "question added",
-      logoBg: '#DFF3FB',
+      logoBg: "#DFF3FB",
       options: [
         {
           id: 0,
@@ -75,15 +77,17 @@ const DSteps = () => {
       key: 1,
       img: hPlus,
       title: "Improving my general  wellbeing ",
-      logoBg: '#FFE5B1',
+      logoBg: "#FFE5B1",
       options: [
         {
           id: 0,
-          checkLabel: "Is there anything I can do in terms of my life style / diet / habits /  to control the pace of advancement of my disease?",
+          checkLabel:
+            "Is there anything I can do in terms of my life style / diet / habits /  to control the pace of advancement of my disease?",
         },
         {
           id: 1,
-          checkLabel: "Is there anything I can do in terms of life style / diet / habits/  to improve my wellbeing alongside fighting the disease?",
+          checkLabel:
+            "Is there anything I can do in terms of life style / diet / habits/  to improve my wellbeing alongside fighting the disease?",
         },
       ],
     },
@@ -91,21 +95,24 @@ const DSteps = () => {
       key: 2,
       img: document,
       title: "Understanding my medical information",
-      badge: '1',
+      badge: "1",
       label: "question added",
-      logoBg: '#EAEFFF',
+      logoBg: "#EAEFFF",
       options: [
         {
           id: 0,
-          checkLabel: "Where can I get additional reliable information about my condition?",
+          checkLabel:
+            "Where can I get additional reliable information about my condition?",
         },
         {
           id: 1,
-          checkLabel: "What should I expect in terms of disease advancement in the upcoming weeks/months/years?",
+          checkLabel:
+            "What should I expect in terms of disease advancement in the upcoming weeks/months/years?",
         },
         {
           id: 2,
-          checkLabel: "What information is critical for me to know in order to decide on  additional / alternative treatments?",
+          checkLabel:
+            "What information is critical for me to know in order to decide on  additional / alternative treatments?",
         },
         {
           id: 3,
@@ -117,19 +124,22 @@ const DSteps = () => {
       key: 3,
       img: home,
       title: "What should I do while at home",
-      logoBg: '#D0F1BF',
+      logoBg: "#D0F1BF",
       options: [
         {
           id: 0,
-          checkLabel: "What should I do to make it more comfortable for people to visit me?",
+          checkLabel:
+            "What should I do to make it more comfortable for people to visit me?",
         },
         {
           id: 1,
-          checkLabel: "What is the best way to set up my bed at home in order to improve my sleep?",
+          checkLabel:
+            "What is the best way to set up my bed at home in order to improve my sleep?",
         },
         {
           id: 2,
-          checkLabel: "What is the best way to set up my bed at home in order to improve my rest in the middle of the day?",
+          checkLabel:
+            "What is the best way to set up my bed at home in order to improve my rest in the middle of the day?",
         },
         {
           id: 3,
@@ -137,11 +147,13 @@ const DSteps = () => {
         },
         {
           id: 4,
-          checkLabel: "Do you recomend any renovations to my bedroom, bathroom and kitchen?",
+          checkLabel:
+            "Do you recomend any renovations to my bedroom, bathroom and kitchen?",
         },
         {
           id: 5,
-          checkLabel: "If things get worse, how should I prepare my home environment for a long-term stay?",
+          checkLabel:
+            "If things get worse, how should I prepare my home environment for a long-term stay?",
         },
       ],
     },
@@ -149,34 +161,39 @@ const DSteps = () => {
       key: 4,
       img: bed,
       title: "My hospitalization alternatives",
-      logoBg: '#FFCFC0',
+      logoBg: "#FFCFC0",
       options: [
         {
           id: 0,
-          checkLabel: "In my case, what are the benefits of hospital relative to home care?",
+          checkLabel:
+            "In my case, what are the benefits of hospital relative to home care?",
         },
         {
           id: 1,
-          checkLabel: "When I have an emergency, when should I go directly to the ER, and when should I call the clinic?",
+          checkLabel:
+            "When I have an emergency, when should I go directly to the ER, and when should I call the clinic?",
         },
         {
           id: 2,
-          checkLabel: "when should I call the clinic? When I need ongoing medical care, do you gessest hospital or home care?",
+          checkLabel:
+            "when should I call the clinic? When I need ongoing medical care, do you gessest hospital or home care?",
         },
         {
           id: 3,
-          checkLabel: "From your experience, do people in my situation usually prefer hospital or home care?",
+          checkLabel:
+            "From your experience, do people in my situation usually prefer hospital or home care?",
         },
       ],
     },
   ];
 
   return (
-    <DoctorLayout onClick={nextPage} onClickBack={prevPage}>
+    <DoctorLayout onClick={nextPage} onClickBack={prevPage} layoutBtn={false}>
       <Indicator active={current_page} items={doctorStateKeys.length} />
       {current_page === 0 && (
         <Steps
           onClick={(epilog_system) => {
+            nextPage()
             dispatch(setDoctorState({ epilog_system }));
           }}
           data={doctorState.epilog_system}
@@ -199,14 +216,27 @@ const DSteps = () => {
             {data.map((item) => (
               <AppAccordion {...item} margin="18px 0 0">
                 {item.options.map((option, ind) => (
-                  <TextSec margin="8px 0 0" id ={ind} {...option}/>
+                  <TextSec margin="8px 0 0" id={ind} {...option} />
                 ))}
               </AppAccordion>
             ))}
           </Accordion>
+          <AppButton
+            title="+ Add a question"
+            className={styles.aqBtn}
+            color="#4059AD"
+            boxMargin="36px auto 0"
+            hrefLink="/add-question"
+          />
+          <AppButton
+            title="Prepare for the meeting"
+            boxMargin="36px auto 0"
+            width="209px"
+            hrefLink="/prepare"
+          />
         </>
       )}
-      {current_page === 2 && (
+      {/* {current_page === 2 && (
         <>
           <Steps
           
@@ -222,7 +252,7 @@ const DSteps = () => {
             hrefLink="/prepare"
           />
         </>
-      )}
+      )} */}
     </DoctorLayout>
   );
 };

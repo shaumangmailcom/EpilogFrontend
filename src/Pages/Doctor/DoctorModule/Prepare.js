@@ -3,6 +3,7 @@ import AppButton from "../../../Components/Button";
 import { CatgCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import share from "../../../Assets/images/share.svg";
+import mail from "../../../Assets/images/mail.svg";
 
 const data = [
   {
@@ -11,7 +12,7 @@ const data = [
     title: "Brainstorm",
     desc: "Ask a loved one to help you with questions before. Ask them to brainstorm with you what is important for you to know, and what is important to them.",
   },
-  {
+  { 
     key: 1,
     title: "Practice",
     number: "02",
@@ -37,16 +38,20 @@ const Prepare = () => {
       ))}
 
       <AppButton
-        leftIcon={share}
         title="Share your list of questions"
-        width="274px"
-        height="36px"
+        leftIcon={share}
+        width="270px"
+        imgWidth="15px"
+        border="2px solid var(--color-primary-dark)"
+        backgroundColor="var(--color-white)"
+        color="var(--color-primary-dark)"
         boxMargin="auto"
-      />
+        />
       <AppButton
-        title="Send me preparation kit"
-        width="214px"
-        height="36px"
+        title="Send me my preparation kit"
+        leftIcon={mail}
+        width="270px"
+        imgWidth="15px"
         boxMargin="22px auto 0"
       />
     </DoctorLayout>

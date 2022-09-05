@@ -1,5 +1,5 @@
 import React, { useCallback } from "react";
-import { Lable, Range, UserCard } from "../SmallComponents";
+import { Lable, ListCard, Range, UserCard } from "../SmallComponents";
 import Form from "react-bootstrap/Form";
 import styles from "./style.module.scss";
 import { Col, Row } from "react-bootstrap";
@@ -76,7 +76,7 @@ export const SliderCard = ({
   );
 };
 
-export const CatgCard = ({ title, number, desc, dMsg = [], pMsg = [] }) => {
+export const CatgCard = ({ title, number, desc, messages = [], listOptions=[] }) => {
   let descs = [];
   if (typeof desc === "string") descs.push(desc);
   if (Array.isArray(desc)) descs = [...desc];
@@ -89,17 +89,26 @@ export const CatgCard = ({ title, number, desc, dMsg = [], pMsg = [] }) => {
       {descs.map((text, ind) => (
         <p className={styles.dtl}>{text}</p>
       ))}
-      {dMsg.map((dMsg, ind) => (
-        <div className={classNames(styles.chat, styles.dTriangle, "bgLight")}>
-          <p className={classNames(styles.title, "primaryDark")}>Doctor</p>
-          <p className={styles.msg}>{dMsg}</p>
-        </div>
-      ))}
-      {pMsg.map((pMsg, ind) => (
-        <div className={classNames(styles.chat, styles.pTriangle, "bgPrimary")}>
-          <p className={classNames(styles.title, "primaryLight")}>You</p>
-          <p className={styles.msg}>{pMsg}</p>
-        </div>
+      {messages.map((message, ind) => {
+        const isDoctor = message.by == "doctor";
+        return (
+          <div
+          key={ind+'message'}
+            className={classNames(
+              styles.chat,
+              isDoctor ? styles.dTriangle : styles.pTriangle,
+              isDoctor ? "bgLight" : "bgPrimary"
+            )}
+          >
+            <p className={classNames(styles.title, "primaryDark")}>
+              {isDoctor ? "Doctor" : "You"}
+            </p>
+            <p className={styles.msg}>{message.msg}</p>
+          </div>
+        );
+      })}
+      {listOptions.map((item, ind) => (
+      <ListCard {...item} key={ind} />
       ))}
     </div>
   );
@@ -193,13 +202,12 @@ export const JourneyCard = ({ src, title, onClick }) => {
 };
 export const TextSec = ({ text, margin, textAlign, checkLabel }) => {
   return (
-    <div className={classNames(styles.textSec, 'textSec')} style={{ margin: margin, textAlign }}>
+    <div
+      className={classNames(styles.textSec, "textSec")}
+      style={{ margin: margin, textAlign }}
+    >
       {checkLabel && (
-        <Form.Check
-          label={checkLabel}
-          name="group1"
-          className="checkLabel"
-        />
+        <Form.Check label={checkLabel} name="group1" className="checkLabel" />
       )}
       {text && <p>{text}</p>}
     </div>
@@ -208,7 +216,14 @@ export const TextSec = ({ text, margin, textAlign, checkLabel }) => {
 export const ReviewCard = ({ title, img, options = [], profBg, margin }) => {
   return (
     <div className={styles.reviewCard} style={{ margin }}>
-      <UserCard title={title} img={img} profBg={profBg} border="none" padding="0 0 16px" fontFamily="heebo700" />
+      <UserCard
+        title={title}
+        img={img}
+        profBg={profBg}
+        border="none"
+        padding="0 0 16px"
+        fontFamily="heebo700"
+      />
       {options.map((text, ind) => (
         <TextSec margin="8px 0 0" key={ind} text={text} />
       ))}

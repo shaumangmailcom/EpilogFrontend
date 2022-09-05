@@ -20,7 +20,7 @@ const DMeeting = () => {
           height="36px"
           width="135px"
           borderRadius="18px"
-          boxMargin="8rem auto 0"
+          boxMargin="80px auto 0"
           //   onClick={nextPage}
         />
       </div>

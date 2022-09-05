@@ -46,7 +46,6 @@ const AppRouting = () => {
 
   return (
     <Router>
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/basic" element={<QA />} />

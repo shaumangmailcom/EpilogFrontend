@@ -7,9 +7,9 @@ import styles from "../style.module.scss";
 
 const PreparationKit = () => {
   return (
-    <DoctorLayout>
+    <DoctorLayout layoutBtn={false}>
       <p className="title24 mb-5">Add your email to get a preparation kit </p>
-      <AppInput as="input" placeholder="Your email here" />
+      <AppInput as="input" placeholder="Your email here" error="Error message" />
       <p className="title24 my-5">
         Add your loved one’s email and send them your list of questions
       </p>

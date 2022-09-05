@@ -68,20 +68,64 @@ export const Lable = ({ lable, className }) => {
   );
 };
 
-export const AppInput = ({ as, placeholder, rows, className, margin }) => {
+export const AppInput = ({ as, placeholder, rows, className, margin, error }) => {
   return (
     <div className={classNames("textArea", className)} style={{ margin }}>
       <Form.Control as={as} placeholder={placeholder} rows={rows} />
+      <p className="error-msg">{error}</p>
     </div>
   );
 };
-export const UserCard = ({ profBg, title, img, border, padding, fontFamily }) => {
+export const UserCard = ({
+  profBg,
+  title,
+  img,
+  border,
+  padding,
+  fontFamily,
+}) => {
   return (
-    <div className={styles.userCard} style={{border, padding}}>
+    <div className={styles.userCard} style={{ border, padding }}>
       <div className={styles.profSec} style={{ backgroundColor: profBg }}>
         <img src={img} alt="logo" />
       </div>
-      <p className={styles.title} style={{fontFamily}}>{title}</p>
+      <p className={styles.title} style={{ fontFamily }}>
+        {title}
+      </p>
+    </div>
+  );
+};
+export const ListCard = ({
+  profBg,
+  value,
+  title,
+  border,
+  padding,
+  fontFamily,
+  dtl,
+  dtlOptions = [],
+}) => {
+  return (
+    <div className={styles.listCard} style={{ border, padding }}>
+      <div className={styles.header}>
+        {value && (
+          <div className={styles.nGrid} style={{ backgroundColor: profBg }}>
+            <p>{value}</p>
+          </div>
+        )}
+        <p className={styles.title} style={{ fontFamily }}>
+          {title}
+        </p>
+      </div>
+      {dtlOptions.length > 0 && (
+        <ul>
+          {dtlOptions.map((dtl, ind) => (
+            <li className={styles.desc} style={{ fontFamily }}>
+              {dtl}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

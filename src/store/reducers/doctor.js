@@ -8,9 +8,9 @@ export const doctorStateKeys = [
   {
     heading: "heading",
   },
-  {
-    add_quetion: "add_quetion",
-  },
+  // {
+  //   add_quetion: "add_quetion",
+  // },
 ];
 
 const initialState = {

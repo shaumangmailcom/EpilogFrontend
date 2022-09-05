@@ -2,6 +2,7 @@ import React from "react";
 import AppButton from "../../../Components/Button";
 import { CatgCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
+import mail from "../../../Assets/images/mail.svg"
 
 const data = [
   {
@@ -9,13 +10,17 @@ const data = [
     title: "Care goals",
     number: "01",
     desc: "In general, there is no reason to believe that we have the tools to know what will be the best treatment for us. That is what the doctor is for. Therefore, our key recommendation is, that whenever your doctor is asking you make a decision about taking a treatment Yes/ No or choosing between alternative treatment paths, always take the following approach:",
-    dMsg: [
-      "Do you want to do treatment X?",
-      "Do you want to do treatment X or treatment Y?",
-    ],
-    pMsg: [
-      "Can I please tell you what my care goals are, and then you will tell me if this treatment is in line with my goals?",
-      "Can we please talk about my care goals, and then you will tell me what is your recommended treatment path based on my goals?",
+    messages: [
+      { by: "doctor", msg: "Do you want to do treatment X?" },
+      {
+        by: "user",
+        msg: "Can I please tell you what my care goals are, and then you will tell me if this treatment is in line with my goals?",
+      },
+      { by: "doctor", msg: "Do you want to do treatment X or treatment Y?" },
+      {
+        by: "user",
+        msg: "Can we please talk about my care goals, and then you will tell me what is your recommended treatment path based on my goals?",
+      },
     ],
   },
   {
@@ -24,23 +29,21 @@ const data = [
     number: "02",
     desc: [
       "If your doctor is unwilling to confidently recommend a treatment path based on your care goals (between alternative active treatments, or between active treatment and no treatment), ask them to help you, for each of the treatment options, to do the following:",
-      <div>
-        <p>
-          <span className="desc18b" style={{ color: "#4059AD" }}>
-            1-{" "}
-          </span>
-          Prepare a list of pros and cons
-        </p>
-
-        <p>
-          <span className="desc18b" style={{ color: "#4059AD" }}>
-            2-{" "}
-          </span>
-          Give a grade of 0-10 in each of the following categories, and then sum
-          the results:
-        </p>
-      </div>,
-      "How good overall my quality of life will be if the treatment succeeds, when, and for how long What are the odds of it succeeding How difficult will it be (what are the “costs” of taking the treatment, in terms of implications on my quality of life, and for how long)",
+    ],
+    listOptions: [
+      {
+        value: "1",
+        title: "Prepare a list of pros and cons",
+      },
+      {
+        value: "2",
+        title:
+          "Give a grade of 0-10 in each of the following categories, and then sum the results:",
+        dtlOptions: [
+          "How good overall my quality of life will be if the treatment succeeds, when, and for how long",
+          "What are the odds of it succeedingHow difficult will it be (what are the “costs” of taking the treatment, in terms of implications on my quality of life, and for how long)",
+        ],
+      },
     ],
   },
 ];
@@ -60,10 +63,10 @@ const Treatment = () => {
         <CatgCard {...item} key={ind} />
       ))}
       <AppButton
+      imgWidth="20px"
+      leftIcon={mail}
         title="Send me preparation kit"
-        width="214px"
-        height="36px"
-        boxMargin="40px auto 0"
+        boxMargin="24px auto 0"
       />
     </DoctorLayout>
   );

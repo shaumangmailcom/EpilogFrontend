@@ -44,26 +44,23 @@ const AddQuestion = () => {
           }} />
         </AppAccordion>
       </Accordion>
-      <AppInput as="textarea" placeholder="Type here..." rows={3} className="mt-5" />
-      <AppButton
-        title="Add question and review my list"
-        height="36px"
-        width="286px"
-        boxMargin="52px auto 0"
-      />
+      <AppInput as="textarea" placeholder="Type here..." rows={5} className="mt-5" />
       <AppButton
         title="Save and add another question"
-        height="36px"
-        width="286px"
-        boxMargin="32px auto 0"
+        height="40px"
+        width="261px"
+        boxMargin="52px auto 0"
+        border="1px solid var(--color-primary-dark)"
+        backgroundColor="var(--color-white)"
+        color="var(--color-primary-dark)"
       />
       <AppButton
-        className={styles.addQbtn}
-        title="Cancel"
-        height="36px"
-        boxMargin="28px auto 0"
-        color="#1125486B"
-      />
+        title="Save and review list"
+        height="40px"
+        width="261px"
+        boxMargin="32px auto 0"
+
+      /> 
     </DoctorLayout>
   );
 };

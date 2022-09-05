@@ -37,20 +37,21 @@ const Reviewing = () => {
           ],
         }}
       />
+        <AppButton
+          title="+  Add a new question"
+          width="214px"
+          height="36px"
+          boxMargin="22px auto 0"
+          color="var(--color-primary-dark)"
+          border="2px solid var(--color-primary-dark)"
+          backgroundColor="var(--color-white)"
+        />
       <AppButton
         leftIcon={edit}
         title="Edit list"
         width="214px"
         height="36px"
-        boxMargin="34px auto 0"
-      />
-      <AppButton
-        title="+  Add a new question"
-        width="214px"
-        height="36px"
-        boxMargin="22px auto 0"
-        color="#4059AD"
-        className={styles.rvbtn}
+        boxMargin="24px auto 0"
       />
     </DoctorLayout>
   );

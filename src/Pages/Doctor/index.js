@@ -19,8 +19,8 @@ const Doctor = () => {
         options={[
           {
             question: "To what extent does this sound familiar?",
-            sLableOne: "Mostly rationally",
-            sLableTwo: "Mostly emotionally",
+            sLableOne: "Not at all",
+            sLableTwo: "Very much",
           },
         ]}
       />

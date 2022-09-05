@@ -22,6 +22,7 @@ const AppButton = ({
   className,
   hrefLink,
   imgMargin,
+  border
 
 }) => {
   const navigate = useNavigate();
@@ -46,6 +47,7 @@ const AppButton = ({
             color,
             fontSize,
             minWidth,
+            border
           }}
           className={classNames(styles.icon_bttn, className)}
           >
