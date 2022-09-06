@@ -3,6 +3,7 @@ import { CatgCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import Steps from "../../../Components/Steps";
 import { Range } from "../../../Components/SmallComponents";
+import { withLoader } from "../../../Components/Loader";
 
 const data = [
   {
@@ -49,4 +50,4 @@ const ManageConversation = () => {
   );
 };
 
-export default ManageConversation;
+export default withLoader(ManageConversation);

@@ -2,7 +2,8 @@ import React from "react";
 import AppButton from "../../../Components/Button";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import { BsCheckCircleFill } from "react-icons/bs";
-import styles from "../style.module.scss"
+import styles from "../style.module.scss";
+import { withLoader } from "../../../Components/Loader";
 
 const Done = () => {
   return (
@@ -16,9 +17,10 @@ const Done = () => {
         title="Back to my journeys"
         height="36px"
         boxMargin="24px auto 0"
+        hrefLink="/journey"
       />
     </DoctorLayout>
   );
 };
 
-export default Done;
+export default withLoader(Done);

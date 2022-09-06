@@ -39,11 +39,18 @@ function JourneyHome() {
               onClick={() => navigate("/wishes-start")}
             />
           </Col>
+          <Col xs={12} md={6} xl={4}>
+            <JourneyCard
+              title="Conversation with my doctor"
+              src={journeyImg2}
+              onClick={() => navigate("/doctor")}
+            />
+          </Col>
         </Row>
         <Row className={styles.jBox}>
           <Col xs={12} md={10} lg={8} xl={6}>
             <div className={styles.parashootBox}>
-              <img src={parashoot} />
+              <img src={parashoot} alt="" />
               <p className={styles.dtl}>
                 In the near future, there will be many journeys that will be
                 offered to you, at the right time and based on your personality

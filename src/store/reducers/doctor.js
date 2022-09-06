@@ -13,11 +13,22 @@ export const doctorStateKeys = [
   // },
 ];
 
+export const stepRoutes = [
+  "/doctor",
+  "/pre-appointment",
+  "/appointment-questions",
+  "/prepare",
+  "/reviewing",
+  "/manage-conversation",
+  "/treatment",
+  "/preparation-kit",
+];
+
 const initialState = {
   epilog_system: 0,
-  want_to_think_large_decision: 0, 
-  current_page:0,
-  heading:0,
+  want_to_think_large_decision: 0,
+  current_page: 0,
+  heading: 0,
   add_quetion: 0,
 };
 

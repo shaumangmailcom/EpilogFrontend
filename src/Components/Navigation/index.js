@@ -1,9 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../../Pages/Home";
 import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
@@ -46,35 +42,35 @@ const AppRouting = () => {
 
   return (
     <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/basic" element={<QA />} />
-          <Route path="/stepEnd" element={<StepEnd />} />
-          <Route path="/range" element={<Range />} />
-          <Route path="/thankyou" element={<ThankYou />} />
-          <Route path="/journey" element={<Journey />} />
-          <Route path="/share-start" element={<ShareStart />} />
-          <Route path="/share" element={<ShareModule />} />
-          <Route path="/share-thank" element={<ShareThank />} />
-          <Route path="/share-end" element={<ShareEnd />} />
-          <Route path="/shair-complex" element={<ShareComplex />} />
-          <Route path="/wishes-start" element={<WishesStart />} />
-          <Route path="/wishes" element={<Wishes />} />
-          <Route path="/wishes-person" element={<TypeOfPerson />} />
-          <Route path="/wishes-end" element={<WishesEnd />} />
-          <Route path="/complex-situation" element={<ComplexSituation />} />
-          <Route path="/feedback" element={<LastPhase />} />
-          <Route path="/doctor" element={<Doctor />} />
-          <Route path="/dmeeting" element={<DMeeting/>} />
-          <Route path="/dsteps" element={<Steps/>} />
-          <Route path="/add-question" element={<AddQuestion/>} />
-          <Route path="/prepare" element={<Prepare/>} />
-          <Route path="/reviewing" element={<Reviewing/>} />
-          <Route path="/manage-conversation" element={<ManageConversation/>} />
-          <Route path="/treatment" element={<Treatment />} />
-          <Route path="/preparation-kit" element={<PreparationKit />} />
-          <Route path="/done" element={<Done />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/basic" element={<QA />} />
+        <Route path="/stepEnd" element={<StepEnd />} />
+        <Route path="/range" element={<Range />} />
+        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/journey" element={<Journey />} />
+        <Route path="/share-start" element={<ShareStart />} />
+        <Route path="/share" element={<ShareModule />} />
+        <Route path="/share-thank" element={<ShareThank />} />
+        <Route path="/share-end" element={<ShareEnd />} />
+        <Route path="/shair-complex" element={<ShareComplex />} />
+        <Route path="/wishes-start" element={<WishesStart />} />
+        <Route path="/wishes" element={<Wishes />} />
+        <Route path="/wishes-person" element={<TypeOfPerson />} />
+        <Route path="/wishes-end" element={<WishesEnd />} />
+        <Route path="/complex-situation" element={<ComplexSituation />} />
+        <Route path="/feedback" element={<LastPhase />} />
+        <Route path="/doctor" element={<Doctor />} />
+        <Route path="/pre-appointment" element={<DMeeting />} />
+        <Route path="/appointment-questions" element={<Steps />} />
+        <Route path="/add-appointment-question" element={<AddQuestion />} />
+        <Route path="/prepare" element={<Prepare />} />
+        <Route path="/reviewing" element={<Reviewing />} />
+        <Route path="/manage-conversation" element={<ManageConversation />} />
+        <Route path="/treatment" element={<Treatment />} />
+        <Route path="/preparation-kit" element={<PreparationKit />} />
+        <Route path="/done" element={<Done />} />
+      </Routes>
     </Router>
   );
 };

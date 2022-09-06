@@ -2,7 +2,8 @@ import React from "react";
 import AppButton from "../../../Components/Button";
 import { CatgCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
-import mail from "../../../Assets/images/mail.svg"
+import mail from "../../../Assets/images/mail.svg";
+import { withLoader } from "../../../Components/Loader";
 
 const data = [
   {
@@ -63,8 +64,8 @@ const Treatment = () => {
         <CatgCard {...item} key={ind} />
       ))}
       <AppButton
-      imgWidth="20px"
-      leftIcon={mail}
+        imgWidth="20px"
+        leftIcon={mail}
         title="Send me preparation kit"
         boxMargin="24px auto 0"
       />
@@ -72,4 +73,4 @@ const Treatment = () => {
   );
 };
 
-export default Treatment;
+export default withLoader(Treatment);

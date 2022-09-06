@@ -50,9 +50,10 @@ const DSteps = () => {
       })
     );
   }, [current_page, dispatch, navigate]);
+
   const data = [
     {
-      key: 0,
+      id: 0,
       img: managing,
       title: "Managing my symptoms",
       badge: "3",
@@ -74,7 +75,7 @@ const DSteps = () => {
       ],
     },
     {
-      key: 1,
+      id: 1,
       img: hPlus,
       title: "Improving my general  wellbeing ",
       logoBg: "#FFE5B1",
@@ -92,7 +93,7 @@ const DSteps = () => {
       ],
     },
     {
-      key: 2,
+      id: 3,
       img: document,
       title: "Understanding my medical information",
       badge: "1",
@@ -121,7 +122,7 @@ const DSteps = () => {
       ],
     },
     {
-      key: 3,
+      id: 4,
       img: home,
       title: "What should I do while at home",
       logoBg: "#D0F1BF",
@@ -158,7 +159,7 @@ const DSteps = () => {
       ],
     },
     {
-      key: 4,
+      id: 5,
       img: bed,
       title: "My hospitalization alternatives",
       logoBg: "#FFCFC0",
@@ -188,12 +189,12 @@ const DSteps = () => {
   ];
 
   return (
-    <DoctorLayout onClick={nextPage} onClickBack={prevPage} layoutBtn={false}>
+    <DoctorLayout onClickBack={prevPage} layoutBtn={false}>
       <Indicator active={current_page} items={doctorStateKeys.length} />
       {current_page === 0 && (
         <Steps
           onClick={(epilog_system) => {
-            nextPage()
+            nextPage();
             dispatch(setDoctorState({ epilog_system }));
           }}
           data={doctorState.epilog_system}
@@ -214,9 +215,9 @@ const DSteps = () => {
           />
           <Accordion defaultActiveKey="0">
             {data.map((item) => (
-              <AppAccordion {...item} margin="18px 0 0">
+              <AppAccordion key={item.id} {...item} margin="18px 0 0">
                 {item.options.map((option, ind) => (
-                  <TextSec margin="8px 0 0" id={ind} {...option} />
+                  <TextSec key={ind} margin="8px 0 0" id={ind} {...option} />
                 ))}
               </AppAccordion>
             ))}
@@ -226,7 +227,7 @@ const DSteps = () => {
             className={styles.aqBtn}
             color="#4059AD"
             boxMargin="36px auto 0"
-            hrefLink="/add-question"
+            hrefLink="/add-appointment-question"
           />
           <AppButton
             title="Prepare for the meeting"

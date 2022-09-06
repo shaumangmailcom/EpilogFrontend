@@ -6,7 +6,7 @@ import styles from "./style.module.scss";
 const AppButton = ({
   height,
   width,
-  boxMargin="0px 0px 0px auto",
+  boxMargin = "0px 0px 0px auto",
   minWidth,
   padding,
   backgroundColor,
@@ -22,15 +22,14 @@ const AppButton = ({
   className,
   hrefLink,
   imgMargin,
-  border
-
+  border,
 }) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.buttonBox} >
+    <div className={styles.buttonBox}>
       <div
         className={styles.buttonHref}
-        style={{margin:boxMargin}}
+        style={{ margin: boxMargin }}
         onClick={() => {
           hrefLink && navigate(hrefLink);
         }}
@@ -47,12 +46,16 @@ const AppButton = ({
             color,
             fontSize,
             minWidth,
-            border
+            border,
           }}
           className={classNames(styles.icon_bttn, className)}
-          >
+        >
           {leftIcon && (
-            <img style={{ margin: imgMargin, width: imgWidth }} className={styles.leftIcon} src={leftIcon} />
+            <img
+              style={{ margin: imgMargin, width: imgWidth }}
+              className={styles.leftIcon}
+              src={leftIcon}
+            />
           )}
           <p style={{ color, fontSize }} className={styles.icon_bttn_p}>
             {title}

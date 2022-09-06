@@ -1,18 +1,32 @@
-import React, { useCallback } from "react";
+import React from "react";
 import { Col, Row } from "react-bootstrap";
 import journeyImg2 from "../../Assets/images/journey2.svg";
 import right from "../../Assets/images/right.svg";
 import AppButton from "../../Components/Button";
 import AppHeader from "../../Components/Header";
 import styles from "./style.module.scss";
+import { stepRoutes } from "../../store/reducers/doctor";
+import { useLocation, useNavigate } from "react-router-dom";
 
-const DoctorLayout = ({ children, layoutBtn = true , onClick, onClickBack}) => {
+const DoctorLayout = ({ children, layoutBtn = true, onClick, onClickBack }) => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const hrefLinkIndex = stepRoutes.indexOf(location.pathname);
+
+  const onClickGoBack = () => {
+    if (hrefLinkIndex === 0) navigate("/journey");
+    if (location.pathname === "/add-appointment-question")
+      return navigate("/appointment-questions");
+
+    navigate(stepRoutes[hrefLinkIndex - 1]);
+  };
+
   return (
     <div className={styles.doctorLayout}>
-      <AppHeader back onClickBack={onClickBack} />
+      <AppHeader back onClickBack={onClickGoBack || onClickBack} />
       <div className={styles.header}>
         <p>Conversation with my doctor</p>
-        <img src={journeyImg2} />
+        <img src={journeyImg2} alt="" />
       </div>
       <div className={styles.content}>
         <Row className={styles.row}>
@@ -28,8 +42,8 @@ const DoctorLayout = ({ children, layoutBtn = true , onClick, onClickBack}) => {
                 src={right}
                 imgWidth="10px"
                 imgMargin="0"
-                hrefLink="/DMeeting"
-                  onClick={onClick}
+                hrefLink={stepRoutes[hrefLinkIndex + 1]}
+                onClick={onClick}
               />
             </Col>
           </Row>

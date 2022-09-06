@@ -1,11 +1,12 @@
 import React from "react";
 import AppButton from "../../../Components/Button";
-import {ReviewCard } from "../../../Components/Cards";
+import { ReviewCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import edit from "../../../Assets/images/edit.svg";
 import styles from "../style.module.scss";
 import document from "../../../Assets/images/document.svg";
 import managing from "../../../Assets/images/managing.svg";
+import { withLoader } from "../../../Components/Loader";
 
 const Reviewing = () => {
   return (
@@ -26,9 +27,9 @@ const Reviewing = () => {
         }}
       />
       <ReviewCard
-      margin="16px 0 0"
+        margin="16px 0 0"
         {...{
-          profBg: '#DFF3FB',
+          profBg: "#DFF3FB",
           title: "Managing symptoms",
           img: managing,
           options: [
@@ -37,24 +38,26 @@ const Reviewing = () => {
           ],
         }}
       />
-        <AppButton
-          title="+  Add a new question"
-          width="214px"
-          height="36px"
-          boxMargin="22px auto 0"
-          color="var(--color-primary-dark)"
-          border="2px solid var(--color-primary-dark)"
-          backgroundColor="var(--color-white)"
-        />
+      <AppButton
+        title="+  Add a new question"
+        width="214px"
+        height="36px"
+        boxMargin="22px auto 0"
+        color="var(--color-primary-dark)"
+        border="2px solid var(--color-primary-dark)"
+        backgroundColor="var(--color-white)"
+        hrefLink="/add-appointment-question"
+      />
       <AppButton
         leftIcon={edit}
         title="Edit list"
         width="214px"
         height="36px"
         boxMargin="24px auto 0"
+        hrefLink="/appointment-questions"
       />
     </DoctorLayout>
   );
 };
 
-export default Reviewing;
+export default withLoader(Reviewing);

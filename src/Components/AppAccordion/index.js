@@ -1,11 +1,20 @@
 import { Badge } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 
-const AppAccordion = ({key, img, title, label, badge, children, margin , logoBg}) => {
+const AppAccordion = ({
+  id,
+  img,
+  title,
+  label,
+  badge,
+  children,
+  margin,
+  logoBg,
+}) => {
   return (
-    <Accordion.Item eventKey={key} style={{margin: margin}}>
+    <Accordion.Item eventKey={id} style={{ margin: margin }}>
       <Accordion.Header>
-        <div className="iconSec" style={{backgroundColor: logoBg}}>
+        <div className="iconSec" style={{ backgroundColor: logoBg }}>
           <img src={img} alt="logo" />
         </div>
         <div className="titleSec">

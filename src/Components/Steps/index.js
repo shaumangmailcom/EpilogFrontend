@@ -2,7 +2,15 @@ import React, { useCallback } from "react";
 import { StepCard } from "../Cards";
 import styles from "./style.module.scss";
 
-const Steps = ({ lable, title, desc, data, options = [], onClick, titleMargin }) => {
+const Steps = ({
+  lable,
+  title,
+  desc,
+  data,
+  options = [],
+  onClick,
+  titleMargin,
+}) => {
   const cardHeight = options.length > 2 ? "unset" : "112px";
   const clickItem = useCallback(
     (text) => {
@@ -17,7 +25,9 @@ const Steps = ({ lable, title, desc, data, options = [], onClick, titleMargin })
           {lable}/<span>5</span>
         </p>
       )}
-      <p className={styles.title} style={{margin: titleMargin}}>{title}</p>
+      <p className={styles.title} style={{ margin: titleMargin }}>
+        {title}
+      </p>
       <p className={styles.desc}>{desc}</p>
       {options.map((text, ind) => (
         <StepCard

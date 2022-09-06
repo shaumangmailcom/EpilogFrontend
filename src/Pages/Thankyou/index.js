@@ -5,8 +5,9 @@ import AppHeader from "../../Components/Header";
 import AppButton from "../../Components/Button";
 import right from "../../Assets/images/right.svg";
 import { useNavigate } from "react-router-dom";
+import { withLoader } from "../../Components/Loader";
 
-export default function ThankYou() {
+const ThankYou = () => {
   const navigate = useNavigate();
   return (
     <div className={styles.thankyou}>
@@ -30,4 +31,6 @@ export default function ThankYou() {
       </Row>
     </div>
   );
-}
+};
+
+export default withLoader(ThankYou);

@@ -42,7 +42,6 @@ const QA = () => {
     alert("error");
   }, [dispatch, navigate]);
   const nextPage = useCallback(
-    
     (value) => {
       if (value === LoveOne) {
         return setModalShow(true);

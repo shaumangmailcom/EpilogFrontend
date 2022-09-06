@@ -14,7 +14,7 @@ const MatchStart = () => {
       <AppHeader back onClickBack={() => navigate("/journey")} />
       <div className={styles.header}>
         <p>Sharing with family and friends</p>
-        <img src={c1} />
+        <img src={c1} alt="" />
       </div>
       <div className={styles.content}>
         <Row className={styles.row}>
@@ -52,4 +52,4 @@ const MatchStart = () => {
   );
 };
 
-export default withLoader (MatchStart);
+export default withLoader(MatchStart);
