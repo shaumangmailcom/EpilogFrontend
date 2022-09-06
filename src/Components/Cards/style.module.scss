@@ -107,6 +107,9 @@
     width: max-content;
     max-width: 100%;
     margin-top: 10px;
+    @media screen and(min-width: 768px) {
+      max-width: 80%;
+    }
     .title {
       font-size: 16px;
       font-family: heebo700;
@@ -119,12 +122,13 @@
     }
   }
   .dTriangle {
+    margin-right: auto;
     &::after {
       content: "";
       width: 0;
       height: 0;
       border-top: 10px solid transparent;
-      border-right: 20px solid #F0F1FD;
+      border-right: 20px solid #f0f1fd;
       border-bottom: 15px solid transparent;
       position: absolute;
       z-index: 1;
@@ -134,12 +138,13 @@
     }
   }
   .pTriangle {
+    margin-left: auto;
     &::after {
       content: "";
       width: 0;
       height: 0;
       border-top: 10px solid transparent;
-      border-left: 20px solid #E5EDFF;
+      border-left: 20px solid #e5edff;
       border-bottom: 15px solid transparent;
       position: absolute;
       z-index: 1;
@@ -289,7 +294,7 @@
     font-family: heebo;
     color: var(--color-primary);
   }
-  .checkLabel{
+  .checkLabel {
     height: 18px;
     width: 18px;
   }

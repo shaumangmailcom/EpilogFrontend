@@ -95,10 +95,13 @@
     display: flex;
     align-items: center;
     .nGrid {
-      height: 32px;
-      width: 32px;
+      height: 34px;
+      width: 34px;
       border-radius: 100%;
       background-color: var(--color-primary-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       p {
         font-size: 20px;
         font-family: heebo700;

@@ -16,7 +16,7 @@ const AppAccordion = ({key, img, title, label, badge, children, margin , logoBg}
           </div>
         </div>
       </Accordion.Header>
-      <Accordion.Body>{children}</Accordion.Body>
+      <Accordion.Body >{children}</Accordion.Body>
     </Accordion.Item>
   );
 };
