@@ -47,6 +47,7 @@ const Prepare = () => {
         backgroundColor="var(--color-white)"
         color="var(--color-primary-dark)"
         boxMargin="auto"
+        hrefLink="/preparation-kit"
       />
       <AppButton
         title="Send me my preparation kit"
@@ -54,7 +55,7 @@ const Prepare = () => {
         width="270px"
         imgWidth="15px"
         boxMargin="22px auto 0"
-        hrefLink="/reviewing"
+        hrefLink="/preparation-kit"
       />
     </DoctorLayout>
   );

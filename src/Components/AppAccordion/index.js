@@ -25,7 +25,7 @@ const AppAccordion = ({
           </div>
         </div>
       </Accordion.Header>
-      <Accordion.Body>{children}</Accordion.Body>
+      <Accordion.Body >{children}</Accordion.Body>
     </Accordion.Item>
   );
 };

@@ -596,6 +596,7 @@ html {
       }
       .titleSec {
         margin-left: 20px;
+        flex: 1;
         .heading {
           font-size: 16px;
           line-height: 23px;
@@ -634,6 +635,15 @@ html {
   }
 }
 
+.addQAccordion{
+  .accordion-collapse{
+    box-shadow: none;
+    background-color: transparent;
+    .accordion-body{
+      padding: 0 0 30px 0;
+    }
+  }
+}
 /*------------------------*/
 /*       App Accordion    */
 /*------------------------*/

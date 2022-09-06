@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import journeyImg1 from "../../Assets/images/journey1.svg";
 import journeyImg2 from "../../Assets/images/journey2.svg";
+import docImg from "../../Assets/images/doc.svg";
 import parashoot from "../../Assets/images/parashoot.svg";
 import { StepCard, JourneyCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
@@ -42,7 +43,7 @@ function JourneyHome() {
           <Col xs={12} md={6} xl={4}>
             <JourneyCard
               title="Conversation with my doctor"
-              src={journeyImg2}
+              src={docImg}
               onClick={() => navigate("/doctor")}
             />
           </Col>

@@ -68,6 +68,7 @@ const Treatment = () => {
         leftIcon={mail}
         title="Send me preparation kit"
         boxMargin="24px auto 0"
+        hrefLink="/preparation-kit"
       />
     </DoctorLayout>
   );
