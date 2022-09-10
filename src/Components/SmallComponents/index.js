@@ -68,11 +68,19 @@ export const Lable = ({ lable, className }) => {
   );
 };
 
-export const AppInput = ({ as, placeholder, rows, className, margin, error }) => {
+export const AppInput = ({
+  as,
+  placeholder,
+  rows,
+  className,
+  margin,
+  error,
+  ...rest
+}) => {
   return (
     <div className={classNames("textArea", className)} style={{ margin }}>
-      <Form.Control as={as} placeholder={placeholder} rows={rows} />
-      <p className="error-msg">{error}</p>
+      <Form.Control as={as} placeholder={placeholder} rows={rows} {...rest} />
+      {!!error && <p className="error-msg">{error}</p>}
     </div>
   );
 };

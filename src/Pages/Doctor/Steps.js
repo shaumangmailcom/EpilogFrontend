@@ -1,29 +1,35 @@
 import React, { useCallback } from "react";
+import Accordion from "react-bootstrap/Accordion";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import bed from "../../Assets/images/bed.svg";
+import document from "../../Assets/images/document.svg";
+import home from "../../Assets/images/home.svg";
+import hPlus from "../../Assets/images/hPlus.svg";
+import managing from "../../Assets/images/managing.svg";
+import AppAccordion from "../../Components/AppAccordion";
 import AppButton from "../../Components/Button";
+import { TextSec } from "../../Components/Cards";
 import DoctorLayout from "../../Components/Layout/DoctorLayout";
 import { withLoader } from "../../Components/Loader";
 import { Indicator } from "../../Components/SmallComponents";
 import Steps from "../../Components/Steps";
-import { setDoctorState, doctorStateKeys } from "../../store/reducers/doctor";
-import Accordion from "react-bootstrap/Accordion";
-import AppAccordion from "../../Components/AppAccordion";
-import managing from "../../Assets/images/managing.svg";
-import document from "../../Assets/images/document.svg";
-import hPlus from "../../Assets/images/hPlus.svg";
-import home from "../../Assets/images/home.svg";
-import bed from "../../Assets/images/bed.svg";
-import { TextSec } from "../../Components/Cards";
+import {
+  doctorStateKeys,
+  modulesDefault,
+  setDoctorState,
+  setReplies,
+} from "../../store/reducers/doctor";
 import styles from "./style.module.scss";
+const icons = { managing, document, hPlus, home, bed };
 
 const DSteps = () => {
   const doctorState = useSelector((s) => s.doctor);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   //
   const current_page = doctorState.current_page;
-
+  const data = Object.values(doctorState.questions);
   const nextPage = useCallback(() => {
     const isLast = current_page === doctorStateKeys.length - 1;
     if (
@@ -43,7 +49,7 @@ const DSteps = () => {
   }, [current_page, dispatch, navigate, doctorState]);
 
   const prevPage = useCallback(() => {
-    if (current_page === 0) return navigate("/doctor-start");
+    if (current_page === 0) return navigate(-1);
     dispatch(
       setDoctorState({
         current_page: current_page - 1,
@@ -51,151 +57,14 @@ const DSteps = () => {
     );
   }, [current_page, dispatch, navigate]);
 
-  const data = [
-    {
-      id: 0,
-      img: managing,
-      title: "Managing my symptoms",
-      badge: "3",
-      label: "question added",
-      logoBg: "#DFF3FB",
-      options: [
-        {
-          id: 0,
-          checkLabel: "What should I do to make my pain more manageable?",
-        },
-        {
-          id: 1,
-          checkLabel: "How should I manage my sleep?",
-        },
-        {
-          id: 2,
-          checkLabel: "How can you help me manage my anxiety?",
-        },
-      ],
-    },
-    {
-      id: 1,
-      img: hPlus,
-      title: "Improving my general  wellbeing ",
-      logoBg: "#FFE5B1",
-      options: [
-        {
-          id: 0,
-          checkLabel:
-            "Is there anything I can do in terms of my life style / diet / habits /  to control the pace of advancement of my disease?",
-        },
-        {
-          id: 1,
-          checkLabel:
-            "Is there anything I can do in terms of life style / diet / habits/  to improve my wellbeing alongside fighting the disease?",
-        },
-      ],
-    },
-    {
-      id: 3,
-      img: document,
-      title: "Understanding my medical information",
-      badge: "1",
-      label: "question added",
-      logoBg: "#EAEFFF",
-      options: [
-        {
-          id: 0,
-          checkLabel:
-            "Where can I get additional reliable information about my condition?",
-        },
-        {
-          id: 1,
-          checkLabel:
-            "What should I expect in terms of disease advancement in the upcoming weeks/months/years?",
-        },
-        {
-          id: 2,
-          checkLabel:
-            "What information is critical for me to know in order to decide on  additional / alternative treatments?",
-        },
-        {
-          id: 3,
-          checkLabel: "When can we talk about my care goals?",
-        },
-      ],
-    },
-    {
-      id: 4,
-      img: home,
-      title: "What should I do while at home",
-      logoBg: "#D0F1BF",
-      options: [
-        {
-          id: 0,
-          checkLabel:
-            "What should I do to make it more comfortable for people to visit me?",
-        },
-        {
-          id: 1,
-          checkLabel:
-            "What is the best way to set up my bed at home in order to improve my sleep?",
-        },
-        {
-          id: 2,
-          checkLabel:
-            "What is the best way to set up my bed at home in order to improve my rest in the middle of the day?",
-        },
-        {
-          id: 3,
-          checkLabel: "Do you recomend that I have a TV in my bedroom or not?",
-        },
-        {
-          id: 4,
-          checkLabel:
-            "Do you recomend any renovations to my bedroom, bathroom and kitchen?",
-        },
-        {
-          id: 5,
-          checkLabel:
-            "If things get worse, how should I prepare my home environment for a long-term stay?",
-        },
-      ],
-    },
-    {
-      id: 5,
-      img: bed,
-      title: "My hospitalization alternatives",
-      logoBg: "#FFCFC0",
-      options: [
-        {
-          id: 0,
-          checkLabel:
-            "In my case, what are the benefits of hospital relative to home care?",
-        },
-        {
-          id: 1,
-          checkLabel:
-            "When I have an emergency, when should I go directly to the ER, and when should I call the clinic?",
-        },
-        {
-          id: 2,
-          checkLabel:
-            "when should I call the clinic? When I need ongoing medical care, do you gessest hospital or home care?",
-        },
-        {
-          id: 3,
-          checkLabel:
-            "From your experience, do people in my situation usually prefer hospital or home care?",
-        },
-      ],
-    },
-  ];
-
   return (
     <DoctorLayout onClickBack={prevPage} layoutBtn={false}>
       <Indicator active={current_page} items={doctorStateKeys.length} />
       {current_page === 0 && (
         <Steps
           onClick={(epilog_system) => {
-            nextPage();
             dispatch(setDoctorState({ epilog_system }));
+            nextPage();
           }}
           data={doctorState.epilog_system}
           titleMargin="30px 0"
@@ -203,24 +72,46 @@ const DSteps = () => {
           options={["Yes", "No"]}
         />
       )}
-      {current_page === 1 && (
+      {current_page === 1 && data.length > 0 && (
         <>
           <Steps
-            onClick={(heading) => {
-              dispatch(setDoctorState({ heading }));
-            }}
-            data={doctorState.heading}
             title="To help you get going, our experts prepared a basic list of questions.
             Feel free to select a few questions from our list, and add your own."
           />
           <Accordion defaultActiveKey="0">
-            {data.map((item) => (
-              <AppAccordion key={item.id} {...item} margin="18px 0 0">
-                {item.options.map((option, ind) => (
-                  <TextSec key={ind} margin="8px 0 0" id={ind} {...option} />
-                ))}
-              </AppAccordion>
-            ))}
+            {data.map((item) => {
+              const badge =
+                modulesDefault[item.id] < item.options.length
+                  ? item.options.length - modulesDefault[item.id]
+                  : 0;
+
+              return (
+                <AppAccordion
+                  key={item.id}
+                  {...item}
+                  badge={badge}
+                  icons={icons}
+                  margin="18px 0 0"
+                >
+                  {item.options.map((option, ind) => (
+                    <TextSec
+                      key={ind}
+                      margin="8px 0 0"
+                      id={option.id}
+                      checkLabel={option.question}
+                      onClick={(value) =>
+                        dispatch(
+                          setReplies({
+                            [option.id]: { ...option, answer: value },
+                          })
+                        )
+                      }
+                      checked={doctorState.replies[option.id]?.answer}
+                    />
+                  ))}
+                </AppAccordion>
+              );
+            })}
           </Accordion>
           <AppButton
             title="+ Add a question"

@@ -29,6 +29,7 @@ import Treatment from "../../Pages/Doctor/DoctorModule/Treatment";
 import Reviewing from "../../Pages/Doctor/DoctorModule/Reviewing";
 import PreparationKit from "../../Pages/Doctor/DoctorModule/PreparationKit";
 import Done from "../../Pages/Doctor/DoctorModule/Done";
+import { asyncGetQuestions } from "../../store/actions/doctor";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -37,6 +38,7 @@ const AppRouting = () => {
   useEffect(() => {
     if (deviceId) {
       dispatch(asyncCreate_FetchUser());
+      dispatch(asyncGetQuestions());
     }
   }, [dispatch, deviceId]);
 

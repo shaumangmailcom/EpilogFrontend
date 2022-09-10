@@ -76,7 +76,13 @@ export const SliderCard = ({
   );
 };
 
-export const CatgCard = ({ title, number, desc, messages = [], listOptions=[] }) => {
+export const CatgCard = ({
+  title,
+  number,
+  desc,
+  messages = [],
+  listOptions = [],
+}) => {
   let descs = [];
   if (typeof desc === "string") descs.push(desc);
   if (Array.isArray(desc)) descs = [...desc];
@@ -90,10 +96,10 @@ export const CatgCard = ({ title, number, desc, messages = [], listOptions=[] })
         <p className={styles.dtl}>{text}</p>
       ))}
       {messages.map((message, ind) => {
-        const isDoctor = message.by == "doctor";
+        const isDoctor = message.by === "doctor";
         return (
           <div
-          key={ind+'message'}
+            key={ind + "message"}
             className={classNames(
               styles.chat,
               isDoctor ? styles.dTriangle : styles.pTriangle,
@@ -108,7 +114,7 @@ export const CatgCard = ({ title, number, desc, messages = [], listOptions=[] })
         );
       })}
       {listOptions.map((item, ind) => (
-      <ListCard {...item} key={ind} />
+        <ListCard {...item} key={ind} />
       ))}
     </div>
   );
@@ -200,14 +206,30 @@ export const JourneyCard = ({ src, title, onClick }) => {
     </div>
   );
 };
-export const TextSec = ({ text, margin, textAlign, checkLabel }) => {
+export const TextSec = ({
+  text,
+  margin,
+  textAlign,
+  checkLabel,
+  checked,
+  onClick = () => {},
+  id,
+}) => {
   return (
     <div
       className={classNames(styles.textSec, "textSec")}
       style={{ margin: margin, textAlign }}
     >
       {checkLabel && (
-        <Form.Check label={checkLabel} name="group1" className="checkLabel" />
+        <Form.Check
+          label={checkLabel}
+          name="group1"
+          checked={checked}
+          onChange={() => {
+            onClick(!checked);
+          }}
+          className="checkLabel"
+        />
       )}
       {text && <p>{text}</p>}
     </div>
@@ -224,8 +246,8 @@ export const ReviewCard = ({ title, img, options = [], profBg, margin }) => {
         padding="0 0 16px"
         fontFamily="heebo700"
       />
-      {options.map((text, ind) => (
-        <TextSec margin="8px 0 0" key={ind} text={text} />
+      {options.map((option, ind) => (
+        <TextSec margin="8px 0 0" key={ind} text={option.question} />
       ))}
     </div>
   );

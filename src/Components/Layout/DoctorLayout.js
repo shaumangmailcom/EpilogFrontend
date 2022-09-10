@@ -14,16 +14,12 @@ const DoctorLayout = ({ children, layoutBtn = true, onClick, onClickBack }) => {
   const hrefLinkIndex = stepRoutes.indexOf(location.pathname);
 
   const onClickGoBack = () => {
-    if (hrefLinkIndex === 0) navigate("/journey");
-    if (location.pathname === "/add-appointment-question")
-      return navigate("/appointment-questions");
-
-    navigate(stepRoutes[hrefLinkIndex - 1]);
+    navigate(-1);
   };
 
   return (
     <div className={styles.doctorLayout}>
-      <AppHeader back onClickBack={onClickGoBack || onClickBack} />
+      <AppHeader back onClickBack={onClickBack || onClickGoBack} />
       <div className={styles.header}>
         <p>Conversation with my doctor</p>
         <img src={doc} alt="" />

@@ -5,6 +5,7 @@ import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import share from "../../../Assets/images/share.svg";
 import mail from "../../../Assets/images/mail.svg";
 import { withLoader } from "../../../Components/Loader";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -31,6 +32,7 @@ const data = [
 ];
 
 const Prepare = () => {
+  const navigate = useNavigate();
   return (
     <DoctorLayout>
       <p className="title24 mb-5">Prepare yourself and your loved ones</p>
@@ -47,7 +49,7 @@ const Prepare = () => {
         backgroundColor="var(--color-white)"
         color="var(--color-primary-dark)"
         boxMargin="auto"
-        hrefLink="/preparation-kit"
+        onClick={() => navigate("/preparation-kit", { state: { email: 2 } })}
       />
       <AppButton
         title="Send me my preparation kit"
@@ -55,7 +57,7 @@ const Prepare = () => {
         width="270px"
         imgWidth="15px"
         boxMargin="22px auto 0"
-        hrefLink="/preparation-kit"
+        onClick={() => navigate("/preparation-kit", { state: { email: 1 } })}
       />
     </DoctorLayout>
   );

@@ -4,6 +4,8 @@ import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import Steps from "../../../Components/Steps";
 import { Range } from "../../../Components/SmallComponents";
 import { withLoader } from "../../../Components/Loader";
+import { useDispatch, useSelector } from "react-redux";
+import { setDoctorState } from "../../../store/reducers/doctor";
 
 const data = [
   {
@@ -21,6 +23,10 @@ const data = [
 ];
 
 const ManageConversation = () => {
+  const doctorState = useSelector((s) => s.doctor);
+
+  const dispatch = useDispatch();
+
   return (
     <DoctorLayout>
       <p className="title24 mb-5">Prepare to manage the conversation</p>
@@ -35,6 +41,11 @@ const ManageConversation = () => {
       <Range
         margin="52px 0 0"
         {...{
+          value: doctorState.next_treatment_offer,
+          id: "next_treatment_offer",
+          onChange: (_, next_treatment_offer) => {
+            dispatch(setDoctorState({ next_treatment_offer }));
+          },
           question:
             "To what extent do you feel that you need help with understanding whether you should say YES or NO to the next treatment offered to you?",
           sLableOne: "Not at all",
@@ -42,6 +53,10 @@ const ManageConversation = () => {
         }}
       />
       <Steps
+        onClick={(have_decisions) => {
+          dispatch(setDoctorState({ have_decisions }));
+        }}
+        data={doctorState.have_decisions}
         titleMargin="52px 0 0"
         title="Do you think there is a good chance that you will have decisions to make while at the doctor’s?"
         options={["Yes", "No", "Have no idea"]}

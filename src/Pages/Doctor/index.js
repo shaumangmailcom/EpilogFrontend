@@ -1,9 +1,13 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { SliderCard } from "../../Components/Cards";
 import DoctorLayout from "../../Components/Layout/DoctorLayout";
 import { withLoader } from "../../Components/Loader";
+import { setDoctorState } from "../../store/reducers/doctor";
 
 const Doctor = () => {
+  const sound_familiar = useSelector((s) => s.doctor.sound_familiar);
+  const dispatch = useDispatch();
   return (
     <DoctorLayout>
       <p className="title24 left">
@@ -18,11 +22,16 @@ const Doctor = () => {
       <SliderCard
         options={[
           {
+            id: "sound_familiar",
             question: "To what extent does this sound familiar?",
             sLableOne: "Not at all",
             sLableTwo: "Very much",
           },
         ]}
+        onChange={(obj) => {
+          dispatch(setDoctorState({ ...obj }));
+        }}
+        data={{ sound_familiar }}
       />
     </DoctorLayout>
   );
