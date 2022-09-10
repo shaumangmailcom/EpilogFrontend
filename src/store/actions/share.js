@@ -6,15 +6,21 @@ import { asyncSetLatestTry } from "./user";
 export const asyncCreateShare = createAsyncThunk(
   "share/create",
   async (_, { dispatch, getState }) => {
-    const { deviceId, user } = getState().user;
+    const { deviceId, user, latestTry } = getState().user;
     const body = getState().share;
     console.log(body, "body");
-    const res = await callApi({
+    const reqObj = {
       path: "/share",
       method: "POST",
       token: user?.deviceId ?? deviceId,
       body,
-    });
+    };
+    const update = latestTry && latestTry.share;
+    if (update) {
+      reqObj.path = "/share/" + latestTry.share.id;
+      reqObj.method = "PUT";
+    }
+    const res = await callApi(reqObj);
     console.log(res, "res");
     if (res.success) {
       dispatch(asyncSetLatestTry(res.data));
