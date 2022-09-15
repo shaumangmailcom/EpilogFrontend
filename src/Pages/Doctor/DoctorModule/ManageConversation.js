@@ -32,7 +32,7 @@ const ManageConversation = () => {
       <p className="title24 mb-5">Prepare to manage the conversation</p>
       <p className="desc18">
         Having a list of questions with you while at the doctor’s office is very
-        important. While there, you need to make sure{" "}
+        important. While there, you need to make sure you:{" "}
       </p>
       {data.map((item, ind) => (
         <CatgCard {...item} key={ind} />

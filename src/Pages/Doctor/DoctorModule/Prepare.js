@@ -12,7 +12,7 @@ const data = [
     key: 0,
     number: "01",
     title: "Brainstorm",
-    desc: "Ask a loved one to help you with questions before. Ask them to brainstorm with you what is important for you to know, and what is important to them.",
+    desc: "Ask a loved one to help you with questions before meeting the doctor. Ask them to brainstorm with you what is important for you to know, and what is important to them.",
   },
   {
     key: 1,
@@ -26,7 +26,7 @@ const data = [
     number: "03",
     desc: [
       "Ask a loved one to join you and share with this person your questions before you get to the doctor. When you introduce them to your doctor say:",
-      "“This is Shila, and because this information is so complex for me to grasp I have asked them to be here to make sure everything is clear during the meeting and to remind me about it after we leave. I hope that this is OK with you”",
+      "“This is Shila, and because this information is so complex for me to grasp I have asked her to be here to make sure everything is clear during the meeting and to remind me about it after we leave. I hope that this is OK with you”",
     ],
   },
 ];

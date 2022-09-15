@@ -41,8 +41,9 @@ const data = [
         title:
           "Give a grade of 0-10 in each of the following categories, and then sum the results:",
         dtlOptions: [
-          "How good overall my quality of life will be if the treatment succeeds, when, and for how long",
-          "What are the odds of it succeedingHow difficult will it be (what are the “costs” of taking the treatment, in terms of implications on my quality of life, and for how long)",
+          "How good overall my quality of life will be if the treatment succeeds, when, and for how long.",
+          "What are the odds of it succeeding.",
+          "How difficult will it be (what are the “costs” of taking the treatment, in terms of implications on my quality of life, and for how long)",
         ],
       },
     ],
