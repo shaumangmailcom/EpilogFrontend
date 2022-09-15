@@ -604,7 +604,7 @@ html {
           color: var(--color-primary);
         }
         .labelSec {
-          color: #4059AD;
+          
           display: flex;
           align-items: center;
           .badge {
@@ -619,6 +619,7 @@ html {
             padding: 3px 2px;
           }
           .labelSecText{
+            color: #4059AD;
             font-family: heebo;
             font-size: 14px;
             margin-left: 5px;
