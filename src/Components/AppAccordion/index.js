@@ -21,7 +21,12 @@ const AppAccordion = ({
         <div className="titleSec">
           <p className="heading">{name}</p>
           <div className="labelSec">
-            {!!badge && <Badge>{badge}</Badge>}
+            {!!badge && (
+              <>
+                <Badge>{badge} </Badge>
+                <span className="labelSecText"> question added</span>
+              </>
+            )}
             <p className="label">{label}</p>
           </div>
         </div>

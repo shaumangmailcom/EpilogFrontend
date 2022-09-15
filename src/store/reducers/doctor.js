@@ -30,6 +30,7 @@ export const stepRoutes = [
   "/manage-conversation",
   "/treatment",
   "/preparation-kit",
+  "/add-appointment-question",
 ];
 
 const initialState = {
