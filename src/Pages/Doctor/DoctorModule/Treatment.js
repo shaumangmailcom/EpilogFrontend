@@ -4,6 +4,7 @@ import { CatgCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import mail from "../../../Assets/images/mail.svg";
 import { withLoader } from "../../../Components/Loader";
+import { useNavigate } from "react-router-dom";
 
 const data = [
   {
@@ -51,6 +52,8 @@ const data = [
 ];
 
 const Treatment = () => {
+  const navigate = useNavigate();
+
   return (
     <DoctorLayout>
       <p className="title24 mb-5">
@@ -69,7 +72,8 @@ const Treatment = () => {
         leftIcon={mail}
         title="Send me preparation kit"
         boxMargin="24px auto 0"
-        hrefLink="/preparation-kit"
+        // hrefLink="/preparation-kit"
+        onClick={() => navigate("/preparation-kit", { state: { email: 1 } })}
       />
     </DoctorLayout>
   );

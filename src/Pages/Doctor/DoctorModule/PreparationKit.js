@@ -24,11 +24,11 @@ const PreparationKit = (props) => {
         [`email${email}`]: "Enter Email ",
       }));
     }
-    const { success , message } = await dispatch(asyncCreateDoctor()).unwrap();
+    const { success, message } = await dispatch(asyncCreateDoctor()).unwrap();
     if (success) {
       navigate("/done");
-    }else { 
-      alert (message || 'Error while saving data!')
+    } else {
+      alert(message || "Error while saving data!");
     }
   }, [navigate, email, doctorState, dispatch]);
   return (

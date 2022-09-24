@@ -70,9 +70,9 @@ const AddQuestion = () => {
               error: null,
             };
             const badge =
-                modulesDefault[item.id] < item.options.length
-                  ? item.options.length - modulesDefault[item.id]
-                  : 0;
+              modulesDefault[item.id] < item.options.length
+                ? item.options.length - modulesDefault[item.id]
+                : 0;
             return (
               <AppAccordion
                 key={item.id}
@@ -104,18 +104,18 @@ const AddQuestion = () => {
                   color="var(--color-primary-dark)"
                   onClick={() => saveQuestion(item.id)}
                 />
-                <AppButton
-                  title="Save and review list"
-                  height="40px"
-                  width="261px"
-                  boxMargin="32px auto 0"
-                  // hrefLink="/appointment-questions"
-                  onClick={() => saveQuestion(item.id, true)}
-                />
               </AppAccordion>
             );
           })}
         </Accordion>
+        <AppButton
+          title="Review list"
+          height="40px"
+          width="261px"
+          boxMargin="32px auto 0"
+          hrefLink="/appointment-questions"
+          // onClick={() => saveQuestion(item.id, true)}
+        />
       </div>
     </DoctorLayout>
   );
