@@ -44,7 +44,7 @@ export const asyncCreateDoctor = createAsyncThunk(
       dispatch(resetDoctor())
       dispatch(asyncSetLatestTry(res.data));
       dispatch(asyncShowSuccess("Doctor Conversation created successfully"));
-      dispatch(asyncGetQuestions());
+      // dispatch(asyncGetQuestions());
       return res;
     }
     dispatch(asyncShowError(res.message));
