@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { callApi } from "../../services/api";
 import { resetBasic, setBasicInfoState } from "../reducers/basicInfo";
+import { resetDoctor } from "../reducers/doctor";
 import { resetFeedback, setFeedbackState } from "../reducers/feedback";
 import { resetMoreInfo, setMoreInfoState } from "../reducers/moreInfo";
 import { resetShare, setShareState } from "../reducers/share";
@@ -33,11 +34,14 @@ export const asyncSetLatestTry = createAsyncThunk(
   "latestTry",
   async (lastestTry, { dispatch }) => {
     dispatch(setLatestTry(lastestTry));
-    const { basicInfo, moreInfo, share, wishes, journey } = lastestTry ?? {};
+    const { basicInfo, moreInfo, share, wishes, journey,doctor } = lastestTry ?? {};
     dispatch(basicInfo ? setBasicInfoState(basicInfo) : resetBasic());
     dispatch(moreInfo ? setMoreInfoState(moreInfo) : resetMoreInfo());
     dispatch(share ? setShareState(share) : resetShare());
     dispatch(wishes ? setWishesState(wishes) : resetWishes());
     dispatch(journey ? setFeedbackState(journey) : resetFeedback());
+    // if(!doctor){
+    //   dispatch( resetDoctor());
+    // }
   }
 );
