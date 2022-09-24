@@ -38,7 +38,7 @@ const DoctorLayout = ({ children, layoutBtn = true, onClick, onClickBack }) => {
                 src={right}
                 imgWidth="10px"
                 imgMargin="0"
-                hrefLink={stepRoutes[hrefLinkIndex + 1]}
+                hrefLink={!onClick ?stepRoutes[hrefLinkIndex + 1]:null}
                 onClick={onClick}
               />
             </Col>

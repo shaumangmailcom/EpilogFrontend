@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import document from "../../../Assets/images/document.svg";
 import edit from "../../../Assets/images/edit.svg";
 import managing from "../../../Assets/images/managing.svg";
@@ -11,12 +11,13 @@ import AppButton from "../../../Components/Button";
 import { ReviewCard } from "../../../Components/Cards";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import { withLoader } from "../../../Components/Loader";
+import { setAccordion } from "../../../store/reducers/doctor";
 const icons = { managing, document, hPlus, home, bed };
 
 const Reviewing = () => {
   const doctorState = useSelector((s) => s.doctor);
   let arr = Object.values(doctorState.questions);
-
+  const dispatch = useDispatch();
   const data = [];
   arr.forEach((module) => {
     const options = module.options.filter(
@@ -52,6 +53,9 @@ const Reviewing = () => {
         border="2px solid var(--color-primary-dark)"
         backgroundColor="var(--color-white)"
         hrefLink="/add-appointment-question"
+        onClick={()=>{
+              dispatch(setAccordion(2))
+            }}
       />
       <AppButton
         leftIcon={edit}

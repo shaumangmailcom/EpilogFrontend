@@ -55,7 +55,9 @@ const Treatment = () => {
   const navigate = useNavigate();
 
   return (
-    <DoctorLayout>
+    <DoctorLayout 
+     onClick={() => navigate("/preparation-kit", { state: { email: 3 } })}
+    >
       <p className="title24 mb-5">
         Prepare to choose between treatment alternatives
       </p>
@@ -73,7 +75,7 @@ const Treatment = () => {
         title="Send me preparation kit"
         boxMargin="24px auto 0"
         // hrefLink="/preparation-kit"
-        onClick={() => navigate("/preparation-kit", { state: { email: 1 } })}
+        onClick={() => navigate("/preparation-kit", { state: { email: 3 } })}
       />
     </DoctorLayout>
   );

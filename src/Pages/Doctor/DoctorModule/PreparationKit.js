@@ -18,10 +18,11 @@ const PreparationKit = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const submit = useCallback(async () => {
-    if ([1, 2].includes(email) && !doctorState["email" + email]) {
+    let myEmail = email ===3?1:email;
+    if ([1, 2].includes(myEmail) && !doctorState["email" + myEmail]) {
       return setError((s) => ({
         ...s,
-        [`email${email}`]: "Enter Email ",
+        [`email${myEmail}`]: "Enter Email ",
       }));
     }
     const { success, message } = await dispatch(asyncCreateDoctor()).unwrap();
@@ -31,6 +32,7 @@ const PreparationKit = (props) => {
       alert(message || "Error while saving data!");
     }
   }, [navigate, email, doctorState, dispatch]);
+  // console.log(email)
   return (
     <DoctorLayout layoutBtn={false}>
       <p className="title24 mb-5">Add your email to get a preparation kit </p>
@@ -66,7 +68,7 @@ const PreparationKit = (props) => {
         }}
       />
       <div className={styles.prepkitBtns}>
-        {!!email ? (
+        {email!==3&& !!email ? (
           <AppButton
             title="Maybe later"
             width="138px"
