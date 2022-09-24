@@ -29,7 +29,6 @@ const Done = () => {
         title="Back to my journeys"
         height="36px"
         boxMargin="24px auto 0"
-        // hrefLink="/journey"
         onClick={loadUser}
       />
     </DoctorLayout>
