@@ -34,7 +34,7 @@ export const useNavigationValidator = () => {
       if (route === "/feedback") {
         pathRoutes = [...journeyRoute, ...pathRoutes];
       }
-      console.log("yahan", pathRoutes, route);
+      // console.log("yahan", pathRoutes, route);
       if (pathRoutes && !pathRoutes.includes(location.pathname)) {
         navigation(route);
       }

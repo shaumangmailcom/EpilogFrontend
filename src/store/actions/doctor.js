@@ -74,12 +74,16 @@ export const asyncGetQuestions = createAsyncThunk(
   }
 );
 
-function questionsData(data) {
+function questionsData(data, lastTrue = false) {
   let replies = {};
-  const questions = data.reduce((acc, val) => {
+  const questions = data.reduce((acc, val, ind) => {
     let module = acc[val.moduleId] ?? { ...val.module, options: [] };
     module.options.push({ ...val });
-    replies[val.id] = { ...val, answer: module.options.length === 1 };
+    const isLast = lastTrue && ind === data.length - 1;
+    replies[val.id] = {
+      ...val,
+      answer: isLast ? isLast : module.options.length === 1,
+    };
     return { ...acc, [val.moduleId]: module };
   }, {});
   return { replies, questions };
@@ -99,7 +103,7 @@ export const asyncCreateQuestions = createAsyncThunk(
     });
     console.log(res, "res");
     if (res.success) {
-      const { replies, questions } = questionsData(res.data);
+      const { replies, questions } = questionsData(res.data, true);
       dispatch(setDoctorState({ questions }));
       dispatch(setRepliesReverse(replies));
       dispatch(asyncShowSuccess("questions fetched successfully"));

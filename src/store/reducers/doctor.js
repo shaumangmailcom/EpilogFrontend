@@ -44,6 +44,7 @@ const initialState = {
   questions: {},
   replies: {},
   current_page: 0,
+  accordion: 2
 };
 
 export const doctorSlice = createSlice({
@@ -54,6 +55,9 @@ export const doctorSlice = createSlice({
     setDoctorState: (state, { payload }) => ({ ...state, ...payload }),
     setCurrentPage: (state, { payload }) => {
       state.current_page = payload;
+    },
+    setAccordion: (state, { payload }) => {
+      state.accordion = payload;
     },
     setReplies: (state, { payload }) => {
       state.replies = { ...state.replies, ...payload };
@@ -70,6 +74,7 @@ export const {
   setCurrentPage,
   resetDoctor,
   setReplies,
+  setAccordion,
   setRepliesReverse,
 } = doctorSlice.actions;
 

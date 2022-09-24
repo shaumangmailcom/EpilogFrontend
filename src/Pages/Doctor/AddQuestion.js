@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { current } from "@reduxjs/toolkit";
 import { asyncCreateQuestions } from "../../store/actions/doctor";
-import { modulesDefault } from "../../store/reducers/doctor";
+import { modulesDefault, setAccordion } from "../../store/reducers/doctor";
 const icons = { managing, document, hPlus, home, bed };
 
 const AddQuestion = () => {
@@ -58,12 +58,12 @@ const AddQuestion = () => {
     },
     [dispatch, navigate, questions]
   );
-  console.log(questions);
+  // console.log(doctorState);
   return (
     <DoctorLayout layoutBtn={false}>
       <p className="title24 my-5">Add a question</p>
       <div className="addQAccordion">
-        <Accordion defaultActiveKey={2}>
+        <Accordion defaultActiveKey={2} activeKey={doctorState.accordion}  onSelect={(key)=>dispatch(setAccordion(key))}>
           {data.map((item, id) => {
             const currentObj = questions[item.id] ?? {
               value: "",

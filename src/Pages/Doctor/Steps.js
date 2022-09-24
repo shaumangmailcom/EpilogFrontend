@@ -17,6 +17,7 @@ import Steps from "../../Components/Steps";
 import {
   doctorStateKeys,
   modulesDefault,
+  setAccordion,
   setDoctorState,
   setReplies,
 } from "../../store/reducers/doctor";
@@ -119,6 +120,9 @@ const DSteps = () => {
             color="#4059AD"
             boxMargin="36px auto 0"
             hrefLink="/add-appointment-question"
+            onClick={()=>{
+              dispatch(setAccordion(2))
+            }}
           />
           <AppButton
             title="Prepare for the meeting"
