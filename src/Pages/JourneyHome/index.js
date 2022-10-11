@@ -40,13 +40,13 @@ function JourneyHome() {
               onClick={() => navigate("/wishes-start")}
             />
           </Col>
-          <Col xs={12} md={6} xl={4}>
+          {/* <Col xs={12} md={6} xl={4}>
             <JourneyCard
               title="Conversation with my doctor"
               src={docImg}
               onClick={() => navigate("/doctor")}
             />
-          </Col>
+          </Col> */}
         </Row>
         <Row className={styles.jBox}>
           <Col xs={12} md={10} lg={8} xl={6}>

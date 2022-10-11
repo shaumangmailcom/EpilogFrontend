@@ -11,13 +11,13 @@ export const asyncCreateFeedback = createAsyncThunk(
     let body = getState().feedback;
     body = { ...body, ...data };
     console.log(body, "body");
-    if (!body.email && data.want_amazon_gift) {
-      return {
-        success: false,
-        message: "Please enter your email",
-        custom: true,
-      };
-    }
+    // if (!body.email && data.want_amazon_gift) {
+    //   return {
+    //     success: false,
+    //     message: "Please enter your email",
+    //     custom: true,
+    //   };
+    // }
     let res = await callApi({
       path: "/journey",
       method: "POST",

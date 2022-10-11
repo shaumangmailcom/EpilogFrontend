@@ -1,14 +1,13 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { callApi } from "../../services/api";
 import { resetBasic, setBasicInfoState } from "../reducers/basicInfo";
-import { resetDoctor } from "../reducers/doctor";
 import { resetFeedback, setFeedbackState } from "../reducers/feedback";
 import { resetMoreInfo, setMoreInfoState } from "../reducers/moreInfo";
 import { resetShare, setShareState } from "../reducers/share";
 import { setLatestTry, setUser } from "../reducers/user";
 import { resetWishes, setWishesState } from "../reducers/wishes";
 import { asyncShowError, asyncShowSuccess } from "./common";
-import { asyncGetQuestions } from "./doctor";
+// import { asyncGetQuestions } from "./doctor";
 
 export const asyncCreate_FetchUser = createAsyncThunk(
   "user",
@@ -24,7 +23,7 @@ export const asyncCreate_FetchUser = createAsyncThunk(
     if (res.success) {
       dispatch(setUser(res.data));
       dispatch(asyncSetLatestTry(res.data.latest_try));
-      dispatch(asyncGetQuestions())
+      // dispatch(asyncGetQuestions())
       dispatch(asyncShowSuccess("User created successfully"));
       return res;
     }

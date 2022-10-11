@@ -21,11 +21,17 @@ export const useNavigationValidator = () => {
       let journeyRoute = [];
       if (latest) {
         journeyRoute = journey;
-        if (!latest.doctor && !latest.wishes && !latest.share) {
-          journeyRoute = [...journeyRoute, ...stepRoutes, ...wishes, ...share];
-        } else if (!latest.wishes && !latest.share) {
-          journeyRoute = [...journeyRoute, ...stepRoutes];
-        } else if (latest.share) journeyRoute = [...journeyRoute, ...share];
+        if (
+          // !latest.doctor &&
+           !latest.wishes && !latest.share) {
+          journeyRoute = [...journeyRoute, 
+            // ...stepRoutes,
+             ...wishes, ...share];
+        } 
+        // else if (!latest.wishes && !latest.share) {
+        //   journeyRoute = [...journeyRoute, ...stepRoutes];
+        // } 
+        else if (latest.share) journeyRoute = [...journeyRoute, ...share];
         else if (latest.wishes) {
           journeyRoute = [...journeyRoute, ...wishes];
         }

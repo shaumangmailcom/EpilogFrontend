@@ -15,12 +15,12 @@ function getRoute(latest) {
     basicInfo,
     journey,
     moreInfo,
-    doctor,
+    // doctor,
   });
   const isBasic = values.every((v) => !v);
   if (isBasic) return "/";
-  const isDone = !!doctor;
-  if (isDone) return "/done";
+  // const isDone = !!doctor;
+  // if (isDone) return "/done";
   const isLastModule = !!share || !!wishes;
   if (isLastModule) return "/feedback";
   const isJourney = !!moreInfo;
@@ -29,7 +29,7 @@ function getRoute(latest) {
   if (isMore) return "/range";
 }
 
-const slash = ["/", "/basic", "/stepEnd"];
+const slash = ["/", "/home", "/basic", "/stepEnd"];
 const range = [...slash, "/range", "/thankyou"];
 export const share = [
   "/share-start",

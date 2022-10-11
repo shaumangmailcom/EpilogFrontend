@@ -340,26 +340,24 @@ const LastPhase = (props) => {
                     data={feedbackState}
                   />
                   <p className="desc">
-                    You've reached the end of our trial system. As a gratitude
-                    for your participattion, we would like to offer you a ticket
-                    to a lottery for a{" "}
-                    <span className="desc18b"> $300 Amazon gift card</span>.
+                    You've reached the end of our trial system. Please type in your completion code here.
+                    {/* <span className="desc18b"> $300 Amazon gift card</span>. */}
                   </p>
-                  <p className="desc">
+                  {/* <p className="desc">
                     if you are interested in participating, please leave your
                     email below. We will only use it to let you know if you have
                     won the gift card, and also let you know when our system is
                     ready.
-                  </p>
+                  </p> */}
                   <div className={styles.fillSec}>
-                    Email:
+                    Completion Code:
                     <div className="iForm">
                       <Form.Control
-                        onChange={({ target: { value: email } }) =>
-                          dispatch(setFeedbackState({ email }))
+                        onChange={({ target: { value: completion_code } }) =>
+                          dispatch(setFeedbackState({ completion_code }))
                         }
-                        value={feedbackState.email}
-                        type="email"
+                        value={feedbackState.completion_code}
+                        type="text"
                         placeholder=""
                       />
                     </div>
@@ -371,7 +369,7 @@ const LastPhase = (props) => {
                     onClick={() => submitForm(true)}
                     boxMargin="auto"
                   />
-                  <div className={styles.cancelAmazonCard}>
+                  {/* <div className={styles.cancelAmazonCard}>
                     <AppButton
                       title="Don't want amazon gift"
                       width="200px"
@@ -385,7 +383,7 @@ const LastPhase = (props) => {
                       backgroundColor="lightgray"
                       color="#000"
                     />
-                  </div>
+                  </div> */}
                   <p className="desc18b" style={{ textAlign: "center" }}>
                     Thank you for participating!
                   </p>

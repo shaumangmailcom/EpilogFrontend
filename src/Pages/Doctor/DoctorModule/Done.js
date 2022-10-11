@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import AppButton from "../../../Components/Button";
 import DoctorLayout from "../../../Components/Layout/DoctorLayout";
 import { withLoader } from "../../../Components/Loader";
-import { asyncGetQuestions } from "../../../store/actions/doctor";
+// import { asyncGetQuestions } from "../../../store/actions/doctor";
 import { asyncCreate_FetchUser } from "../../../store/actions/user";
 import styles from "../style.module.scss";
 
@@ -14,7 +14,7 @@ const Done = () => {
   const navigate = useNavigate();
   const loadUser = useCallback(() => {
     dispatch(asyncCreate_FetchUser());
-    dispatch(asyncGetQuestions());
+    // dispatch(asyncGetQuestions());
     navigate("/");
   }, [dispatch, navigate]);
 

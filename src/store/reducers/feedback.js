@@ -80,6 +80,7 @@ const initialState = {
   family_member: 0,
   web_search: 0,
   email: "",
+  completion_code: "",
   current_page: 0,
   showModal2: false,
 };

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes , } from "react-router-dom";
 import Home from "../../Pages/Home";
 import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
@@ -29,7 +29,9 @@ import Treatment from "../../Pages/Doctor/DoctorModule/Treatment";
 import Reviewing from "../../Pages/Doctor/DoctorModule/Reviewing";
 import PreparationKit from "../../Pages/Doctor/DoctorModule/PreparationKit";
 import Done from "../../Pages/Doctor/DoctorModule/Done";
-import { asyncGetQuestions } from "../../store/actions/doctor";
+// import { asyncGetQuestions } from "../../store/actions/doctor";
+import Welcome from "../../Pages/Welcome";
+import Page404 from "../../Pages/Error/404";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -38,14 +40,15 @@ const AppRouting = () => {
   useEffect(() => {
     if (deviceId) {
       dispatch(asyncCreate_FetchUser());
-      dispatch(asyncGetQuestions());
+      // dispatch(asyncGetQuestions()); // for doctor modules
     }
   }, [dispatch, deviceId]);
 
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/basic" element={<QA />} />
         <Route path="/stepEnd" element={<StepEnd />} />
         <Route path="/range" element={<Range />} />
@@ -62,7 +65,7 @@ const AppRouting = () => {
         <Route path="/wishes-end" element={<WishesEnd />} />
         <Route path="/complex-situation" element={<ComplexSituation />} />
         <Route path="/feedback" element={<LastPhase />} />
-        <Route path="/doctor" element={<Doctor />} />
+        {/* <Route path="/doctor" element={<Doctor />} />
         <Route path="/pre-appointment" element={<DMeeting />} />
         <Route path="/appointment-questions" element={<Steps />} />
         <Route path="/add-appointment-question" element={<AddQuestion />} />
@@ -71,7 +74,8 @@ const AppRouting = () => {
         <Route path="/manage-conversation" element={<ManageConversation />} />
         <Route path="/treatment" element={<Treatment />} />
         <Route path="/preparation-kit" element={<PreparationKit />} />
-        <Route path="/done" element={<Done />} />
+        <Route path="/done" element={<Done />} /> */}
+        <Route path="/*" element={<Page404 />} />
       </Routes>
     </Router>
   );
