@@ -317,7 +317,7 @@ const LastPhase = (props) => {
                       {
                         id: "SNF",
                         question:
-                          "A nurse att the hospital or a SNF (skilled nursing facility)",
+                          "A nurse at the hospital or a SNF (skilled nursing facility)",
                         sLableOne: "Not at all",
                         sLableTwo: "Very much",
                       },

@@ -14,7 +14,7 @@ function Welcome() {
           <p className="desc">
             You are invited to participate in a study being conducted by a
             research team at Reichman University. The purpose of the study is to
-            investigate attitudes towards success. Participation should take
+            investigate attitudes towards quality of care. Participation should take
             approximately 10 minutes to complete.{" "}
           </p>
           <h1 className="title">PARTICIPATION</h1>
