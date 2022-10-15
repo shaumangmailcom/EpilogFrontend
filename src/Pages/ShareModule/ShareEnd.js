@@ -45,7 +45,7 @@ const RenderOtherInvolved = () => {
     desc =
       "You do not necessarily see the overall value from having others involved in your life. However you do realize there is high value in sharing some of the burden we experience in bad times with others. We recommend you to practice sharing more about your life with others. ";
   }
-  return <CatgCard title={title} number="01" desc={desc} />;
+  return <CatgCard title={title} number="01" desc={desc} />
 };
 const RenderKeepSharing = () => {
   const avg = useSelector(shareAvgTenSelector);
@@ -108,7 +108,7 @@ const RenderKeepSharing = () => {
   }
   return (
     <>
-      <CatgCard title={title} number="02" desc={desc} />;
+      <CatgCard title={title} number="02" desc={desc} />
       <CatgCard title={title2} number="03" desc={desc2} />
     </>
   );

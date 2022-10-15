@@ -353,10 +353,10 @@ const LastPhase = (props) => {
                     Completion Code:
                     <div className="iForm">
                       <Form.Control
-                        onChange={({ target: { value: completion_code } }) =>
-                          dispatch(setFeedbackState({ completion_code }))
+                        onChange={({ target: { value: email } }) =>
+                          dispatch(setFeedbackState({ email }))
                         }
-                        value={feedbackState.completion_code}
+                        value={feedbackState.email}
                         type="text"
                         placeholder=""
                       />
