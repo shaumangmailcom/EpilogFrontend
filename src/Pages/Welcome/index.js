@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import AppHeader from "../../Components/Header";
 import { Row, Col } from "react-bootstrap";
 import styles from "./style.module.scss";
 import AppButton from "../../Components/Button";
 import { withLoader } from "../../Components/Loader";
+import AppModal from "../../Components/AppModal";
+import { AppInput } from "../../Components/SmallComponents";
 
 function Welcome() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.firstScreen}>
       <AppHeader />
@@ -14,8 +17,8 @@ function Welcome() {
           <p className="desc">
             You are invited to participate in a study being conducted by a
             research team at Reichman University. The purpose of the study is to
-            investigate attitudes towards quality of care. Participation should take
-            approximately 10 minutes to complete.{" "}
+            investigate attitudes towards quality of care. Participation should
+            take approximately 10 minutes to complete.{" "}
           </p>
           <h1 className="title">PARTICIPATION</h1>
 
@@ -58,9 +61,10 @@ function Welcome() {
             If you have any questions about the research, please contact me at{" "}
           </p>
           <p className="desc">ben.heller@post.idc.ac.il. </p>
-      <Row className={styles.btnRow}>
+          <Row className={styles.btnRow}>
             <AppButton
-              hrefLink="/home"
+              // hrefLink="/home"
+              onClick={() => setShowModal(true)}
               title="OK"
               // src={right}
               minWidth="118px"
@@ -69,6 +73,21 @@ function Welcome() {
           </Row>
         </Col>
       </Row>
+      <AppModal show={showModal} onHide={() => setShowModal(false)}>
+        <Row style={{width: '100%'}} className="justify-content-center">
+          <Col xs={12} md={10}>
+            <h3 className="title22">please enter your prolific ID</h3>
+            <AppInput placeholder="enter your ID" style={{ borderRadius: 2 }} />
+            <AppButton
+              title="ok"
+              width="14rem"
+              borderRadius="2px"
+              boxMargin="2rem auto 0"
+              hrefLink="/home"
+            />
+          </Col>
+        </Row>
+      </AppModal>
     </div>
   );
 }

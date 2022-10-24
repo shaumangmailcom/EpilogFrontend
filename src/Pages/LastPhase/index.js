@@ -339,17 +339,16 @@ const LastPhase = (props) => {
                     }}
                     data={feedbackState}
                   />
-                  <p className="desc">
+                  {/* <p className="desc">
                     You've reached the end of our trial system. Please type in your completion code here.
-                    {/* <span className="desc18b"> $300 Amazon gift card</span>. */}
-                  </p>
+                  </p> */}
                   {/* <p className="desc">
                     if you are interested in participating, please leave your
                     email below. We will only use it to let you know if you have
                     won the gift card, and also let you know when our system is
                     ready.
                   </p> */}
-                  <div className={styles.fillSec}>
+                  {/* <div className={styles.fillSec}>
                     Completion Code:
                     <div className="iForm">
                       <Form.Control
@@ -361,12 +360,12 @@ const LastPhase = (props) => {
                         placeholder=""
                       />
                     </div>
-                  </div>
+                  </div> */}
                   <AppButton
-                    title="Submit"
+                    title="Next"
                     className={styles.submitBtn}
                     fontSize="15px"
-                    onClick={() => submitForm(true)}
+                    hrefLink="/end-page"
                     boxMargin="auto"
                   />
                   {/* <div className={styles.cancelAmazonCard}>
@@ -384,9 +383,9 @@ const LastPhase = (props) => {
                       color="#000"
                     />
                   </div> */}
-                  <p className="desc18b" style={{ textAlign: "center" }}>
+                  {/* <p className="desc18b" style={{ textAlign: "center" }}>
                     Thank you for participating!
-                  </p>
+                  </p> */}
                 </div>
               )}
             </div>
