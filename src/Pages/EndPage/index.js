@@ -46,6 +46,11 @@ const EndPage = (props) => {
   const submitForm = useCallback(
     async (want_amazon_gift = true) => {
       let { prolificID, nation } = feedbackState;
+
+      if (!nation) {
+        return alert("Please select ethnicity from the given dropdown");
+      }
+
       dispatch(setFeedbackState({ email: `${prolificID}-${nation}` }));
 
       let { success, message } = await dispatch(
@@ -60,7 +65,7 @@ const EndPage = (props) => {
       }
       if (!success) alert(message ?? "error");
     },
-    [dispatch, navigate]
+    [dispatch, navigate, feedbackState]
   );
 
   return (
@@ -86,13 +91,15 @@ const EndPage = (props) => {
               </p>
               <div className="app-select">
                 <Form.Select
-                  defaultValue={feedbackState.nation}
                   value={feedbackState.nation}
                   onChange={({ target: { value } }) =>
                     dispatch(setFeedbackState({ nation: value }))
                   }
                   aria-label="Default select example"
                 >
+                  <option defaultValue="" value="" hidden>
+                    Please Select
+                  </option>
                   {options.map((item, ind) => (
                     <option key={ind} value={item.title}>
                       {item.title}
