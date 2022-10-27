@@ -14,13 +14,15 @@ function Welcome() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [error, setError] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(false);
   const feedbackState = useSelector((state) => state.feedback);
 
   const handleInit = () => {
-    if (!error) {
+    if (!error && feedbackState.prolificID) {
       navigate("/home");
+    } else {
+      setError(true);
     }
   };
 
@@ -95,7 +97,7 @@ function Welcome() {
             <AppInput
               value={feedbackState.prolificID}
               onChange={({ target: { value: prolificID } }) => {
-                setError((e) => (prolificID.length < 1 ? true : false));
+                setError(() => (!prolificID ? true : false));
                 dispatch(setFeedbackState({ prolificID }));
               }}
               error={error ? "Field is required!" : ""}
@@ -107,7 +109,6 @@ function Welcome() {
               width="14rem"
               borderRadius="2px"
               boxMargin="2rem auto 0"
-              // hrefLink="/home"
               onClick={() => handleInit()}
             />
           </Col>
