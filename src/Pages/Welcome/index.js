@@ -14,11 +14,14 @@ function Welcome() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const [error, setError] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const feedbackState = useSelector((state) => state.feedback);
 
   const handleInit = () => {
-    navigate("/home");
+    if (!error) {
+      navigate("/home");
+    }
   };
 
   return (
@@ -92,8 +95,10 @@ function Welcome() {
             <AppInput
               value={feedbackState.prolificID}
               onChange={({ target: { value: prolificID } }) => {
+                setError((e) => (prolificID.length < 1 ? true : false));
                 dispatch(setFeedbackState({ prolificID }));
               }}
+              error={error ? "Field is required!" : ""}
               placeholder="enter your ID"
               style={{ borderRadius: 2 }}
             />
