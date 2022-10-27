@@ -6,9 +6,21 @@ import AppButton from "../../Components/Button";
 import { withLoader } from "../../Components/Loader";
 import AppModal from "../../Components/AppModal";
 import { AppInput } from "../../Components/SmallComponents";
+import { setFeedbackState } from "../../store/reducers/feedback";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Welcome() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [showModal, setShowModal] = useState(false);
+  const feedbackState = useSelector((state) => state.feedback);
+
+  const handleInit = () => {
+    navigate("/home");
+  };
+
   return (
     <div className={styles.firstScreen}>
       <AppHeader />
@@ -60,7 +72,7 @@ function Welcome() {
           <p className="desc">
             If you have any questions about the research, please contact me at{" "}
           </p>
-          <p className="desc">ben.heller@post.idc.ac.il. </p>
+          <p className="desc">ben.heller@post.idc.ac.il.</p>
           <Row className={styles.btnRow}>
             <AppButton
               // hrefLink="/home"
@@ -74,16 +86,24 @@ function Welcome() {
         </Col>
       </Row>
       <AppModal show={showModal} onHide={() => setShowModal(false)}>
-        <Row style={{width: '100%'}} className="justify-content-center">
+        <Row style={{ width: "100%" }} className="justify-content-center">
           <Col xs={12} md={10}>
             <h3 className="title22">please enter your prolific ID</h3>
-            <AppInput placeholder="enter your ID" style={{ borderRadius: 2 }} />
+            <AppInput
+              value={feedbackState.prolificID}
+              onChange={({ target: { value: prolificID } }) => {
+                dispatch(setFeedbackState({ prolificID }));
+              }}
+              placeholder="enter your ID"
+              style={{ borderRadius: 2 }}
+            />
             <AppButton
               title="ok"
               width="14rem"
               borderRadius="2px"
               boxMargin="2rem auto 0"
-              hrefLink="/home"
+              // hrefLink="/home"
+              onClick={() => handleInit()}
             />
           </Col>
         </Row>

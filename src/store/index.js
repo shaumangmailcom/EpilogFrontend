@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import sampleReducer from "./reducers/sample";
 import userReducer from "./reducers/user";
 import basicInfoReducer from "./reducers/basicInfo";
@@ -9,16 +9,35 @@ import doctorReducer from "./reducers/doctor";
 import feedbackReducer from "./reducers/feedback";
 import commonReducer from "./reducers/common";
 
-export const store = configureStore({
-  reducer: {
-    counter: sampleReducer,
-    user: userReducer,
-    basic: basicInfoReducer,
-    more: moreInfoReducer,
-    share: shareReducer,
-    wishes: wishesReducer,
-    doctor: doctorReducer,
-    feedback: feedbackReducer,
-    common: commonReducer,
-  },
+import { persistReducer, persistStore } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+
+const persistConfig = {
+  key: "epilog",
+  storage,
+  whitelist: ["feedback"],
+};
+
+const allReducers = combineReducers({
+  counter: sampleReducer,
+  user: userReducer,
+  basic: basicInfoReducer,
+  more: moreInfoReducer,
+  share: shareReducer,
+  wishes: wishesReducer,
+  doctor: doctorReducer,
+  feedback: feedbackReducer,
+  common: commonReducer,
 });
+
+const persistedReducer = persistReducer(persistConfig, allReducers);
+
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
+});
+
+export const persistor = persistStore(store);

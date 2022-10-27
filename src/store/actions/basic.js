@@ -22,7 +22,7 @@ export const asyncCreateBasic = createAsyncThunk(
     }
 
     const res = await callApi(reqObj);
-    console.log(res, "res");
+    console.log(res, "basic");
     if (res.success) {
       dispatch(asyncSetLatestTry(res.data));
       dispatch(asyncShowSuccess("Basic info created successfully"));

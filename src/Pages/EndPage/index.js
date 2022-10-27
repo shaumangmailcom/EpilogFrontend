@@ -8,27 +8,32 @@ import right from "../../Assets/images/right.svg";
 import AppButton from "../../Components/Button";
 import AppHeader from "../../Components/Header";
 import { AppInput } from "../../Components/SmallComponents";
-import { setFeedbackState } from "../../store/reducers/feedback";
+import { persistor } from "../../store";
+import { asyncCreateFeedback } from "../../store/actions/feedback";
+import { resetFeedback, setFeedbackState } from "../../store/reducers/feedback";
 import styles from "./style.module.scss";
 
 const options = [
-    {ind: '1', title: 'Africa'},
-    {ind: '2', title: 'Black/African American'},
-    {ind: '3', title: 'Caribbean'},
-    {ind: '4', title: 'East Asian'},
-    {ind: '5', title: 'Latino/Hispanic'},
-    {ind: '6', title: 'Middle/Eastern'},
-    {ind: '7', title: 'Mixed'},
-    {ind: '8', title: 'Native American or Alaskan Native'},
-    {ind: '9', title: 'South Aisan'},
-    {ind: '10', title: 'White/Caucasian'},
-    {ind: '11', title: 'Other (please feel free to let us know your ethnicity via email)'},
-    {ind: '12', title: ' White / Sephardic Jew'},
-    {ind: '13', title: 'Black/British'},
-    {ind: '14', title: 'White/Mexican'},
-    {ind: '15', title: 'Romani/Traveller'},
-    {ind: '16', title: 'South East Asian'},
-]
+  { ind: "1", title: "Africa" },
+  { ind: "2", title: "Black/African American" },
+  { ind: "3", title: "Caribbean" },
+  { ind: "4", title: "East Asian" },
+  { ind: "5", title: "Latino/Hispanic" },
+  { ind: "6", title: "Middle/Eastern" },
+  { ind: "7", title: "Mixed" },
+  { ind: "8", title: "Native American or Alaskan Native" },
+  { ind: "9", title: "South Aisan" },
+  { ind: "10", title: "White/Caucasian" },
+  {
+    ind: "11",
+    title: "Other (please feel free to let us know your ethnicity via email)",
+  },
+  { ind: "12", title: " White / Sephardic Jew" },
+  { ind: "13", title: "Black/British" },
+  { ind: "14", title: "White/Mexican" },
+  { ind: "15", title: "Romani/Traveller" },
+  { ind: "16", title: "South East Asian" },
+];
 
 const EndPage = (props) => {
   const feedbackState = useSelector((state) => state.feedback);
@@ -38,38 +43,38 @@ const EndPage = (props) => {
   const location = useLocation();
   const current_page = feedbackState.current_page;
 
-  const nextPage = useCallback(() => {
-    window.scrollTo(0, 0);
-    dispatch(
-      setFeedbackState({
-        current_page: current_page + 1,
-      })
-    );
-    // if (isLast) setTimeout(submitForm, 300);
-  }, [current_page, dispatch]);
-  console.log("isLast", location, props);
+  const submitForm = useCallback(
+    async (want_amazon_gift = true) => {
+      let { prolificID, nation } = feedbackState;
+      dispatch(setFeedbackState({ email: `${prolificID}-${nation}` }));
 
-  const prevPage = useCallback(() => {
-    window.scrollTo(0, 0);
-    if (current_page === 0) return navigate(-1);
-    dispatch(
-      setFeedbackState({
-        current_page: current_page - 1,
-      })
-    );
-  }, [current_page, dispatch, navigate]);
+      let { success, message } = await dispatch(
+        asyncCreateFeedback({ want_amazon_gift })
+      ).unwrap();
+      if (success) {
+        dispatch(resetFeedback());
+        if (!want_amazon_gift) {
+          navigate("/");
+        }
+        return;
+      }
+      if (!success) alert(message ?? "error");
+    },
+    [dispatch, navigate]
+  );
+
   return (
     <div className={styles.phase}>
-      <AppHeader back onClickBack={prevPage} />
+      <AppHeader back onClickBack={() => navigate(-1)} />
       {latestTry?.wishes === null ? (
         <div className={styles.header}>
           <p>Sharing with family and friends</p>
-          <img src={journeyImg1} />
+          <img alt="" src={journeyImg1} />
         </div>
       ) : (
         <div className={styles.header}>
           <p>Wishes for medical care</p>
-          <img src={journeyImg2} />
+          <img alt="" src={journeyImg2} />
         </div>
       )}
       <div className={styles.content}>
@@ -80,9 +85,18 @@ const EndPage = (props) => {
                 You've reached the end of our trial system.
               </p>
               <div className="app-select">
-                <Form.Select aria-label="Default select example">
+                <Form.Select
+                  defaultValue={feedbackState.nation}
+                  value={feedbackState.nation}
+                  onChange={({ target: { value } }) =>
+                    dispatch(setFeedbackState({ nation: value }))
+                  }
+                  aria-label="Default select example"
+                >
                   {options.map((item, ind) => (
-                    <option value={ind}>{item.title}</option>
+                    <option key={ind} value={item.title}>
+                      {item.title}
+                    </option>
                   ))}
                 </Form.Select>
               </div>
@@ -94,6 +108,7 @@ const EndPage = (props) => {
               />
               <AppButton
                 title="Submit"
+                onClick={() => submitForm(false)}
                 className={styles.submitBtn}
                 fontSize="15px"
                 boxMargin="auto"
