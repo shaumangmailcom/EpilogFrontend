@@ -35,12 +35,13 @@ export const asyncSetLatestTry = createAsyncThunk(
   "latestTry",
   async (lastestTry, { dispatch }) => {
     dispatch(setLatestTry(lastestTry));
-    const { basicInfo, moreInfo, share, wishes, journey,doctor } = lastestTry ?? {};
+    const { basicInfo, moreInfo, share, wishes, journey, doctor } =
+      lastestTry ?? {};
     dispatch(basicInfo ? setBasicInfoState(basicInfo) : resetBasic());
     dispatch(moreInfo ? setMoreInfoState(moreInfo) : resetMoreInfo());
     dispatch(share ? setShareState(share) : resetShare());
     dispatch(wishes ? setWishesState(wishes) : resetWishes());
-    dispatch(journey ? setFeedbackState(journey) : resetFeedback());
+    // dispatch(journey ? setFeedbackState(journey) : resetFeedback());
     // if(!doctor){
     //   dispatch( resetDoctor());
     // }

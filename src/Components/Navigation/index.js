@@ -32,6 +32,7 @@ import Done from "../../Pages/Doctor/DoctorModule/Done";
 // import { asyncGetQuestions } from "../../store/actions/doctor";
 import Welcome from "../../Pages/Welcome";
 import Page404 from "../../Pages/Error/404";
+import EndPage from "../../Pages/EndPage";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -65,6 +66,7 @@ const AppRouting = () => {
         <Route path="/wishes-end" element={<WishesEnd />} />
         <Route path="/complex-situation" element={<ComplexSituation />} />
         <Route path="/feedback" element={<LastPhase />} />
+        <Route path="/end-page" element={<EndPage />} />
         {/* <Route path="/doctor" element={<Doctor />} />
         <Route path="/pre-appointment" element={<DMeeting />} />
         <Route path="/appointment-questions" element={<Steps />} />

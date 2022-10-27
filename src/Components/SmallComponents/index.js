@@ -75,11 +75,12 @@ export const AppInput = ({
   className,
   margin,
   error,
+  style,
   ...rest
 }) => {
   return (
     <div className={classNames("textArea", className)} style={{ margin }}>
-      <Form.Control as={as} placeholder={placeholder} rows={rows} {...rest} />
+      <Form.Control as={as} placeholder={placeholder} rows={rows} {...rest} style={style} />
       {!!error && <p className="error-msg">{error}</p>}
     </div>
   );
