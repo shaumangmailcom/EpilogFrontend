@@ -109,7 +109,9 @@ const EndPage = (props) => {
               </div>
               <p className="desc18b">Here is your prolific completion code:</p>
               <AppInput
+                value="C6HS4LQK"
                 disabled
+                style={{ textAlign: "center" }}
                 placeholder="completion code"
                 className={styles.input}
               />
