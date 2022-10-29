@@ -45,13 +45,13 @@ const EndPage = (props) => {
 
   const submitForm = useCallback(
     async (want_amazon_gift = true) => {
-      let { prolificID, nation } = feedbackState;
+      let { prolificId, ethnicity } = feedbackState;
 
-      if (!nation) {
+      if (!ethnicity) {
         return alert("Please select ethnicity from the given dropdown");
       }
 
-      dispatch(setFeedbackState({ email: `${prolificID}-${nation}` }));
+      dispatch(setFeedbackState({ email: `${prolificId}-${ethnicity}` }));
 
       let { success, message } = await dispatch(
         asyncCreateFeedback({ want_amazon_gift })
@@ -91,9 +91,9 @@ const EndPage = (props) => {
               </p>
               <div className="app-select">
                 <Form.Select
-                  value={feedbackState.nation}
+                  value={feedbackState.ethnicity}
                   onChange={({ target: { value } }) =>
-                    dispatch(setFeedbackState({ nation: value }))
+                    dispatch(setFeedbackState({ ethnicity: value }))
                   }
                   aria-label="Default select example"
                 >

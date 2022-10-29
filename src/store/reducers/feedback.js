@@ -81,8 +81,8 @@ const initialState = {
   web_search: 0,
   email: "",
   completion_code: "",
-  prolificID: "",
-  nation: "",
+  prolificId: "",
+  ethnicity: "",
   current_page: 0,
   showModal2: false,
 };

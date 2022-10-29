@@ -19,7 +19,7 @@ function Welcome() {
   const feedbackState = useSelector((state) => state.feedback);
 
   const handleInit = () => {
-    if (!error && feedbackState.prolificID) {
+    if (!error && feedbackState.prolificId) {
       navigate("/home");
     } else {
       setError(true);
@@ -95,10 +95,10 @@ function Welcome() {
           <Col xs={12} md={10}>
             <h3 className="title22">please enter your prolific ID</h3>
             <AppInput
-              value={feedbackState.prolificID}
-              onChange={({ target: { value: prolificID } }) => {
-                setError(() => (!prolificID ? true : false));
-                dispatch(setFeedbackState({ prolificID }));
+              value={feedbackState.prolificId}
+              onChange={({ target: { value: prolificId } }) => {
+                setError(() => (!prolificId ? true : false));
+                dispatch(setFeedbackState({ prolificId }));
               }}
               error={error ? "Field is required!" : ""}
               placeholder="enter your ID"
