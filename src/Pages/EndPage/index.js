@@ -95,26 +95,37 @@ const EndPage = (props) => {
         <Row className={styles.row}>
           <Col xs={12} md={8} lg={8} xl={5} className={styles.grid}>
             <div className={styles.sec3}>
-              <p className="desc" style={{ marginBottom: 0 }}>
+              {/* <p className="desc" style={{ marginBottom: 0 }}>
                 You've reached the end of our trial system.
-              </p>
-              <div className="app-select">
-                <Form.Select
-                  value={feedbackState.ethnicity}
-                  onChange={({ target: { value } }) =>
-                    dispatch(setFeedbackState({ ethnicity: value }))
-                  }
-                  aria-label="Default select example"
-                >
-                  <option defaultValue="" value="" hidden>
-                    Please Select
-                  </option>
-                  {options.map((item, ind) => (
-                    <option key={ind} value={item.title}>
-                      {item.title}
+              </p> */}
+              <div>
+                <div className="app-select">
+                  <p className="desc18b" style={{ textAlign: "center" }}>
+                    What is your ethnicity?
+                  </p>
+                  <Form.Select
+                    value={feedbackState.ethnicity}
+                    onChange={({ target: { value } }) =>
+                      dispatch(setFeedbackState({ ethnicity: value }))
+                    }
+                    aria-label="Default select example"
+                  >
+                    <option defaultValue="" value="" hidden>
+                      Please Select
                     </option>
-                  ))}
-                </Form.Select>
+                    {options.map((item, ind) => (
+                      <option key={ind} value={item.title}>
+                        {item.title}
+                      </option>
+                    ))}
+                  </Form.Select>
+                </div>
+                <p
+                  className="desc"
+                  style={{ textAlign: "center", marginBottom: 0 }}
+                >
+                  You've reached the end of our trial system.
+                </p>
               </div>
               <p className="desc18b">Here is your prolific completion code:</p>
               <AppInput
