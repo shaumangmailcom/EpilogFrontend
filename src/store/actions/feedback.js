@@ -29,7 +29,7 @@ export const asyncCreateFeedback = createAsyncThunk(
       dispatch(asyncShowSuccess("More info created successfully"));
       if (!data.want_amazon_gift)
         await dispatch(asyncCreate_FetchUser()).unwrap();
-      else dispatch(setShowModal2(true));
+      // else dispatch(setShowModal2(true));
       return res;
     }
     dispatch(asyncShowError(res.message));

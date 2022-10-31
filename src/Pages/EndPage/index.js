@@ -1,16 +1,19 @@
 import React, { useCallback } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import journeyImg1 from "../../Assets/images/c1.svg";
 import journeyImg2 from "../../Assets/images/journey2.svg";
-import right from "../../Assets/images/right.svg";
+import AppModal from "../../Components/AppModal";
 import AppButton from "../../Components/Button";
 import AppHeader from "../../Components/Header";
 import { AppInput } from "../../Components/SmallComponents";
-import { persistor } from "../../store";
 import { asyncCreateFeedback } from "../../store/actions/feedback";
-import { resetFeedback, setFeedbackState } from "../../store/reducers/feedback";
+import {
+  resetFeedback,
+  setFeedbackState,
+  setShowModal2,
+} from "../../store/reducers/feedback";
 import styles from "./style.module.scss";
 
 const options = [
@@ -40,8 +43,14 @@ const EndPage = (props) => {
   const latestTry = useSelector((state) => state.user.latestTry);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
-  const current_page = feedbackState.current_page;
+  // const location = useLocation();
+  // const current_page = feedbackState.current_page;
+
+  const onCloseModal2 = useCallback(() => {
+    dispatch(setShowModal2(false));
+    dispatch(resetFeedback());
+    navigate("/");
+  }, [dispatch, navigate]);
 
   const submitForm = useCallback(
     async (want_amazon_gift = true) => {
@@ -57,16 +66,16 @@ const EndPage = (props) => {
         asyncCreateFeedback({ want_amazon_gift })
       ).unwrap();
       if (success) {
-        dispatch(resetFeedback());
-        if (!want_amazon_gift) {
-          navigate("/");
-        }
+        dispatch(setShowModal2(true));
         return;
+      } else {
+        alert(message ?? "error");
       }
-      if (!success) alert(message ?? "error");
     },
-    [dispatch, navigate, feedbackState]
+    [dispatch, feedbackState]
   );
+
+  console.log(feedbackState, "state");
 
   return (
     <div className={styles.phase}>
@@ -129,6 +138,24 @@ const EndPage = (props) => {
           </Col>
         </Row>
       </div>
+
+      <AppModal show={feedbackState.showModal2} onHide={onCloseModal2}>
+        <p className="desc">
+          Thank you for participating, we will contact you soon.
+        </p>
+        <Row>
+          <Col>
+            <AppButton
+              title="OK"
+              width="150px"
+              height="36px"
+              fontSize="15px"
+              borderRadius="50px "
+              onClick={onCloseModal2}
+            />
+          </Col>
+        </Row>
+      </AppModal>
     </div>
   );
 };
