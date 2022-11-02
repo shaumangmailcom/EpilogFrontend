@@ -17,24 +17,24 @@ import {
 import styles from "./style.module.scss";
 
 const options = [
-  { ind: "1", title: "Africa" },
-  { ind: "2", title: "Black/African American" },
+  { ind: "1", title: "African" },
+  { ind: "2", title: "Black / African American" },
   { ind: "3", title: "Caribbean" },
   { ind: "4", title: "East Asian" },
-  { ind: "5", title: "Latino/Hispanic" },
-  { ind: "6", title: "Middle/Eastern" },
+  { ind: "5", title: "Latino / Hispanic" },
+  { ind: "6", title: "Middle / Eastern" },
   { ind: "7", title: "Mixed" },
   { ind: "8", title: "Native American or Alaskan Native" },
-  { ind: "9", title: "South Aisan" },
-  { ind: "10", title: "White/Caucasian" },
+  { ind: "9", title: "South Asian" },
+  { ind: "10", title: "White / Caucasian" },
   {
     ind: "11",
-    title: "Other (please feel free to let us know your ethnicity via email)",
+    title: "Other ( please feel free to let us know your ethnicity via email )",
   },
-  { ind: "12", title: " White / Sephardic Jew" },
-  { ind: "13", title: "Black/British" },
-  { ind: "14", title: "White/Mexican" },
-  { ind: "15", title: "Romani/Traveller" },
+  { ind: "12", title: "White / Sephardic Jew" },
+  { ind: "13", title: "Black / British" },
+  { ind: "14", title: "White / Mexican" },
+  { ind: "15", title: "Romani / Traveller" },
   { ind: "16", title: "South East Asian" },
 ];
 
@@ -98,53 +98,56 @@ const EndPage = (props) => {
               {/* <p className="desc" style={{ marginBottom: 0 }}>
                 You've reached the end of our trial system.
               </p> */}
-              <div>
-                <div className="app-select">
-                  <p className="desc18b" style={{ textAlign: "center" }}>
-                    What is your ethnicity?
-                  </p>
-                  <Form.Select
-                    value={feedbackState.ethnicity}
-                    onChange={({ target: { value } }) =>
-                      dispatch(setFeedbackState({ ethnicity: value }))
-                    }
-                    aria-label="Default select example"
-                  >
-                    <option defaultValue="" value="" hidden>
-                      Please Select
+              <div className="app-select">
+                <p className="title24 my-5" style={{ textAlign: "center" }}>
+                  What is your ethnicity?
+                </p>
+                <Form.Select
+                  value={feedbackState.ethnicity}
+                  onChange={({ target: { value } }) =>
+                    dispatch(setFeedbackState({ ethnicity: value }))
+                  }
+                  aria-label="Default select example"
+                >
+                  <option defaultValue="" value="" hidden>
+                    Please Select
+                  </option>
+                  {options.map((item, ind) => (
+                    <option key={ind} value={item.title}>
+                      {item.title}
                     </option>
-                    {options.map((item, ind) => (
-                      <option key={ind} value={item.title}>
-                        {item.title}
-                      </option>
-                    ))}
-                  </Form.Select>
-                </div>
+                  ))}
+                </Form.Select>
+              </div>
+              <div className={styles.secContent}>
                 <p
                   className="desc"
                   style={{ textAlign: "center", marginBottom: 0 }}
                 >
                   You've reached the end of our trial system.
                 </p>
+
+                <p className="desc18b">
+                  Here is your prolific completion code:
+                </p>
+                <AppInput
+                  value="C6HS4LQK"
+                  disabled
+                  style={{ textAlign: "center" }}
+                  placeholder="completion code"
+                  className={styles.input}
+                />
+                <AppButton
+                  title="Submit"
+                  onClick={() => submitForm(false)}
+                  className={styles.submitBtn}
+                  fontSize="15px"
+                  boxMargin="auto"
+                />
+                <p className="desc18b" style={{ textAlign: "center" }}>
+                  Thank you for participating!
+                </p>
               </div>
-              <p className="desc18b">Here is your prolific completion code:</p>
-              <AppInput
-                value="C6HS4LQK"
-                disabled
-                style={{ textAlign: "center" }}
-                placeholder="completion code"
-                className={styles.input}
-              />
-              <AppButton
-                title="Submit"
-                onClick={() => submitForm(false)}
-                className={styles.submitBtn}
-                fontSize="15px"
-                boxMargin="auto"
-              />
-              <p className="desc18b" style={{ textAlign: "center" }}>
-                Thank you for participating!
-              </p>
             </div>
           </Col>
         </Row>
