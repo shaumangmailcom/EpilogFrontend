@@ -27,33 +27,41 @@
     .row {
       justify-content: center;
       .grid {
+        min-height: calc(100vh - 167px);
         height: calc(100vh - 167px);
         padding: 0px 20px 20px;
         .sec3 {
+          height: 100%;
           display: flex;
           flex-direction: column;
+          justify-content: space-around;
           align-items: center;
-          .input {
-            width: 60%;
-            @media only screen and (max-width: 428px) {
-              width: 100%;
-            }
-          }
-          .fillSec {
+          .secContent {
             display: flex;
-            flex-wrap: wrap;
-            align-items: baseline;
-            font-size: 18px;
-            color: var(--color-primary);
-            @media screen and (max-width: 428px) {
-              text-align: center;
-              justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            .input {
+              width: 60%;
+              @media only screen and (max-width: 428px) {
+                width: 100%;
+              }
+            }
+            .submitBtn {
+              width: 120px;
+              margin: 40px auto;
             }
           }
-          .submitBtn {
-            width: 120px;
-            margin: 40px auto;
-          }
+          // .fillSec {
+          //   display: flex;
+          //   flex-wrap: wrap;
+          //   align-items: baseline;
+          //   font-size: 18px;
+          //   color: var(--color-primary);
+          //   @media screen and (max-width: 428px) {
+          //     text-align: center;
+          //     justify-content: center;
+          //   }
+          // }
         }
       }
     }
