@@ -23,7 +23,7 @@ export const asyncCreate_FetchUser = createAsyncThunk(
     if (res.success) {
       dispatch(setUser(res.data));
       dispatch(asyncSetLatestTry(res.data.latest_try));
-      // dispatch(asyncGetQuestions())
+      // dispatch(asyncGetQuestions());
       dispatch(asyncShowSuccess("User created successfully"));
       return res;
     }

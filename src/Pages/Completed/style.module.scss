@@ -1,0 +1,75 @@
+.medical {
+  min-height: 100vh;
+  .header {
+    padding: 3rem 2rem 2.4rem;
+    background: linear-gradient(108.29deg, #ffffff 50.21%, #e8ebfe 86.64%);
+    position: relative;
+    overflow: hidden;
+    min-height: 113px;
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 20px;
+      font-family: ubuntu;
+      color: var(--color-primary);
+      @media only screen and (max-width: 428px) {
+        width: 60%;
+      }
+    }
+    img {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 113px;
+    }
+  }
+  .content {
+    padding: 25px 20px;
+    min-height: calc(100vh - 167px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .row {
+      justify-content: center;
+      .textSec {
+        margin-top: 20px;
+        // width: 70%;
+        @media screen and (max-width: 768px) {
+          width: 100%;
+        }
+      }
+      .crdSec {
+        .title {
+          font-size: 24px;
+          color: var(--color-primary);
+          font-family: ubuntu;
+          line-height: 127%;
+          text-align: center;
+          margin: 24px 0 32px;
+        }
+      }
+    }
+    .wBtnRow {
+      .tsBtn {
+        height: 36px;
+        width: 135px;
+        margin-top: 50px;
+      }
+    }
+    .btnRow {
+      justify-content: center;
+      .btn {
+        height: 48px;
+        width: 48px;
+        border-radius: 100%;
+        margin-top: 5rem;
+        float: right;
+      }
+    }
+  }
+}
+
+.dIcon{
+    margin: 0 auto 32px;
+    display: block;
+  }

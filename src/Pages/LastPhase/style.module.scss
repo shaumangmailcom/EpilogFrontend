@@ -1,69 +1,70 @@
 .phase {
-    min-height: 100vh;
-    .header {
-      padding: 3rem 2rem 2.4rem;
-      background: linear-gradient(108.29deg, #ffffff 50.21%, #e8ebfe 86.64%);
-      position: relative;
-      overflow: hidden;
-      min-height: 113px;
-      display: flex;
-      align-items: center;
-      p {
-        font-size: 20px;
-        font-family: ubuntu;
-        color: var(--color-primary);
-        @media only screen and (max-width: 428px) {
-          width: 60%;
-        }
-      }
-      img {
-        position: absolute;
-        right: -40px;
-        top: 0;
-        height: 113px;
+  min-height: 100vh;
+  .header {
+    padding: 3rem 2rem 2.4rem;
+    background: linear-gradient(108.29deg, #ffffff 50.21%, #e8ebfe 86.64%);
+    position: relative;
+    overflow: hidden;
+    min-height: 113px;
+    display: flex;
+    align-items: center;
+    p {
+      font-size: 20px;
+      font-family: ubuntu;
+      color: var(--color-primary);
+      @media only screen and (max-width: 428px) {
+        width: 60%;
       }
     }
-    .content {
-      .row {
-        justify-content: center;
-        .grid {
-          min-height: calc(100vh - 54px);
-          padding: 25px 20px;
+    img {
+      position: absolute;
+      right: -40px;
+      top: 0;
+      height: 113px;
+    }
+  }
+  .content {
+    .row {
+      justify-content: center;
+      .grid {
+        min-height: calc(100% - 167px);
+        // height: calc(100vh - 167px);
+        padding: 0px 20px 20px;
+        .sec3 {
+          height: 100%;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
-          height: 100%;
-          .indi{
-            margin-bottom: 3.5rem;
-          }
-          .btnRow {
-            margin-top: 5rem;
-            .btn {
-              height: 48px;
-              width: 48px;
-              border-radius: 100%;
-              float: right;
+          justify-content: space-around;
+          align-items: center;
+          .secContent {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 70px;
+            .input {
+              width: 60%;
+              @media only screen and (max-width: 428px) {
+                width: 100%;
+              }
+            }
+            .submitBtn {
+              width: 120px;
+              margin: 40px auto;
             }
           }
-          .sec3{
-            .fillSec{
-                display: flex;
-                flex-wrap: wrap;
-                align-items: baseline;
-                font-size: 18px;
-                color: var(--color-primary);
-                @media screen and (max-width: 428px) {
-                    text-align: center;
-                    justify-content: center;
-                }
-            }
-            .submitBtn{
-                width: 120px;
-                margin: 40px auto;
-            }
-          }
+          // .fillSec {
+          //   display: flex;
+          //   flex-wrap: wrap;
+          //   align-items: baseline;
+          //   font-size: 18px;
+          //   color: var(--color-primary);
+          //   @media screen and (max-width: 428px) {
+          //     text-align: center;
+          //     justify-content: center;
+          //   }
+          // }
         }
       }
     }
   }
-  
+}

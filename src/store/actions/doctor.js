@@ -1,6 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { callApi } from "../../services/api";
-import { resetDoctor, setDoctorState, setRepliesReverse } from "../reducers/doctor";
+import {
+  resetDoctor,
+  setDoctorState,
+  setRepliesReverse,
+} from "../reducers/doctor";
 import { asyncShowError, asyncShowSuccess } from "./common";
 import { asyncSetLatestTry } from "./user";
 // import { asyncSetLatestTry } from "./user";
@@ -41,7 +45,7 @@ export const asyncCreateDoctor = createAsyncThunk(
     });
     console.log(res, "res");
     if (res.success) {
-      dispatch(resetDoctor())
+      dispatch(resetDoctor());
       dispatch(asyncSetLatestTry(res.data));
       dispatch(asyncShowSuccess("Doctor Conversation created successfully"));
       // dispatch(asyncGetQuestions());
@@ -66,7 +70,7 @@ export const asyncGetQuestions = createAsyncThunk(
     console.log(res, "res");
     if (res.success) {
       const { replies, questions } = questionsData(res.data);
-      dispatch(setDoctorState({ questions,replies }));
+      dispatch(setDoctorState({ questions, replies }));
       // dispatch(setRepliesReverse(replies));
       dispatch(asyncShowSuccess("questions fetched successfully"));
       return res;

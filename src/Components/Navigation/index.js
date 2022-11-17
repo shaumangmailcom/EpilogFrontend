@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes , } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../../Pages/Home";
 import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
@@ -19,20 +19,21 @@ import ShareComplex from "../../Pages/ShareModule/ShareComplex";
 import LastPhase from "../../Pages/LastPhase";
 import { useDispatch, useSelector } from "react-redux";
 import { asyncCreate_FetchUser } from "../../store/actions/user";
-import Doctor from "../../Pages/Doctor";
-import Steps from "../../Pages/Doctor/Steps";
-import DMeeting from "../../Pages/Doctor/Meeting";
-import AddQuestion from "../../Pages/Doctor/AddQuestion";
-import Prepare from "../../Pages/Doctor/DoctorModule/Prepare";
-import ManageConversation from "../../Pages/Doctor/DoctorModule/ManageConversation";
-import Treatment from "../../Pages/Doctor/DoctorModule/Treatment";
-import Reviewing from "../../Pages/Doctor/DoctorModule/Reviewing";
-import PreparationKit from "../../Pages/Doctor/DoctorModule/PreparationKit";
-import Done from "../../Pages/Doctor/DoctorModule/Done";
+// import Doctor from "../../Pages/Doctor";
+// import Steps from "../../Pages/Doctor/Steps";
+// import DMeeting from "../../Pages/Doctor/Meeting";
+// import AddQuestion from "../../Pages/Doctor/AddQuestion";
+// import Prepare from "../../Pages/Doctor/DoctorModule/Prepare";
+// import ManageConversation from "../../Pages/Doctor/DoctorModule/ManageConversation";
+// import Treatment from "../../Pages/Doctor/DoctorModule/Treatment";
+// import Reviewing from "../../Pages/Doctor/DoctorModule/Reviewing";
+// import PreparationKit from "../../Pages/Doctor/DoctorModule/PreparationKit";
+// import Done from "../../Pages/Doctor/DoctorModule/Done";
 // import { asyncGetQuestions } from "../../store/actions/doctor";
 import Welcome from "../../Pages/Welcome";
 import Page404 from "../../Pages/Error/404";
 import EndPage from "../../Pages/EndPage";
+import Completed from "../../Pages/Completed";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -77,6 +78,7 @@ const AppRouting = () => {
         <Route path="/treatment" element={<Treatment />} />
         <Route path="/preparation-kit" element={<PreparationKit />} />
         <Route path="/done" element={<Done />} /> */}
+        <Route path="/completed" element={<Completed />} />
         <Route path="/*" element={<Page404 />} />
       </Routes>
     </Router>
