@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes , } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "../../Pages/Home";
 import ShareModule from "../../Pages/ShareModule";
 import Range from "../../Pages/RangeSlider";
@@ -33,6 +33,7 @@ import Done from "../../Pages/Doctor/DoctorModule/Done";
 import Welcome from "../../Pages/Welcome";
 import Page404 from "../../Pages/Error/404";
 import EndPage from "../../Pages/EndPage";
+import Completed from "../../Pages/Completed";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -77,6 +78,7 @@ const AppRouting = () => {
         <Route path="/treatment" element={<Treatment />} />
         <Route path="/preparation-kit" element={<PreparationKit />} />
         <Route path="/done" element={<Done />} /> */}
+        <Route path="/completed" element={<Completed />} />
         <Route path="/*" element={<Page404 />} />
       </Routes>
     </Router>
