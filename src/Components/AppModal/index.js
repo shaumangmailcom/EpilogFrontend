@@ -1,9 +1,9 @@
 import Modal from "react-bootstrap/Modal";
 import AppButton from "../Button";
 import styles from "./style.module.scss";
-import crossIcon from '../../Assets/images/cross.png'
+import crossIcon from "../../Assets/images/cross.png";
 
-const AppModal = ({ props, show, onHide, children }) => {
+const AppModal = ({ props, hideCross = false, show, onHide, children }) => {
   return (
     <Modal
       {...props}
@@ -15,9 +15,11 @@ const AppModal = ({ props, show, onHide, children }) => {
       className={styles.modal}
     >
       <Modal.Header>
-        <div className={styles.closeBtn}>
-          <img onClick={onHide} src={crossIcon} />
-        </div>
+        {!hideCross && (
+          <div className={styles.closeBtn}>
+            <img onClick={onHide} src={crossIcon} alt="cross-icon" />
+          </div>
+        )}
       </Modal.Header>
       <Modal.Body>{children}</Modal.Body>
     </Modal>
