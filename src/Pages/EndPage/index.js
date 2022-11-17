@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { useCallback } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -47,10 +48,11 @@ const EndPage = (props) => {
   // const current_page = feedbackState.current_page;
 
   const onCloseModal2 = useCallback(() => {
-    dispatch(setShowModal2(false));
-    dispatch(resetFeedback());
+    return;
+    // dispatch(setShowModal2(false));
+    // dispatch(resetFeedback());
     // navigate("/");
-  }, [dispatch, navigate]);
+  }, []);
 
   const submitForm = useCallback(
     async (want_amazon_gift = true) => {
@@ -145,19 +147,28 @@ const EndPage = (props) => {
                   fontSize="15px"
                   boxMargin="auto"
                 />
-                <p className="desc18b" style={{ textAlign: "center" }}>
+                {/* <p className="desc18b" style={{ textAlign: "center" }}>
                   Thank you for participating!
-                </p>
+                </p> */}
               </div>
             </div>
           </Col>
         </Row>
       </div>
 
-      <AppModal show={feedbackState.showModal2} onHide={onCloseModal2}>
-        <p className="desc">
-          Thank you for participating, we will contact you soon.
-        </p>
+      <AppModal
+        hideCross
+        show={feedbackState.showModal2}
+        onHide={onCloseModal2}
+      >
+        <p className="desc">Thank you for participating.</p>
+        <AppInput
+          value="C6HS4LQK"
+          disabled
+          style={{ textAlign: "center" }}
+          placeholder="completion code"
+          className={classNames(styles.input, "mb-5")}
+        />
         <Row>
           <Col>
             <AppButton
