@@ -162,6 +162,9 @@ const EndPage = (props) => {
         onHide={onCloseModal2}
       >
         <p className="desc">Thank you for participating.</p>
+        <p className="desc18b">
+                  Here is your prolific completion code:
+                </p>
         <AppInput
           value="C6HS4LQK"
           disabled
@@ -169,7 +172,7 @@ const EndPage = (props) => {
           placeholder="completion code"
           className={classNames(styles.input, "mb-5")}
         />
-        <Row>
+        {/* <Row>
           <Col>
             <AppButton
               title="OK"
@@ -180,7 +183,7 @@ const EndPage = (props) => {
               onClick={onCloseModal2}
             />
           </Col>
-        </Row>
+        </Row> */}
       </AppModal>
     </div>
   );
