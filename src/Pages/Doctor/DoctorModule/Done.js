@@ -25,12 +25,12 @@ const Done = () => {
         The email has been sent successfully. You can always forward the email
         you got to other people from your inbox
       </p>
-      <AppButton
+      {/* <AppButton
         title="Back to my journeys"
         height="36px"
         boxMargin="24px auto 0"
         onClick={loadUser}
-      />
+      /> */}
     </DoctorLayout>
   );
 };

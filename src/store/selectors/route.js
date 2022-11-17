@@ -21,6 +21,8 @@ function getRoute(latest) {
   if (isBasic) return "/";
   // const isDone = !!doctor;
   // if (isDone) return "/done";
+  // const isCompleted = !!doctor;
+  // if (!isCompleted) return "/completed";
   const isLastModule = !!share || !!wishes;
   if (isLastModule) return "/feedback";
   const isJourney = !!moreInfo;

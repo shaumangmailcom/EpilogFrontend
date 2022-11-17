@@ -49,7 +49,7 @@ const EndPage = (props) => {
   const onCloseModal2 = useCallback(() => {
     dispatch(setShowModal2(false));
     dispatch(resetFeedback());
-    navigate("/");
+    // navigate("/");
   }, [dispatch, navigate]);
 
   const submitForm = useCallback(
@@ -67,6 +67,7 @@ const EndPage = (props) => {
       ).unwrap();
       if (success) {
         dispatch(setShowModal2(true));
+        // navigate("/completed");
         return;
       } else {
         alert(message ?? "error");
