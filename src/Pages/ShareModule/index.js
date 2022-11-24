@@ -37,7 +37,7 @@ const ShareModule = () => {
       if (sum < 20) return setModalShow(true);
       return navigate("/share-thank");
     }
-    if (current_page === 2 && !shareState.personal_info) {
+    if (current_page === 3 && !shareState.personal_info) {
       return alert("Kindly Select any one of the options");
     }
     window.scrollTo(0, 0);
