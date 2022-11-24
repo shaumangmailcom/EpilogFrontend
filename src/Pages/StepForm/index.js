@@ -1,13 +1,14 @@
-import React, { useCallback, useState } from "react";
-import { Row, Col, Button } from "react-bootstrap";
+import React, { useCallback } from "react";
+import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import AppModal from "../../Components/AppModal";
 import AppButton from "../../Components/Button";
+import { SliderCard } from "../../Components/Cards";
 import AppHeader from "../../Components/Header";
 import { withLoader } from "../../Components/Loader";
 import Steps from "../../Components/Steps";
-import { useNavigationValidator } from "../../hooks/navigation";
+import right from "../../Assets/images/right.svg";
 import { asyncCreateBasic } from "../../store/actions/basic";
 import {
   basicStateKeys,
@@ -69,6 +70,13 @@ const QA = () => {
       })
     );
   }, [current_page, dispatch]);
+  const goNext = useCallback(() => {
+    dispatch(
+      setBasicInfoState({
+        current_page: current_page + 1,
+      })
+    );
+  }, [current_page, dispatch]);
   return (
     <div className={styles.qa}>
       <AppHeader back onClickBack={prevPage} />
@@ -118,8 +126,41 @@ const QA = () => {
             />
           )}
           {current_page === 4 && (
+            <>
+              <p className={styles.lable}>
+                5/<span>6</span>
+              </p>
+              <SliderCard
+                title="To what extent do you feel that you understand the meaning and implications of your diagnosis?"
+                // desc="On a scale from not at all to constantly please select"
+                options={[
+                  {
+                    id: "diagnosis",
+                    sLableOne: "I don't understand at all",
+                    sLableTwo: "I understand fully",
+                  },
+                ]}
+                onChange={(obj) => {
+                  dispatch(setBasicInfoState({ ...obj }));
+                }}
+                data={basicState}
+              />
+            </>
+          )}
+          {current_page === 4 && (
+            <Row className={styles.btnRow}>
+              <AppButton
+                className={styles.btn}
+                src={right}
+                imgWidth="10px"
+                imgMargin="0"
+                onClick={goNext}
+              />
+            </Row>
+          )}
+          {current_page === 5 && (
             <Steps
-              lable="5"
+              lable="6"
               title="How would you like to communicate with us?"
               desc="We can communicate in different ways. If using our system right now is not for you, in the future we will have other ways for you to get advice from our experts."
               options={[
@@ -133,6 +174,7 @@ const QA = () => {
           )}
         </Col>
       </Row>
+
       <AppModal show={modalShow} onHide={() => setModalShow(false)}>
         <h4 className="title24">Thank You</h4>
         <p className="desc">
