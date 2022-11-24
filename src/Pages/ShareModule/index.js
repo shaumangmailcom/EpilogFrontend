@@ -116,6 +116,31 @@ const ShareModule = () => {
               />
             )}
             {current_page === 2 && (
+              <SliderCard
+                // title="After sharing something personal, do you usually feel better or worse?"
+                options={[
+                  {
+                    id: "disease_advances",
+                    question:
+                      "To what extent are you worried about becoming a burden on your family, in case your disease advances?",
+                    sLableOne: "Not worried at all",
+                    sLableTwo: "Very worried",
+                  },
+                  {
+                    id: "illness_impact",
+                    question:
+                      "To what extent do you think your family members, who are most likely to be impacted by your Illness, are worried about you becoming a burden?",
+                    sLableOne: "Not worried at all",
+                    sLableTwo: "Very worried",
+                  },
+                ]}
+                onChange={(obj) => {
+                  dispatch(setShareState({ ...obj }));
+                }}
+                data={shareState}
+              />
+            )}
+            {current_page === 3 && (
               <Steps
                 onClick={(personal_info) => {
                   dispatch(setShareState({ personal_info }));
@@ -126,7 +151,7 @@ const ShareModule = () => {
                 data={shareState.personal_info}
               />
             )}
-            {current_page === 3 && (
+            {current_page === 4 && (
               <SliderCard
                 title="To what degree do you want people who are close to you to feel your pain?"
                 options={[
@@ -163,7 +188,7 @@ const ShareModule = () => {
                 data={shareState}
               />
             )}
-            {current_page === 4 && (
+            {current_page === 5 && (
               <SliderCard
                 options={[
                   {

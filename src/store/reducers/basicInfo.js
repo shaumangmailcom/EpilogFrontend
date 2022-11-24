@@ -5,6 +5,7 @@ export const basicStateKeys = [
   "age",
   "gender",
   "disease",
+  "diagnosis",
   "communication",
 ];
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
   age: null,
   gender: null,
   disease: null,
+  diagnosis: 0,
   communication: null,
 
   current_page: 0,

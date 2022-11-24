@@ -22,7 +22,7 @@ const Steps = ({
     <div className={styles.steps}>
       {!!lable && (
         <p className={styles.lable}>
-          {lable}/<span>5</span>
+          {lable}/<span>6</span>
         </p>
       )}
       <p className={styles.title} style={{ margin: titleMargin }}>

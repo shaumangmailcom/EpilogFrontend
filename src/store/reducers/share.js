@@ -10,6 +10,10 @@ export const shareStateKeys = [
     usual_feeling: "usual_feeling",
   },
   {
+    disease_advances: "disease_advances",
+    illness_impact: "illness_impact",
+  },
+  {
     personal_info: "personal_info",
   },
   {
@@ -29,6 +33,8 @@ const initialState = {
   friends: 0,
   co_workers: 0,
   usual_feeling: 0,
+  disease_advances: 0,
+  illness_impact: 0,
   personal_info: null,
   feel_pain: 0,
   // empathize_your_pain: 0,
@@ -58,7 +64,7 @@ export const shareSlice = createSlice({
   name: "share",
   initialState,
   reducers: {
-    resetShare:() => initialState,
+    resetShare: () => initialState,
     setShareState: (state, { payload }) => ({ ...state, ...payload }),
     setCurrentPage: (state, { payload }) => {
       state.current_page = payload;
@@ -67,6 +73,6 @@ export const shareSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setShareState, setCurrentPage,resetShare } = shareSlice.actions;
+export const { setShareState, setCurrentPage, resetShare } = shareSlice.actions;
 
 export default shareSlice.reducer;
