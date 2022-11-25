@@ -1,9 +1,9 @@
-import React, { useCallback } from "react";
-import { Lable, ListCard, Range, UserCard } from "../SmallComponents";
-import Form from "react-bootstrap/Form";
-import styles from "./style.module.scss";
-import { Col, Row } from "react-bootstrap";
 import classNames from "classnames";
+import React, { useCallback } from "react";
+import { Col, Row } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import { Lable, ListCard, Range, UserCard } from "../SmallComponents";
+import styles from "./style.module.scss";
 
 export const StepCard = ({
   text,
@@ -84,17 +84,23 @@ export const CatgCard = ({
   listOptions = [],
 }) => {
   let descs = [];
-  if (typeof desc === "string") descs.push(desc);
+
   if (Array.isArray(desc)) descs = [...desc];
+  else descs.push(desc);
   return (
     <div className={styles.catgCard}>
       <div className={styles.header}>
         <Lable lable={title} className={styles.head} />
         <p className={styles.lbl}>{number}</p>
       </div>
-      {descs.map((text, ind) => (
-        <p className={styles.dtl}>{text}</p>
-      ))}
+      {descs.map((text, ind) => {
+        console.log(text);
+        return (
+          <p key={ind} className={styles.dtl}>
+            {text}
+          </p>
+        );
+      })}
       {messages.map((message, ind) => {
         const isDoctor = message.by === "doctor";
         return (
