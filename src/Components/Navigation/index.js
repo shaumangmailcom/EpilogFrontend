@@ -34,6 +34,8 @@ import Welcome from "../../Pages/Welcome";
 import Page404 from "../../Pages/Error/404";
 import EndPage from "../../Pages/EndPage";
 import Completed from "../../Pages/Completed";
+import Terms from "../../Pages/Terms";
+import Privacy from "../../Pages/Privacy";
 
 const AppRouting = () => {
   const deviceId = useSelector((state) => state.user.deviceId);
@@ -68,6 +70,8 @@ const AppRouting = () => {
         <Route path="/complex-situation" element={<ComplexSituation />} />
         <Route path="/feedback" element={<LastPhase />} />
         <Route path="/end-page" element={<EndPage />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
         {/* <Route path="/doctor" element={<Doctor />} />
         <Route path="/pre-appointment" element={<DMeeting />} />
         <Route path="/appointment-questions" element={<Steps />} />

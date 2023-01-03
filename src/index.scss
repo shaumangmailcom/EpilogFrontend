@@ -30,6 +30,10 @@ html {
 }
 
 @font-face {
+  font-family: ubuntu400;
+  src: url("./Assets/fonts/Heebo-Regular.ttf");
+}
+@font-face {
   font-family: ubuntu;
   src: url("./Assets/fonts/Ubuntu-Medium.ttf");
 }
@@ -149,13 +153,16 @@ html {
     font-size: 18px;
   }
 }
+.title22r {
+  @extend .title22;
+  font-family: ubuntu400;
+}
 
 .desc {
   font-size: 18px;
   line-height: 26px;
   margin: 3.2rem 0;
   font-family: heebo;
-
   @media screen and (max-width: 428px) {
     text-align: center;
   }
@@ -190,19 +197,56 @@ html {
 .left {
   text-align: left;
 }
-
+.center {
+  text-align: center;
+}
+.underline {
+  text-decoration: underline;
+}
 /*------------------------*/
 /*        Spacing         */
 /*------------------------*/
+.mt-0 {
+  margin-top: 0;
+}
 .mt-15 {
   margin-top: 15px;
+}
+.mt-30 {
+  margin-top: 30px;
 }
 .my-5 {
   margin-top: 50px;
   margin-bottom: 50px;
 }
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 .mb-5 {
   margin-bottom: 5rem;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.ml-15 {
+  margin-left: 15px;
+  @media screen and (max-width: 428px) {
+    margin-left: 0;
+  }
+}
+.ml-20 {
+  margin-left: 20px;
+  @media screen and (max-width: 428px) {
+    margin-left: 0;
+  }
 }
 
 /*------------------------*/
