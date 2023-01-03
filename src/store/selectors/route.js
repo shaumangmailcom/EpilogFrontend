@@ -48,7 +48,7 @@ export const wishes = [
   "/wishes-person",
 ];
 
-export const journey = [...range, "/journey"];
+export const journey = [...range, "/journey","/terms","/privacy"];
 export const feedback = ["/feedback"];
 export const routes = {
   "/": slash,

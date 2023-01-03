@@ -18,7 +18,8 @@ export const useNavigationValidator = () => {
   useEffect(() => {
     if (isLoaded && (route === "/" || location.pathname !== route)) {
       let pathRoutes = routes[route];
-      let journeyRoute = [];
+      let journeyRoute = ["/terms","/privacy"];
+      pathRoutes.push("/terms","/privacy")
       if (latest) {
         journeyRoute = journey;
         if (
