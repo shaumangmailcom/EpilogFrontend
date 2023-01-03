@@ -5,16 +5,14 @@ import styles from "./style.module.scss";
 
 const Layout = ({
   reutrnBtn,
-  childern,
+  children,
   header = true,
-  style = {},
-  className = "",
 }) => {
   return (
     <div className={styles.layout}>
       {header && <AppHeader back={reutrnBtn} />}
-      <main className={className} style={style}>
-        {childern}
+      <main className={styles.main}>
+        {children}
       </main>
     </div>
   );

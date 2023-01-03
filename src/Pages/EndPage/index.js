@@ -143,6 +143,7 @@ const EndPage = (props) => {
                 <AppButton
                   title="Submit"
                   onClick={() => submitForm(false)}
+                  // hrefLink="/terms"
                   className={styles.submitBtn}
                   fontSize="15px"
                   boxMargin="auto"
