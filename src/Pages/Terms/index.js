@@ -18,7 +18,7 @@ function Terms() {
             Epilog Data Ltd., together with its subsidiaries ({" "}
             <b>“Epilog,” “Company,” “we” “our,” or “us”</b>) welcomes you (the
             “User(s)” or “you”) to our website at{" "}
-            <a href="https://app.epilog.world/">https://app.epilog.world/</a> (together
+            <a href="https://epilog.world">https://epilog.world</a> (together
             with its subdomains, Content, and Marks, the <b>“Site”</b>), in
             which we offer basic information regarding our Company and our
             Software-as-a-Service companion platform for people dealing with
@@ -37,9 +37,9 @@ function Terms() {
             By entering, connecting to, accessing or using the Site, you
             acknowledge that you have read and understood these Site Terms of
             Use, including the terms of our Privacy Policy available at:
-            <a href="www.app.epilog.world/privacy">
+            <a href="https://app.epilog.world/privacy">
               {" "}
-              www.epilog.world/privacy
+              https://app.epilog.world/privacy
             </a>{" "}
             (the <b>“Site Privacy Policy”</b>, and together with the Site Terms
             of Use, the <b>“Epilog Website Terms”</b>) and agree that these Site

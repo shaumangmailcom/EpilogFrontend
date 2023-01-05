@@ -24,17 +24,18 @@ function Privacy() {
             This privacy policy (the <b>“Site Privacy Policy”</b>) is intended
             to describe our practices regarding the information we may collect
             from you when you use and access our Site(s) located at{" "}
-            <a href="https://app.epilog.world/"> https://app.epilog.world/ </a> and any
+            <a href="https://epilog.world"> https://epilog.world </a> and any
             of their respective sub-domains (the
             <b> “Site”</b>).
           </p>
           <p className="desc">
             Capitalized terms which are not defined herein, shall have the
             meaning ascribed to them in our Site Terms of Use available at
-            <a href="www.app.epilog.world/terms">
+            <a href="https://app.epilog.world/terms">
               {" "}
-              www.app.epilog.world/terms{" "}
-            </a> (the <b> “Site Terms of Use”</b>), which this Site Privacy
+              https://app.epilog.world/terms{" "}
+            </a> 
+            (the <b> “Site Terms of Use”</b>), which this Site Privacy
             Policy is incorporated thereto by reference.
           </p>
           <h1 className="title24">Scope and Applicability</h1>
@@ -44,9 +45,9 @@ function Privacy() {
             Epilog Solution (as such term is defined in the Site Terms of Use)
             and other related services, which are governed solely by Site Terms
             of Use and this Site Privacy Policy (available at
-            <a href="www.app.epilog.world/privacy">
+            <a href="https://app.epilog.world/privacy">
               {" "}
-              www.epilog.world/privacy
+              https://app.epilog.world/privacy
             </a>{" "}
             (the Site Terms of Use and the Site Privacy Policy shall be regarded
             collectively herein as the <b>“Epilog Website Terms”</b>).
