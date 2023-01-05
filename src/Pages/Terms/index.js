@@ -17,8 +17,8 @@ function Terms() {
           <p className="desc">
             Epilog Data Ltd., together with its subsidiaries ({" "}
             <b>“Epilog,” “Company,” “we” “our,” or “us”</b>) welcomes you (the
-            “User(s)” or “you”) to our website at{" "}
-            <a href="https://epilog.world">https://epilog.world</a> (together
+            “User(s)” or “you”) to our website at {" "}
+            <a href="https://epilog.world">www.epilog.world</a> (together
             with its subdomains, Content, and Marks, the <b>“Site”</b>), in
             which we offer basic information regarding our Company and our
             Software-as-a-Service companion platform for people dealing with
@@ -36,10 +36,9 @@ function Terms() {
           <p className="desc">
             By entering, connecting to, accessing or using the Site, you
             acknowledge that you have read and understood these Site Terms of
-            Use, including the terms of our Privacy Policy available at:
+            Use, including the terms of our Privacy Policy available at: {" "}
             <a href="https://app.epilog.world/privacy">
-              {" "}
-              https://app.epilog.world/privacy
+              www.app.epilog.world/privacy
             </a>{" "}
             (the <b>“Site Privacy Policy”</b>, and together with the Site Terms
             of Use, the <b>“Epilog Website Terms”</b>) and agree that these Site
@@ -294,7 +293,7 @@ function Terms() {
           <p className="desc">
             We will use any personal information that we may collect or obtain
             in connection with the Site in accordance with our Site Privacy
-            Policy which is available at <a href="www.epilog.world/privacy">www.epilog.world/privacy</a>
+            Policy which is available at <a href="https://app.epilog.world/privacy">www.app.epilog.world/privacy</a>
           </p>
           <ul>
             <li className="title24 left">Warranty Disclaimers</li>
@@ -480,8 +479,7 @@ function Terms() {
           </ul>
           <p className="desc">
             If you have any questions (or comments) concerning the Terms, you
-            are most welcome to send us an{" "}
-            <mark style={{ backgroundColor: "yellow" }}>e-mail to:</mark>{" "}
+            are most welcome to send us an{" "} e-mail to: {""}
             service@epilog.world
           </p>
         </Col>

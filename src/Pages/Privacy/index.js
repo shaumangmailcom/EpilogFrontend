@@ -24,17 +24,16 @@ function Privacy() {
             This privacy policy (the <b>“Site Privacy Policy”</b>) is intended
             to describe our practices regarding the information we may collect
             from you when you use and access our Site(s) located at{" "}
-            <a href="https://epilog.world"> https://epilog.world </a> and any
+            <a href="https://epilog.world"> www.epilog.world </a> and any
             of their respective sub-domains (the
             <b> “Site”</b>).
           </p>
           <p className="desc">
             Capitalized terms which are not defined herein, shall have the
-            meaning ascribed to them in our Site Terms of Use available at
+            meaning ascribed to them in our Site Terms of Use available at {" "}
             <a href="https://app.epilog.world/terms">
-              {" "}
-              https://app.epilog.world/terms{" "}
-            </a> 
+              www.app.epilog.world/terms
+            </a> {" "}
             (the <b> “Site Terms of Use”</b>), which this Site Privacy
             Policy is incorporated thereto by reference.
           </p>
@@ -47,7 +46,7 @@ function Privacy() {
             of Use and this Site Privacy Policy (available at
             <a href="https://app.epilog.world/privacy">
               {" "}
-              https://app.epilog.world/privacy
+              www.app.epilog.world/privacy
             </a>{" "}
             (the Site Terms of Use and the Site Privacy Policy shall be regarded
             collectively herein as the <b>“Epilog Website Terms”</b>).
@@ -530,7 +529,7 @@ function Privacy() {
             a cookie is being sent. However, some website features or services
             may not function properly without cookies. To learn more about
             tracking technologies please refer to{" "}
-            <a href="www.allaboutcookies.org">www.allaboutcookies.org</a>
+            <a href="https://allaboutcookies.org">www.allaboutcookies.org</a>{" "}
             Tracking technologies may include Pixel tags (also commonly known as
             web beacons), transparent images, iFrames, or Java Script placed on
             our Site or our advertisements and emails, that is used to
@@ -539,8 +538,8 @@ function Privacy() {
           </p>
           <p className="desc">
             To learn more about our use of Cookies and other tracking
-            technologies, please see our Cookie Policy, available at
-            <a href="www.epilog.world/cookies">www.epilog.world/cookies</a>.
+            technologies, please see our Cookie Policy, available at{" "}
+            <a href="https://epilog.world/cookies">www.epilog.world/cookies</a>.{" "}
             Some of these tracking technologies are provided to us by our
             Third-Party Services Providers who collect and process Personal
             Information on our behalf. These Third Party Services Providers may
@@ -599,16 +598,16 @@ function Privacy() {
           </p>
           <ul>
             <li className="desc ml-15 my-0 left">
-              <a href="www.youronlinechoices.eu">www.youronlinechoices.eu</a>
+              <a href="https://youronlinechoices.eu">www.youronlinechoices.eu</a>
             </li>
             <li className="desc ml-15 my-0 left">
-              <a href="http://optout.networkadvertising.org/?c=1">
-                http://optout.networkadvertising.org/?c=1
+              <a href="https://optout.networkadvertising.org/?c=1">
+                www.optout.networkadvertising.org/?c=1
               </a>
             </li>
             <li className="desc ml-15 my-0 left">
-              <a href="http://www.aboutads.info/choices/">
-                http://www.aboutads.info/choices/{" "}
+              <a href="https://aboutads.info/choices/">
+                www.aboutads.info/choices/{" "}
               </a>
             </li>
           </ul>
@@ -636,8 +635,7 @@ function Privacy() {
           </p>
           <p className="desc">
             You may withdraw your consent by sending us a written notice via
-            email to the following address{" "}
-            <a href="service@epilog.world">service@epilog.world</a>.
+            email to the following address service@epilog.world.
           </p>
           <h1 className="title24">Security</h1>
           <p className="desc">
